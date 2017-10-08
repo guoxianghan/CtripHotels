@@ -58,7 +58,7 @@ namespace Maticsoft.DAL
                     new SqlParameter("@UpdateDate", SqlDbType.DateTime),
                     new SqlParameter("@Tag", SqlDbType.VarChar,1000),
                     new SqlParameter("@IsAgentPrivate", SqlDbType.Bit,1),
-                    new SqlParameter("@SaleTitle", SqlDbType.VarChar,50),
+                    new SqlParameter("@SaleTitle", SqlDbType.VarChar,500),
                     new SqlParameter("@HotelPlatID", SqlDbType.VarChar,50),
                     new SqlParameter("@IsCancel", SqlDbType.NVarChar,50),
                     new SqlParameter("@RoomCount", SqlDbType.NVarChar,50),

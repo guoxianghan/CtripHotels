@@ -24,21 +24,26 @@ namespace HotelServerLogic
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
+            Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
+            string v = Console.ReadLine();
+            Logger.WriteLog(v,false);
             string city = "北京";
             string area = "北京西城区酒店";
             int count = h.GetRecordCount("[PlatID]=1 AND [City]='" + city + "'");
             Logger.WriteLog("正在加载所选酒店....");
-            List<HotelDetailViewModel> list = h.GetModelList("[PlatID]=1 AND [City]='北京'");//AND [AREA]='北京西城区酒店'
+            List<HotelDetailViewModel> list = h.GetModelList($"[PlatID]=1 AND [City]='北京' and id>=" + v.Split(',')[0] + " AND ID<=" + v.Split(',')[1]);//AND [AREA]='北京西城区酒店'
             //List<HotelDetailViewModel> list = h.GetModelList("hotelplatid ='439773'");//AND [AREA]='北京西城区酒店'
             Logger.WriteLog($"所选酒店{list.Count}条加载完毕");
             DataTable dtprice = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM HotelPrice");
             DataTable dtclone = dtprice.Clone();
             DataTable dtroom = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM Rooms");
             DataTable dtroomclone = dtroom.Clone();
-            DateTime dtbegin = Convert.ToDateTime("2017-10-09");
-            int days = 30;
+            DateTime dtbegin = Convert.ToDateTime(v.Split(',')[2]);
+            int days = (Convert.ToDateTime(v.Split(',')[3])-dtbegin).Days;
             Random ran = new Random(DateTime.Now.Millisecond);
             HotelDetailViewModel m = null;
+            string parse_hotelid = "";
+            DateTime parse_date;
             for (int i = 0; i < list.Count; i++)
             {
                 m = list[i];
@@ -55,7 +60,7 @@ namespace HotelServerLogic
                         Console.WriteLine(m.HotelName + "," + indate.ToShortDateString() + ",3天内已更新过");
                         continue;
                     }
-                    Thread.Sleep(ran.Next(5000, 10000));
+                    //Thread.Sleep(ran.Next(1000, 4000));
                     #region 模拟请求
                     string url = "http://hotels.ctrip.com/Domestic/tool/AjaxHote1RoomListForDetai1.aspx?psid=&MasterHotelID=" + m.HotelPlatID
                            + "&hotel=" + m.HotelPlatID + "&EDM=F&roomId=&IncludeRoom=&city=1&supplier=&showspothotel=T&IsDecoupleSpotHotelAndGroup=F&contrast=0&brand=614"
@@ -66,6 +71,7 @@ namespace HotelServerLogic
                     string referer = "http://hotels.ctrip.com/hotel/" + m.HotelPlatID + ".html";
                     string log = m.HotelName + "," + referer + "," + indate.ToString("yyyy-MM-dd");
                     //Console.WriteLine(log);
+                    Thread.Sleep(ran.Next(2000, 5000));
                     string html = ctrip.GetRequest(url, referer);
                     CtripHotelPriceJSON json = null;
                     try
@@ -75,17 +81,16 @@ namespace HotelServerLogic
                     catch (Exception ex)
                     {
                         Logger.WriteLog(JsonConvert.SerializeObject(m));
-                        Logger.WriteLog(url);
+                        Thread.Sleep(ran.Next(5000, 10000));
                         Logger.WriteLog(referer);
                         continue;
-                    } 
+                    }
                     #endregion
                     string d = json.html.Replace("\\/", "/").Replace("\\u000a", "").Replace("\\u0009", "");
 
                     HtmlDocument doc = new HtmlDocument();
                     doc.LoadHtml(d);
                     List<RoomsModel> rooms = new List<RoomsModel>();
-                    List<HotelPriceModel> prices = new List<HotelPriceModel>();
 
                     var room_types = doc.DocumentNode.SelectNodes("//td[contains(@class,'room_type')]");
                     RoomsModel r = null;
@@ -101,6 +106,7 @@ namespace HotelServerLogic
                     }
                     foreach (var item in room_types)
                     {
+                        List<HotelPriceModel> prices = new List<HotelPriceModel>();
                         #region 所有房型
                         r = new RoomsModel();
                         r.PlatID = 1;
@@ -164,9 +170,9 @@ namespace HotelServerLogic
                             var modellist = priceserver.GetModelList($@"SaleTitle='{p.SaleTitle}' and BedType='{p.BedType}' and BreakfirstType='{p.BreakfirstType}' and InDate='{p.InDate.ToString("yyyy-MM-dd")}' and OutDate='{p.OutDate.ToString("yyyy-MM-dd")}'
 and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' and BaseRoomID='{p.BaseRoomID}'");
                             coun++;
-                            if (coun == 4)
+                            if (coun <= 4)
                             {
-                                if (!p.SaleTitle.Contains("代理") && p.Tag.Contains("担保") && p.Tag.Contains("到店付"))
+                                if (!p.SaleTitle.Contains("代理") && !p.Tag.Contains("担保") && !p.Tag.Contains("到店付"))
                                     p.IsAgentPrivate = true;
                             }
                             prices.Add(p);
@@ -177,9 +183,18 @@ and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' 
                             else
                             {//添加 
                                 if (p.IsAgentPrivate)//只保存携程自营的价格
-                                    priceserver.Add(p);
+                                    try
+                                    {
+                                        priceserver.Add(p);
+                                    }
+                                    catch (Exception e)
+                                    {
+                                        Logger.WriteException(e);
+                                        Logger.WriteLog(e.Message);
+                                    }
                             }
                             #endregion
+                            Logger.WriteLog("携程自营价格" + prices.FindAll(x => x.IsAgentPrivate).Count() + "条," + m.HotelPlatName + "," + r.RoomName + ",[" + indate.ToShortDateString() + "," + m.HotelPlatID +","+m.ID+ "]");
                         }
                         #endregion
 
@@ -189,6 +204,8 @@ and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' 
                 Console.WriteLine("查询完毕");
                 Console.WriteLine("=========================================");
             }
+            Console.WriteLine("所有酒店查询完毕");
+            Console.ReadKey();
         }
     }
 }
