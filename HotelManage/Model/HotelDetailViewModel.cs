@@ -81,6 +81,8 @@ namespace Maticsoft.Model
 			set{ _platid=value;}
 			get{return _platid;}
 		}
+        public string City { get; set; }
+        public string Area { get; set; }
 		#endregion Model
 
 	}

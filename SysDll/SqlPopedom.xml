@@ -1,0 +1,1163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SqlPopedom</name>
+    </assembly>
+    <members>
+        <member name="M:Popedom.SqlPopedom.SqlModule.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModule.#ctor(System.Int64,System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="code">编号</param>
+            <param name="name">名称</param>
+            <param name="parentCode">上级部门编号</param>
+            <param name="isWorkStation">是否为工作岗位</param>
+            <param name="remark">备注</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModule.Add">
+            <summary>
+            添加模块
+            </summary>
+            <returns>添加果</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModule.Update">
+            <summary>
+            更新模块
+            </summary>
+            <param name="code"></param>
+            <param name="name"></param>
+            <param name="parentCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModule.Delete">
+            <summary>
+            删除模块
+            </summary>
+            <param name="code"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModule.CheckDataValid(System.String)">
+            <summary>
+            检测数据是否有效
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SystemManagement.GetSystems">
+            <summary>
+            获取所有的系统ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.#ctor(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            构造体
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.#ctor(System.Boolean)">
+            <summary>
+            构造体
+            </summary>
+            <param name="isWorkStation">是否为工作岗位</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.Add">
+            <summary>
+            新增部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.Update">
+            <summary>
+            更新部门信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.Delete">
+            <summary>
+            删除部门
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.CheckDataValid(System.String)">
+            <summary>
+            检测数据是否有效
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartment.Load(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            载入部门信息
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModulesAndOperations(System.String)">
+            <summary>
+            根据指定的模块编号获取模块集,获取其模块以及子模块集(包括操作)
+            </summary>
+            <param name="code">模块编号</param>
+            <returns>模块集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModules(System.String)">
+            <summary>
+            根据指定的模块编号获取模块集,获取其模块以及子模块集
+            </summary>
+            <param name="parentCode">上级模块编号</param>
+            <returns>模块集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetUserModules(System.String)">
+            <summary>
+            返回用户可见的模块集
+            </summary>
+            <param name="userID"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.SqlModuleManagement._MenuToModule">
+            <summary>
+            菜单对应的模块
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetMenuToModule">
+            <summary>
+            菜单对应的模块表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModuleCodeByMenuCode(System.String)">
+            <summary>
+            根据菜单编码，获取模块编码,若未找到对应的则反回菜单编码
+            </summary>
+            <param name="moduleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.SqlModuleManagement._ModuleOP">
+            <summary>
+            模块对应的OP表
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModule_OP">
+            <summary>
+            获取模块对应的OP表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModuleOPRows(System.String)">
+            <summary>
+            获取指定模块对应的操作
+            </summary>
+            <param name="moduleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.SqlModuleManagement._Module_OtherField">
+            <summary>
+            模块对应的OP表
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.Module_OtherField">
+            <summary>
+            获取模块对应的OP表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlModuleManagement.GetModule_OtherField(System.String)">
+            <summary>
+            获取指定模板对应的其它关系字段
+            </summary>
+            <param name="moduleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Popedom.SqlPopedom.SqlFlowNo">
+            <summary>
+            流水号类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlFlowNo.Save">
+            <summary>
+            保存流水号信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlFlowNo.Load(System.Int32)">
+            <summary>
+            根据ID，初始流水号信息
+            </summary>
+            <param name="indx"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlFlowNo.Load(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            根据dr，初始流水号信息
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="T:Popedom.SqlPopedom.SqlFlowNoManagement">
+            <summary>
+            流水号管理类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlFlowNoManagement.GetAllFlowNo">
+            <summary>
+            获取所有流水号信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlOperationItem.GetOperationItems(System.String)">
+            <summary>
+            根据模块编号获取相应的操作集
+            </summary>
+            <param name="moduleIndx"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.UserID">
+            <summary>
+            用户ID
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.ConfigFile">
+            <summary>
+            系统配置文件
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.Operations">
+            <summary>
+            当前系统的操作项集
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.m_Database">
+            <summary>
+            SQL数据库
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.Common.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.Common.Instance">
+            <summary>
+            唯一入口点
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.ConnectionString">
+            <summary>
+            获取数据连接
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.Common.GetSqlConnection">
+            <summary>
+            获取数据连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.Common.IsAdmin">
+            <summary>
+            是否为管理员
+            </summary>
+        </member>
+        <member name="P:Popedom.SqlPopedom.Common.Database">
+            <summary>
+            SQL数据库
+            </summary>
+        </member>
+        <member name="T:Popedom.SqlPopedom.SqlEmployeeManagement">
+            <summary>
+            员工管理类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.DeleteEmployee(System.String)">
+            <summary>
+            根据员工编号删除员工信息
+            </summary>
+            <param name="employeeNo">员工编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetAllEmployee">
+            <summary>
+            获取所有人员信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetAllRolesByEmployeeNo(System.String)">
+            <summary>
+            获取所有人员信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetOtherPositionsByEmpoyeeNo(System.String)">
+            <summary>
+            根据员工编号获取此员工所在职位以外的职位信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.SaveEmployeePosition(System.String,System.String[])">
+            <summary>
+            保存职位下的人员
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.DeleteEmployeePosition(System.String,System.String[])">
+            <summary>
+            删除人员下的职位
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetPopedomByEmployeeNoAndModuleCode(System.String,System.String)">
+            <summary>
+            根据人员编号与模块编号获取操作权限
+            </summary>
+            <param name="employeeNo">人员编号</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns>操作权限集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetPopedomByEmployeeNoAndModuleCode_New(System.String,System.String)">
+            <summary>
+            根据人员编号与模块编号获取操作权限
+            </summary>
+            <param name="employeeNo">人员编号</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns>操作权限集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.CheckUserIndxIsNewRolePopedom(System.String)">
+            <summary>
+            检测用户ID为新的角色
+            </summary>
+            <param name="userindx">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetViewCompany(System.String)">
+            <summary>
+            获取指定用户可见的公司信息
+            </summary>
+            <param name="userIndx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployeeManagement.GetViewCompanyIndxs(System.String)">
+            <summary>
+            获取指定用户可见的公司ID，用逗号隔开
+            </summary>
+            <param name="userIndx"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlOperation.GetAllTypes(System.String)">
+            <summary>
+            获取指定系统中所有的操作项
+            </summary>
+            <param name="systemID">系统ID</param>
+            <returns>操作项集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.#ctor(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            构造体
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.Add">
+            <summary>
+            新增员工
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.Update">
+            <summary>
+            更新员工信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.Load(System.String)">
+            <summary>
+            根据员工编号载入员工信息
+            </summary>
+            <param name="employeeNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.Delete">
+            <summary>
+            删除此员工信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlEmployee.Load(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            载入实体信息
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="T:Popedom.SqlPopedom.SqlDepartmentManagement">
+            <summary>
+            部门管理类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.GetAllDepartments(System.Boolean)">
+            <summary>
+            获取所有部门
+            </summary>
+            <param name="isIncludedPosition">是否包括职位</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.GetAllEmployees(System.String)">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.GetOtherEmployees(System.String)">
+            <summary>
+            根据职位编号，获取此职位以外的人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.SaveEmployeePosition(System.String,System.String[])">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.DeleteEmployeePosition(System.String,System.String[])">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.GetAllRoles(System.String)">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.GetOtherRoles(System.String)">
+            <summary>
+            根据职位编号，获取此职位以外的人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.SaveRolePosition(System.String,System.String[])">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlDepartmentManagement.DeleteRolePosition(System.String,System.String[])">
+            <summary>
+            根据职位编号，获取人员信息
+            </summary>
+            <param name="positionCode">职位编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.#ctor(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            构造体
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="F:Popedom.SqlPopedom.SqlRole.m_SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.Add">
+            <summary>
+            新增角色
+            </summary>
+            <returns>更新结果</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.Update">
+            <summary>
+            更新角色
+            </summary>
+            <returns>更新结果</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.Delete">
+            <summary>
+            删除角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.Load(System.String)">
+            <summary>
+            载入角色
+            </summary>
+            <param name="employeeNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRole.Load(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            载入实体
+            </summary>
+            <param name="dr"></param>
+        </member>
+        <member name="P:Popedom.SqlPopedom.SqlRole.SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="T:Popedom.SqlPopedom.SqlRoleManagement">
+            <summary>
+            角色管理类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetAllRoles">
+            <summary>
+            获取所有角色
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.AddRoleMember(System.Int32,System.String[])">
+            <summary>
+            添加角色成员
+            </summary>
+            <param name="employeeNo">角色编号</param>
+            <param name="employeenos">员工编号集</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.DeleteRoleMember(System.Int32,System.String[])">
+            <summary>
+            删除角色成员
+            </summary>
+            <param name="employeeNo"></param>
+            <param name="employeenos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.DeleteRole(System.Int32)">
+            <summary>
+            删除角色
+            </summary>
+            <param name="employeeNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetRolePositionMembers(System.Int32)">
+            <summary>
+            获取角色以外的成员
+            </summary>
+            <param name="employeeNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetOtherRolePositionMembers(System.Int32)">
+            <summary>
+            获取角色以外的成员
+            </summary>
+            <param name="employeeNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetPopedomByRoleIndxAndModuleCode(System.Int64,System.String)">
+            <summary>
+            根据角色Indx与模块编号获取操作权限
+            </summary>
+            <param name="employeeNo">角色Indx</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns>操作权限集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetPopedomByRoleIndxAndModuleCodeNew(System.Int64,System.String)">
+            <summary>
+            根据角色Indx与模块编号获取操作权限
+            </summary>
+            <param name="employeeNo">角色Indx</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns>操作权限集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.GetOperaterPopedomsByDatatable(System.Data.DataTable)">
+            <summary>
+            根据数据表,获取权限集
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.BindNewOperaterPopedom(System.String,Popedom.OperaterPopedomCollection)">
+            <summary>
+            邦定老权限的查询权限
+            </summary>
+            <param name="moduleCode"></param>
+            <param name="newops"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.Save(System.Int32,System.String,Popedom.OperaterPopedomCollection)">
+            <summary>
+            保存操作权限
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.SqlRoleManagement.SaveNew(System.Int32,System.String,Popedom.OperaterPopedomCollection)">
+            <summary>
+            保存操作权限
+            </summary>
+            <param name="roleCode">角色编号</param>
+            <param name="moduleIndx">模块编号</param>
+            <returns></returns>
+        </member>
+        <member name="F:Popedom.SqlPopedom.DataBase.CommandTimeout">
+            <summary>
+            命令执行时间
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.DataBase.IsNeedConvert">
+            <summary>
+            是否需要转换
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.DataBase.IsWriteLog">
+            <summary>
+            是否记录日志(默认为false)
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.DataBase.m_UserCode">
+            <summary>
+            当前用户编号
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.IsConnected">
+            <summary>
+            是否可以连接
+            </summary>
+            <returns>true-可以连接 false-不能连接</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.IsConnected(System.String)">
+            <summary>
+            是否可以连接
+            </summary>
+            <param name="connectionString">连接字符串</param>
+            <returns>true-可以连接 false-不能连接</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.#ctor(System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="connectionString">数据连结字符串</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.#ctor(System.String,Popedom.SqlPopedom.DataBaseType)">
+            <summary>
+            构造体
+            </summary>
+            <param name="connectionString">数据连接字符串</param>
+            <param name="dbtype">数据库类型</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.#ctor(System.String,System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="connectionString">数据连接字符串</param>
+            <param name="logConnectionString">日志数据连接字符串</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CreateConnection">
+            <summary>
+            创建数据连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CreateLogConnection">
+            <summary>
+            创建日志数据连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.WriteLog(System.Data.IDbCommand,System.String,System.Exception)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="cmmd">记录的命令</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.WriteLog(System.String,System.String,System.String)">
+            <summary>
+            记录日志
+            </summary>
+            <param name="userCode">当前用户编号</param>
+            <param name="message">信息</param>
+            <param name="detail">详细信息</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteNonQuery(System.String)">
+            <summary>
+            执行Transact-SQL语句并返回影响行数
+            </summary>
+            <param name="commandText">Transact-SQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteNonQuery(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            对连接执行Transact-SQL语句并返回影响行数
+            </summary>
+            <param name="sqlCommand">SqlCommand</param>
+            <returns></returns>
+            <remarks>命令执行错误,系统会自动记录错误日志</remarks>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteNonQuery(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            对连接执行Transact-SQL语句并返回影响行数
+            </summary>
+            <param name="sqlCommand">SqlCommand</param>
+            <returns></returns>
+            <remarks>鉴于在事务中执行,故系统不做日志记录</remarks>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SetCommandTimeout(System.Data.IDbCommand)">
+            <summary>
+            设置命令执行的时间
+            </summary>
+            <param name="cmmd"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteDataset(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行SQL命令，并反回Dataset
+            </summary>
+            <param name="sqlCommand"></param>
+            <returns></returns>
+            <remarks>命令执行错误,系统会自动记录错误日志</remarks>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteDataTable(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行SQL命令，并反回DataTable
+            </summary>
+            <param name="sqlCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalar(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行查询，并返回第一行第一列的值
+            </summary>
+            <param name="sqlCommand"></param>
+            <returns></returns>
+            <remarks>命令执行错误,系统会自动记录错误日志</remarks>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalar(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            执行查询，并返回第一行第一列的值
+            </summary>
+            <param name="sqlCommand">查询命令</param>
+            <param name="trans">事务</param>
+            <returns></returns>
+            <remarks>鉴于在事务中执行,故系统不做日志记录</remarks>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalarInt(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行查询，并返回第一行第一列的值,且类型为Int型
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScopeIdentity(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行命令，并取出Identity
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteReader(System.Data.SqlClient.SqlCommand)">
+            <summary>
+            执行查询，并返回SqlDataReader
+            </summary>
+            <param name="sqlCommand"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetDataSetSchema(System.Data.SqlClient.SqlCommand,System.Data.SchemaType)">
+            <summary>
+            根据SqlCommand获取数据结构
+            </summary>
+            <param name="sqlCommand"></param>
+            <param name="dataSet"></param>
+            <param name="schemaType"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetDataTableSchema(System.Data.SqlClient.SqlCommand,System.Data.SchemaType)">
+            <summary>
+            根据SqlCommand获取数据结构
+            </summary>
+            <param name="sqlCommand"></param>
+            <param name="dataSet"></param>
+            <param name="schemaType"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetDBVersion">
+            <summary>
+            获取数据库版本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveExtendedProperty(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            保存扩展属性
+            </summary>
+            <param name="schema"></param>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveExtendedProperty2005(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            保存扩展属性
+            </summary>
+            <param name="schema"></param>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveExtendedProperty(System.Boolean,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            保存扩展属性
+            </summary>
+            <param name="is2005"></param>
+            <param name="schema"></param>
+            <param name="tableName"></param>
+            <param name="columnName"></param>
+            <param name="propertyName"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveColumnLable(System.String,System.String,System.String)">
+            <summary>
+            保存列的Lable属性(所有者默认为dbo)
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="columnName">列名</param>
+            <param name="lable">Lalbe名称</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveColumnLable(System.String,System.String,System.String,System.String)">
+            <summary>
+            保存列的Lable属性
+            </summary>
+            <param name="schema">所有者</param>
+            <param name="tableName">表名</param>
+            <param name="columnName">列名</param>
+            <param name="lable">Lalbe名称</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveColumnDescription(System.String,System.String,System.String)">
+            <summary>
+            保存列的decription属性(所有者默认为dbo)
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="columnName">列名</param>
+            <param name="description">列描述</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveColumnDescription2005(System.String,System.String,System.String)">
+            <summary>
+            保存列的decription属性(所有者默认为dbo)
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="columnName">列名</param>
+            <param name="description">列描述</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.SaveColumnDescription(System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>
+            保存列的Lable属性
+            </summary>
+            <param name="schema">所有者</param>
+            <param name="tableName">表名</param>
+            <param name="columnName">列名</param>
+            <param name="description">列描述</param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetUserTableNames">
+            <summary>
+            获取所有的用户表名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetTableKey(System.String,System.Boolean@)">
+            <summary>
+            获取名的主键
+            </summary>
+            <param name="tableName">要获取主键表的名称</param>
+            <param name="isIdentity">是否为自增长</param>
+            <returns>主键名</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteLongText(System.String)">
+            <summary>
+            初始命令文本，类似查询分析器
+            </summary>
+            <param name="longCommandText"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetCommand">
+            <summary>
+            创建Command命令
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetConnection">
+            <summary>
+            获取数据连接
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetParameter(System.String,System.Object)">
+            <summary>
+            获取参数
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteReader(System.Data.IDbCommand)">
+            <summary>
+            获取DataReader
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalar(System.Data.IDbCommand)">
+            <summary>
+            获取第一行第一列的值
+            </summary>
+            <param name="cmmd"></param>
+            <returns>如未找到，则返回DBNull.Value</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalarInt(System.Data.IDbCommand)">
+            <summary>
+            获取第一行第一列的数字值
+            </summary>
+            <param name="cmmd"></param>
+            <returns>如未找到，则返回0</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteScalarLong(System.Data.IDbCommand)">
+            <summary>
+            获取第一行第一列的数字值
+            </summary>
+            <param name="cmmd"></param>
+            <returns>如未找到，则返回0</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteNonQuery(System.Data.IDbCommand)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteNonQuery(System.Data.IDbCommand,System.Data.IDbTransaction)">
+            <summary>
+            执行命令
+            </summary>
+            <param name="cmmd"></param>
+            <param name="trans"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetDataAdapter">
+            <summary>
+            获取DataAdapter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteDataset(System.Data.IDbCommand)">
+            <summary>
+            执行命令，并返回DataSet
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExecuteDataTable(System.Data.IDbCommand)">
+            <summary>
+            执行命令，并返回DataTable
+            </summary>
+            <param name="cmmd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.Update(System.Data.DataTable)">
+            <summary>
+            更新表（只读列不用于更新和插入)
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.Update(System.Data.DataTable,System.Data.DataColumn[])">
+            <summary>
+            更新表（只读列不用于更新和插入)
+            </summary>
+            <param name="dt"></param>
+            <param name="primaryKeys">关键列，用于Update\Delete</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CheckMSSQLValid(System.String)">
+            <summary>
+            检测SQL语句的有效性
+            </summary>
+            <param name="sql">SQL语句，可带参数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetParameterNames(System.String)">
+            <summary>
+            获取SQL语句中，参数的名称
+            </summary>
+            <param name="sql">SQL语句</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CheckMSQLConnectionValid(System.String,System.Int32)">
+            <summary>
+            检测数据连接是否有效
+            </summary>
+            <param name="connectionStr">连接字符串</param>
+            <param name="connectionTimeout">连接超时时间（秒）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CheckMSQLConnectionValid(System.String)">
+            <summary>
+            检测数据连接是否有效
+            </summary>
+            <param name="connectionStr">连接字符串默认为2秒</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.BindObject(System.Object,System.Data.IDataReader)">
+            <summary>
+            利用反射，邦定对象的属性。属性名与列名必须一致
+            </summary>
+            <param name="obj"></param>
+            <param name="dr"></param>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetExcelFormat">
+            <summary>
+            获取导出Excel的格式字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetExcelContent(System.Data.DataTable)">
+            <summary>
+            将DataTable转换为Excel内容
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ToExcel(System.String,System.Data.DataTable)">
+            <summary>
+            将DataTable转换为Excel内容
+            </summary>
+            <param name="dt"></param>
+            <param name="fileName">要保存的文件名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetInsertCommands(System.Data.DataTable)">
+            <summary>
+            根据数据表，获取INSERT COMMAND 集
+            </summary>
+            <param name="dt">数据表</param>
+            <returns>新增命令集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetSQLCommands(System.Data.DataTable)">
+            <summary>
+            根据行的状态，获取SQL命令集(只读列不用于更新和插入)
+            </summary>
+            <param name="dt">需要同步的表</param>
+            <returns>SQL命令集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetSQLCommands(System.Data.DataTable,System.Data.DataColumn[])">
+            <summary>
+            根据行的状态，获取SQL命令集(只读列不用于更新和插入)
+            </summary>
+            <param name="dt">需要同步的表</param>
+            <param name="primaryKeys">关键列，用于Update\Delete</param>
+            <returns>SQL命令集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.GetInsertCommands(System.Data.DataTable[])">
+            <summary>
+            根据表集，获取对应的INSERT COMMAND 集
+            </summary>
+            <param name="dts">数据表集</param>
+            <returns>命令集</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.ExceuteCommands(System.Collections.ObjectModel.Collection{System.Data.SqlClient.SqlCommand},System.String)">
+            <summary>
+            执行命令集合
+            </summary>
+            <param name="cmmds">命令集合</param>
+            <param name="connectionString">数据连接字符串</param>
+            <returns>成功反回空；失败返回原因</returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.DataBase.CheckFieldExists(System.Data.IDataReader,System.String)">
+            <summary>
+            检测指定的字段是否存在于IDataReader中
+            </summary>
+            <param name="dr"></param>
+            <param name="fieldName">字段名</param>
+            <returns>true-存在 false--不存在</returns>
+        </member>
+        <member name="P:Popedom.SqlPopedom.DataBase.UserCode">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Popedom.SqlPopedom.DataBase.DataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+        <member name="T:Popedom.SqlPopedom.OperationEnum">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.Equal">
+            <summary>
+            等于
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.GreaterThen">
+            <summary>
+            大于
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.LessThen">
+            <summary>
+            小于
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.GreaterThenOrEqual">
+            <summary>
+            大于等于
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.LessThenOrEqual">
+            <summary>
+            小于等于
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.Like">
+            <summary>
+            模式匹配
+            </summary>
+        </member>
+        <member name="F:Popedom.SqlPopedom.OperationEnum.IN">
+            <summary>
+            包含
+            </summary>
+        </member>
+        <member name="T:Popedom.SqlPopedom.Converter">
+            <summary>
+            运算符转换类
+            </summary>
+        </member>
+        <member name="M:Popedom.SqlPopedom.Converter.Convert(Popedom.SqlPopedom.OperationEnum)">
+            <summary>
+            运算符转换类
+            </summary>
+            <param name="operation"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.SqlPopedom.Converter.ConvertDbType(System.String)">
+            <summary>
+            将类型名称转换为SqlDbType
+            </summary>
+            <param name="typeName">类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:Popedom.SqlPopedom.DataBaseType">
+            <summary>
+            数据库类型
+            </summary>
+        </member>
+    </members>
+</doc>

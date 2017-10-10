@@ -1,0 +1,1186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Popedom</name>
+    </assembly>
+    <members>
+        <member name="T:Popedom.RoleModulePopedom">
+            <summary>
+            角色对应的模块权限
+            </summary>
+        </member>
+        <member name="F:Popedom.RoleModulePopedom.RoleCode">
+            <summary>
+            角色编号
+            </summary>
+        </member>
+        <member name="F:Popedom.RoleModulePopedom.ModuleID">
+            <summary>
+            模块ID
+            </summary>
+        </member>
+        <member name="F:Popedom.RoleModulePopedom.Type">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="T:Popedom.Operation">
+            <summary>
+            操作项
+            </summary>
+        </member>
+        <member name="F:Popedom.Operation.m_SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="F:Popedom.Operation.m_ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="F:Popedom.Operation.m_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="M:Popedom.Operation.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.Operation.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="systemID">系统ID</param>
+            <param name="id">ID</param>
+            <param name="name">Name</param>
+        </member>
+        <member name="P:Popedom.Operation.SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="P:Popedom.Operation.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:Popedom.Operation.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="T:Popedom.Employee">
+            <summary>
+            员工类
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Indx">
+            <summary>
+            Indx
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_EmployeeNo">
+            <summary>
+            员工编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_NameE">
+            <summary>
+            员工英文名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_NameC">
+            <summary>
+            员工中文名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Enabled">
+            <summary>
+            员工是否有效
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Password">
+            <summary>
+            员工登录密码
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Positions">
+            <summary>
+            员工所在部门编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_WorkTelephone">
+            <summary>
+            员工工作电话
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_MovePhone">
+            <summary>
+            员工移动电话
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Birthday">
+            <summary>
+            员工生日
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Email">
+            <summary>
+            员工Email
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_ContractBeginDay">
+            <summary>
+            员工合同开始日期
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_ContractEndDay">
+            <summary>
+            员工合同结束日期
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_HomeAddress">
+            <summary>
+            家庭住址
+            </summary>
+        </member>
+        <member name="F:Popedom.Employee.m_Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Popedom.Employee.Add">
+            <summary>
+            添加
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.Employee.Update">
+            <summary>
+            更新
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.Employee.Load(System.String)">
+            <summary>
+            载入
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.Employee.Delete">
+            <summary>
+            删除
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Popedom.Employee.Indx">
+            <summary>
+            Indx
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.EmployeeNo">
+            <summary>
+            员工编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.NameE">
+            <summary>
+            员工英文名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.NameC">
+            <summary>
+            员工中文名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Enabled">
+            <summary>
+            员工是否有效
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Password">
+            <summary>
+            员工登录密码
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Positions">
+            <summary>
+            员工所在部门编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.WorkTelephone">
+            <summary>
+            员工工作电话
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.MovePhone">
+            <summary>
+            员工移动电话
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Birthday">
+            <summary>
+            员工生日
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Email">
+            <summary>
+            员工开始工作日期
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.ContractBeginDay">
+            <summary>
+            员工合同开始日期
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.ContractEndDay">
+            <summary>
+            员工合同结束日期
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.HomeAddress">
+            <summary>
+            家庭住址
+            </summary>
+        </member>
+        <member name="P:Popedom.Employee.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Popedom.Department">
+            <summary>
+            部门类
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_IsAdd">
+            <summary>
+            是否为新增状态
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_IsChanged">
+            <summary>
+            是否改变
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_IsWorkStation">
+            <summary>
+            是否为工作岗
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_ParentCode">
+            <summary>
+            上级部门编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Department.m_Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Popedom.Department.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.Department.#ctor(System.Boolean)">
+            <summary>
+            构造体
+            </summary>
+            <param name="isWorkStation">是否为工作岗位</param>
+        </member>
+        <member name="M:Popedom.Department.#ctor(System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="code">编号</param>
+            <param name="name">名称</param>
+            <param name="parentCode">上级部门编号</param>
+            <param name="isWorkStation">是否为工作岗位</param>
+            <param name="remark">备注</param>
+        </member>
+        <member name="M:Popedom.Department.Add">
+            <summary>
+            添加部门信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Department.Update">
+            <summary>
+            更新部门信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Department.Delete">
+            <summary>
+            删除部门
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Department.Load(System.String)">
+            <summary>
+            载入部门实体
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="P:Popedom.Department.IsChanged">
+            <summary>
+            是否改变(只读)
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.IsWorkStation">
+            <summary>
+            是否为工作岗
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.IsOther">
+            <summary>
+            是否为工作岗
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.ParentCode">
+            <summary>
+            上级部门编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Department.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Popedom.OperaterPopedom">
+            <summary>
+            操作权限项
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom._Parent">
+            <summary>
+            父结点
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom.m_OperationCode">
+            <summary>
+            操作ＩＤ
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom.m_OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom.m_AccreditType">
+            <summary>
+            授权类型
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom._UserPopedoms">
+            <summary>
+            用户范围权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedom._CompanyPopedoms">
+            <summary>
+            公司范围权限
+            </summary>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.#ctor(System.Int32,System.String,Popedom.PopedomType)">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.IsAdmin">
+            <summary>
+            是否有所有权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.IsNoPopedom">
+            <summary>
+            是否没有权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.GetFieldPopedom(System.String)">
+            <summary>
+            根据操作字段，获取用户权限范围
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedom.GetFieldCopanyPopedom(System.String)">
+            <summary>
+            根据公司字段，获取公司权限范围
+            </summary>
+            <param name="field"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.Parent">
+            <summary>
+            父结点
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.OperationCode">
+            <summary>
+            操作ＩＤ
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.OperationName">
+            <summary>
+            操作名称
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.AccreditType">
+            <summary>
+            授权类型
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.UserPopedoms">
+            <summary>
+            用户范围权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedom.CompanyPopedoms">
+            <summary>
+            公司范围权限
+            </summary>
+        </member>
+        <member name="T:Popedom.OperaterPopedomCollection">
+            <summary>
+            操作权限集
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.IsNewFlag">
+            <summary>
+            是否启用新权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.ShowMessage">
+            <summary>
+            使用老权限,是否提示用户权限为老权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._OpGroupPopedom">
+            <summary>
+            OP工作组权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._CreateGroupPopedom">
+            <summary>
+            制单人工作组权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._CUSGroupPopedom">
+            <summary>
+            客服工作组权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._SalesGroupPopedom">
+            <summary>
+            销售工作组权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.m_CreateSuperPopedom">
+            <summary>
+            是否具体超级权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.m_OPSuperPopedom">
+            <summary>
+            操作人是否具体超级权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.m_CusSuperPopedom">
+            <summary>
+            客服是否具体超级权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection.m_SalesSuperPopedom">
+            <summary>
+            销售人是否具体超级权限
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._WhereSQL">
+            <summary>
+            条件SQL
+            </summary>
+        </member>
+        <member name="F:Popedom.OperaterPopedomCollection._ModuleCode">
+            <summary>
+            对应模块编码
+            </summary>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.#ctor(Popedom.SuperPopedomType)">
+            <summary>
+            构造体
+            </summary>
+            <param name="createSuperPopedom">是否有超级权限</param>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetPopedom(Operation.OperationType)">
+            <summary>
+            根据操作类型,获取是否有权限
+            </summary>
+            <param name="type"></param>
+            <returns>如果找不到,则返回无权限</returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetPopedom(System.String)">
+            <summary>
+            根据操作类型名称,获取是否有权限
+            </summary>
+            <param name="operationType">操作类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetPopedomByIndex(System.Int32)">
+            <summary>
+            根据操作类型名称,获取是否有权限
+            </summary>
+            <param name="operationType">操作类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetOperaterPopedom(System.Int32)">
+            <summary>
+            根据操作编码ID，获取权限
+            </summary>
+            <param name="operationCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetOperaterPopedom(System.String)">
+            <summary>
+            根据操作编码，获取权限
+            </summary>
+            <param name="OperationName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Popedom.OperaterPopedomCollection.GetSearchPopedom">
+            <summary>
+            获取查询权限
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.ModuleCode">
+            <summary>
+            对应模块编码
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.WhereSQL">
+            <summary>
+            条件SQL
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.OpGroupPopedom">
+            <summary>
+            工作组权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.CreateGroupPopedom">
+            <summary>
+            录入人工作组权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.SalesGroupPopedom">
+            <summary>
+            业务人工作组权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.CusGroupPopedom">
+            <summary>
+            客服工作组权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.CrateSuperPopedom">
+            <summary>
+            制单人是否有超级权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.OpSuperPopedom">
+            <summary>
+            操作是否有超级权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.SalesSuperPopedom">
+            <summary>
+            销售是否有超级权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterPopedomCollection.CusSuperPopedom">
+            <summary>
+            客服是否有超级权限(老的权限,不再使用)
+            </summary>
+        </member>
+        <member name="T:Popedom.SuperPopedomType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.无权限">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.个人权限">
+            <summary>
+            个人权限
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.所在部门">
+            <summary>
+            查看部门数据
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.所在公司">
+            <summary>
+            查看本公司数据
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.公司与下属">
+            <summary>
+            查看本公司与下属数据
+            </summary>
+        </member>
+        <member name="F:Popedom.SuperPopedomType.超级权限">
+            <summary>
+            所有权限
+            </summary>
+        </member>
+        <member name="T:Popedom.OperaterUserPopedom">
+            <summary>
+            操作用户的权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterUserPopedom.AccreditType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterUserPopedom.FieldID">
+            <summary>
+            字段ID
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterUserPopedom.FieldDesc">
+            <summary>
+            字段描述
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterUserPopedom.GroupPopedom">
+            <summary>
+            是否有组的权限
+            </summary>
+        </member>
+        <member name="T:Popedom.OperaterCompanyPopedom">
+            <summary>
+            公司权限
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterCompanyPopedom.AccreditType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterCompanyPopedom.FieldID">
+            <summary>
+            字段ID
+            </summary>
+        </member>
+        <member name="P:Popedom.OperaterCompanyPopedom.FieldDesc">
+            <summary>
+            字段描述
+            </summary>
+        </member>
+        <member name="T:Popedom.Module">
+            <summary>
+            系统模块类
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_Indx">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_IsAdd">
+            <summary>
+            是否为新增状态
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_IsChanged">
+            <summary>
+            值是否改变的标志
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_ParentCode">
+            <summary>
+            上级模块编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_IsOperation">
+            <summary>
+            是否为操作类型
+            </summary>
+        </member>
+        <member name="F:Popedom.Module.m_Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="M:Popedom.Module.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.Module.#ctor(System.Boolean)">
+            <summary>
+            构造体
+            </summary>
+            <param name="isWorkStation">是否为工作岗位</param>
+        </member>
+        <member name="M:Popedom.Module.#ctor(System.Int64,System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            构造体
+            </summary>
+            <param name="indx">ID</param>
+            <param name="code">编号</param>
+            <param name="name">名称</param>
+            <param name="parentCode">上级部门编号</param>
+            <param name="isWorkStation">是否为工作岗位</param>
+            <param name="remark">备注</param>
+        </member>
+        <member name="M:Popedom.Module.Add">
+            <summary>
+            添加模块信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Module.Update">
+            <summary>
+            更新模块信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Module.Delete">
+            <summary>
+            删除模块
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Module.Load(System.String)">
+            <summary>
+            载入模块实体
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="P:Popedom.Module.Indx">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.IsChanged">
+            <summary>
+            值是否改变
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.ParentCode">
+            <summary>
+            上级模块编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.IsOperation">
+            <summary>
+            是否为操作类型
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.IsModule">
+            <summary>
+            是否为模块类型
+            </summary>
+        </member>
+        <member name="P:Popedom.Module.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:Popedom.Role">
+            <summary>
+            角色类
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_ID">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_CreateuserCode">
+            <summary>
+            创建人编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_CreateUserName">
+            <summary>
+            创建人名称
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:Popedom.Role.m_CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="M:Popedom.Role.#ctor">
+            <summary>
+            构造体
+            </summary>
+        </member>
+        <member name="M:Popedom.Role.Add">
+            <summary>
+            添加角色信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Role.Update">
+            <summary>
+            更新角色信息
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Role.Delete">
+            <summary>
+            删除角色
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="M:Popedom.Role.Load(System.String)">
+            <summary>
+            载入角色实体
+            </summary>
+            <returns>执行结果</returns>
+        </member>
+        <member name="P:Popedom.Role.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Role.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Role.CreateuserCode">
+            <summary>
+            创建人编号
+            </summary>
+        </member>
+        <member name="P:Popedom.Role.CreateUserName">
+            <summary>
+            创建人名称
+            </summary>
+        </member>
+        <member name="P:Popedom.Role.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:Popedom.Role.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="M:Popedom.Position.#ctor(System.String,System.String)">
+            <summary>
+            职位构造体
+            </summary>
+            <param name="code"></param>
+            <param name="description"></param>
+        </member>
+        <member name="F:Popedom.Position.Code">
+            <summary>
+            职位编号
+            </summary>
+        </member>
+        <member name="F:Popedom.Position.Description">
+            <summary>
+            职位描述
+            </summary>
+        </member>
+        <member name="T:Popedom.FlowNo">
+            <summary>
+            流水号
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.Indx">
+            <summary>
+            INDX
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.FlowID">
+            <summary>
+            FlowID,流水号类型ID
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.EmpNo">
+            <summary>
+            员工编号，指定员工的流水号规则。0代表默认流水号规则
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.Prefix">
+            <summary>
+            前缀
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.MinValue">
+            <summary>
+            最小值
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.MaxValue">
+            <summary>
+            最大值
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.NowValue">
+            <summary>
+            当前值
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.AddValue">
+            <summary>
+            每次添加的值
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.DataFormat">
+            <summary>
+            格式
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.SystemID">
+            <summary>
+            系统ID
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.PrefixIsHead">
+            <summary>
+            前缀是否在前面
+            </summary>
+        </member>
+        <member name="P:Popedom.FlowNo.Remark">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YY">
+            <summary>
+            两位年
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YYYY">
+            <summary>
+            四位年
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YYMM">
+            <summary>
+            两位年两位月
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YYYYMM">
+            <summary>
+            四位年两位月
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YYMMDD">
+            <summary>
+            两位年两位月两位日
+            </summary>
+        </member>
+        <member name="F:Popedom.FlowNoFormat.YYYYMMDD">
+            <summary>
+            四位年两位月两位日
+            </summary>
+        </member>
+        <member name="T:Popedom.OperationItem">
+            <summary>
+            操作项
+            </summary>
+        </member>
+        <member name="F:Popedom.OperationItem.m_Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="F:Popedom.OperationItem.m_Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="F:Popedom.OperationItem.m_AccreditType">
+            <summary>
+            受权类型
+            </summary>
+        </member>
+        <member name="F:Popedom.OperationItem.m_Remark">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.Code">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.Name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.AccreditType">
+            <summary>
+            受权类型
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.Remark">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.IsAccredit">
+            <summary>
+            是否受权
+            </summary>
+        </member>
+        <member name="P:Popedom.OperationItem.AccreditTypeName">
+            <summary>
+            授权名称
+            </summary>
+        </member>
+        <member name="T:Popedom.PopedomType">
+            <summary>
+            权限类型
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.无权限">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.个人权限">
+            <summary>
+            个人权限
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.部门权限">
+            <summary>
+            部门权限
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.公司权限">
+            <summary>
+            公司权限
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.公司与下属">
+            <summary>
+            公司与下属权限
+            </summary>
+        </member>
+        <member name="F:Popedom.PopedomType.所有权限">
+            <summary>
+            所有权限
+            </summary>
+        </member>
+        <member name="T:Popedom.CompanyPopedomType">
+            <summary>
+            公司权限类型
+            </summary>
+        </member>
+        <member name="F:Popedom.CompanyPopedomType.无权限">
+            <summary>
+            无权限
+            </summary>
+        </member>
+        <member name="F:Popedom.CompanyPopedomType.公司权限">
+            <summary>
+            公司权限
+            </summary>
+        </member>
+        <member name="F:Popedom.CompanyPopedomType.公司与下属">
+            <summary>
+            公司与下属权限
+            </summary>
+        </member>
+        <member name="F:Popedom.CompanyPopedomType.所有权限">
+            <summary>
+            所有权限
+            </summary>
+        </member>
+    </members>
+</doc>

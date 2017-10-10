@@ -30,30 +30,7 @@ namespace Maticsoft.BLL
 		{}
 		#region  BasicMethod
 
-		/// <summary>
-		/// 增加一条数据
-		/// </summary>
-		public bool Add(Maticsoft.Model.HotelPriceViewModel model)
-		{
-			return dal.Add(model);
-		}
-
-		/// <summary>
-		/// 更新一条数据
-		/// </summary>
-		public bool Update(Maticsoft.Model.HotelPriceViewModel model)
-		{
-			return dal.Update(model);
-		}
-
-		/// <summary>
-		/// 删除一条数据
-		/// </summary>
-		public bool Delete()
-		{
-			//该表无主键信息，请自定义主键/条件字段
-			return dal.Delete();
-		}
+		 
 
 		/// <summary>
 		/// 得到一个对象实体

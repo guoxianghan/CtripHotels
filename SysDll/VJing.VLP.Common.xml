@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>VJing.VLP.Common</name>
+    </assembly>
+    <members>
+        <member name="T:VJing.VLP.Common.PromptManager">
+            <summary>
+            信息提示类
+            </summary>
+        </member>
+        <member name="F:VJing.VLP.Common.PromptManager.PromptTable">
+            <summary>
+            消息提示表
+            </summary>
+        </member>
+        <member name="M:VJing.VLP.Common.PromptManager.GetPrompt(System.String)">
+            <summary>
+            根据ID，获取提示消息
+            </summary>
+            <param name="promptID">ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:VJing.VLP.Common.PromptManager.GetPrompt(System.String,System.String)">
+            <summary>
+            根据ID，获取提示消息
+            </summary>
+            <param name="promptID">ID</param>
+            <param name="cultureName">区域名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:VJing.VLP.Common.PromptManager.GetPrompt(System.Data.DataRow,System.String)">
+            <summary>
+            根据数据行获取提示信息
+            </summary>
+            <param name="row">数据行</param>
+            <param name="cultureName">当前区域名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:VJing.VLP.Common.Prompt">
+            <summary>
+            信息提示结构
+            </summary>
+        </member>
+        <member name="M:VJing.VLP.Common.Prompt.#ctor(System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="message">消息提示</param>
+            <param name="caption">提示标题</param>
+        </member>
+        <member name="P:VJing.VLP.Common.Prompt.Message">
+            <summary>
+            提示内容
+            </summary>
+        </member>
+        <member name="P:VJing.VLP.Common.Prompt.Caption">
+            <summary>
+            提示标题
+            </summary>
+        </member>
+    </members>
+</doc>

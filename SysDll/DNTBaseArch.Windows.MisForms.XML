@@ -1,0 +1,2433 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DNTBaseArch.Windows.MisForms</name>
+    </assembly>
+    <members>
+        <member name="T:DNTBaseArch.Windows.MisForms.TaskbarNotifier">
+            <summary>
+            MSN消息提示框
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.TaskbarNotifier.TitleClickable">
+            <summary>
+            标题是否可以点击
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.TaskbarNotifier.ContentClickable">
+            <summary>
+            文本是否可以点击
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.TaskbarNotifier.CloseClickable">
+            <summary>
+            关闭是否可以点击
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.GetNotifier">
+            <summary>
+            获取窗体实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.#ctor">
+            <summary>
+            The Constructor for TaskbarNotifier
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.Show(System.String)">
+            <summary>
+            Displays the popup for 3000 milliseconds ,and the popup title is "Information"
+            </summary>
+            <param name="strContent"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.Show(System.String,System.String)">
+            <summary>
+            Displays the popup for 3000 milliseconds
+            </summary>
+            <param name="strTitle"></param>
+            <param name="strContent"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.Show(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Displays the popup for a certain amount of time
+            </summary>
+            <param name="strTitle">The string which will be shown as the title of the popup</param>
+            <param name="strContent">The string which will be shown as the content of the popup</param>
+            <param name="nTimeToShow">Duration of the showing animation (in milliseconds)</param>
+            <param name="nTimeToStay">Duration of the visible state before collapsing (in milliseconds)</param>
+            <param name="nTimeToHide">Duration of the hiding animation (in milliseconds)</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.Hide">
+            <summary>
+            Hides the popup
+            </summary>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.SetBackgroundBitmap(System.String,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="strFilename">Path of the Background Bitmap on the disk</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.SetBackgroundBitmap(System.Drawing.Image,System.Drawing.Color)">
+            <summary>
+            Sets the background bitmap and its transparency color
+            </summary>
+            <param name="image">Image/Bitmap object which represents the Background Bitmap</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.SetCloseBitmap(System.String,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="strFilename">Path of the 3-state Close button Bitmap on the disk (width must a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TaskbarNotifier.SetCloseBitmap(System.Drawing.Image,System.Drawing.Color,System.Drawing.Point)">
+            <summary>
+            Sets the 3-State Close Button bitmap, its transparency color and its coordinates
+            </summary>
+            <param name="image">Image/Bitmap object which represents the 3-state Close button Bitmap (width must be a multiple of 3)</param>
+            <param name="transparencyColor">Color of the Bitmap which won't be visible</param>
+            /// <param name="position">Location of the close button on the popup</param>
+            <returns>Nothing</returns>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.TaskbarState">
+            <summary>
+            Get the current TaskbarState (hidden, showing, visible, hiding)
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.TitleText">
+            <summary>
+            Get/Set the popup Title Text
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.ContentText">
+            <summary>
+            Get/Set the popup Content Text
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.NormalTitleColor">
+            <summary>
+            Get/Set the Normal Title Color
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.HoverTitleColor">
+            <summary>
+            Get/Set the Hover Title Color
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.NormalContentColor">
+            <summary>
+            Get/Set the Normal Content Color
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.HoverContentColor">
+            <summary>
+            Get/Set the Hover Content Color
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.NormalTitleFont">
+            <summary>
+            Get/Set the Normal Title Font
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.HoverTitleFont">
+            <summary>
+            Get/Set the Hover Title Font
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.NormalContentFont">
+            <summary>
+            Get/Set the Normal Content Font
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.HoverContentFont">
+            <summary>
+            Get/Set the Hover Content Font
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.KeepVisibleOnMousOver">
+            <summary>
+            Indicates if the popup should remain visible when the mouse pointer is over it.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.TaskbarNotifier.ReShowOnMouseOver">
+            <summary>
+            Indicates if the popup should appear again when mouse moves over it while it's disappearing.
+            Added Rev 002
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.TaskbarNotifier.TaskbarStates">
+            <summary>
+            List of the different popup animation status
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.OldMisChildForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.GetRightStrSql(System.String)">
+            <summary>
+            获取权限SQL字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.GetRightCol(System.String,System.Data.DataTable)">
+            <summary>
+            获取权限列名(权限组模块)
+            </summary>
+            <param name="rightSql"></param>
+            <param name="rightmDt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.GetRightPerCol(System.String,System.Data.DataTable)">
+            <summary>
+            获取权限列名(权限组个人操作)
+            </summary>
+            <param name="rightSql"></param>
+            <param name="rightmDt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.#ctor(DNTBaseArch.IDataAccess)">
+            <summary>
+            重构函数
+            </summary>
+            <param name="dac"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.AuthControl(System.Collections.Specialized.StringCollection,System.Windows.Forms.Control)">
+            <summary>
+            设置控件的有效性
+            </summary>
+            <param name="controlNames"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.AddToMainForm(DNTBaseArch.Windows.MisForms.OldMisChildForm)">
+            <summary>
+            子窗体加到父窗体
+            </summary>
+            <param name="child">子窗体</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.AddToMainForm(DNTBaseArch.Windows.MisForms.OldMisChildForm,System.Boolean,System.Boolean)">
+            <summary>
+            子窗体加到父窗体
+            </summary>
+            <param name="child">子窗体</param>
+            <param name="replace">是否替换已有窗体</param>
+            <param name="checkkey"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.CreateCondition(System.Data.DataRow,System.Data.DataTable)">
+            <summary>
+            根据行生成条件表达式
+            </summary>
+            <param name="row"></param>
+            <param name="resTable"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.MakeCondition(System.Data.DataRow,System.Data.DataTable,System.Boolean)">
+            <summary>
+            根据行生成条件表达式
+            用于自定义条件表达式
+            </summary>
+            <param name="row">条件所在行</param>
+            <param name="resTable">要处理的目的表</param>
+            <param name="local">是否本地处理</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.MakeCondition(System.Data.DataRow,System.Data.DataTable)">
+            <summary>
+            根据行生成条件表达式
+            用于自定义条件表达式
+            默认为非本地
+            </summary>
+            <param name="row">条件所在行</param>
+            <param name="resTable">要处理的目的表</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.InitControls(System.Windows.Forms.Control)">
+            <summary>
+            邦定所有表对应的控件
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.InitControls(System.Windows.Forms.Control,System.String)">
+            <summary>
+            绑定特定表对应的控件
+            </summary>
+            <param name="c"></param>
+            <param name="tName">特定表名</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.ProcSQL(System.String@,System.Collections.Hashtable@)">
+            <summary>
+            替换所有sql中的@变量
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.ProcValue(System.String)">
+            <summary>
+            处理值，替换所有参数
+            默认处理表达式
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.ProcValue(System.String,System.Boolean)">
+            <summary>
+            处理值，替换参数
+            </summary>
+            <param name="value">需要检查的</param>
+            <param name="exec">是否处理表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.AddToDatas(System.Data.DataTable)">
+            <summary>
+            增加表到页面数据
+            </summary>
+            <param name="table">要增加的表</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.SaveToTable(System.String,System.String,System.String)">
+            <summary>
+            回写方法默认所属行集为0
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="datavalue">值</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.SaveToTable(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            回写方法
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="row">所属行</param>
+            <param name="datavalue">值</param>
+            <returns>是否更新数据</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.GetFromTable(System.String,System.String)">
+            <summary>
+            获取表中的数据做绑定数据用默认行集为0
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.GetFromTable(System.String,System.String,System.Int32)">
+            <summary>
+            获取表中的数据做绑定数据用
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="row">数据所属行</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.InitFormData">
+            <summary>
+            根据FormSettings获取表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.OldMisChildForm.InitFormData(System.String)">
+            <summary>
+            根据ID获取特定数据
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.OldMisChildForm.DataAccess">
+            <summary>
+            关联的数据连结
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.frmBaseData.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.frmBaseData.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.frmBaseData.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.FormImportData.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FormImportData.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FormImportData.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisMainForm.CanSYNDataBase">
+            <summary>
+            是否可以同步数据
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisMainForm.AddMisChild">
+            <summary>
+            是否正在添加窗体
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.MisMainForm.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.MisMainForm.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.MisMainForm.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.#ctor(System.Windows.Forms.Control)">
+            <summary>
+            包含查询条件的控件
+            </summary>
+            <param name="groupControl"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.SaveTemplate(System.String)">
+            <summary>
+            保存模板
+            </summary>
+            <param name="templateName"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.InitTempalteMenu">
+            <summary>
+            初始菜单
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.itemDelTempate_Click(System.Object,System.EventArgs)">
+            <summary>
+            删除模板
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.GetMenu(System.String)">
+            <summary>
+            获取指定菜单项
+            </summary>
+            <param name="itemName"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.GetTemplate">
+            <summary>
+            获取模板
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.SetDateConfigValid">
+            <summary>
+            设置日期控件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.GetTemplateConfig(System.Windows.Forms.Control)">
+            <summary>
+            获取控件值信息
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.QuickSelectTemplate.TemplateDTConfigConfig">
+            <summary>
+            日期配置表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.TextLikeSearchFlag">
+            <summary>
+            文本模糊查询
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.LanguageType">
+            <summary>
+            语言类型，默认为CN
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.MainForm">
+            <summary>
+            当前程序主窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.ManagerFormComboBoxValue">
+            <summary>
+            处理界面控件值属性
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.InitUserTextBoxHandle">
+            <summary>
+            初始用户文本框
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.UpdateOtherForm(System.Object,DNTBaseArch.Windows.MisForms.UpdateArgs)">
+            <summary>
+            调用事件
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._TableKey">
+            <summary>
+            表主键集
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetKey(System.String)">
+            <summary>
+            根据表名，获取对应的主键(注意：调用此方法前，需要保证调用GetControlsProperty,否则返回空)
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetTableKey(System.String,System.String)">
+            <summary>
+            设置表主键信息
+            </summary>
+            <param name="tableName"></param>
+            <param name="key"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetDataTable(System.String,System.String)">
+            <summary>
+            根据SQL获取表
+            </summary>
+            <param name="sql"></param>
+            <param name="connectionstring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ExecuteSql(System.String,System.String)">
+            <summary>
+            执行SQL语句
+            </summary>
+            <param name="sql"></param>
+            <param name="connectionstring"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._FormTableValues">
+            <summary>
+            本窗体数据表行值,用于更新前比对，防止数据覆盖
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetTableRow(System.String,System.Data.DataRow)">
+            <summary>
+            设置表数据
+            </summary>
+            <param name="tableName"></param>
+            <param name="row"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetTableRow(System.String)">
+            <summary>
+            返回表对应的行，若未找到返回null
+            </summary>
+            <param name="tableName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.#ctor(DNTBaseArch.IDataAccess)">
+            <summary>
+            重构函数
+            </summary>
+            <param name="dac"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._ModuleCode">
+            <summary>
+            模块编号
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPopedoms(System.String,System.String)">
+            <summary>
+            获取指定用户指定模块的权限
+            </summary>
+            <param name="moduleCode">模板ID</param>
+            <param name="user">指定用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetModulePopedoms(System.String,System.String)">
+            <summary>
+            获取指定用户指定模块的权限
+            </summary>
+            <param name="moduleCode">模板ID</param>
+            <param name="user">指定用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetUserViewCompanyIndxs(System.String)">
+            <summary>
+            获取指定用户可查看的公司ID，多个用逗号分隔
+            </summary>
+            <param name="userIndx"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.CurrentBillUser">
+            <summary>
+            当前单据的用户
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.CurrentDataRow">
+            <summary>
+            当前数据据行
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.CheckPopedomDataRow">
+            <summary>
+            检查权限的数据行
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedom(DNTBaseArch.Windows.Forms.ToolBarEx,Popedom.OperaterPopedomCollection,System.Data.DataRow)">
+            <summary>
+            设置权限
+            </summary>
+            <param name="tbex"></param>
+            <param name="ops">权限集</param>
+            <param name="currentRow">当前数据行</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedom(DNTBaseArch.Windows.Forms.ToolBarEx,Popedom.OperaterPopedomCollection,System.Data.DataRow,System.String)">
+            <summary>
+            设置权限
+            </summary>
+            <param name="tbex"></param>
+            <param name="ops">权限集</param>
+            <param name="currentRow">当前数据行</param>
+            <param name="currentUser">当前行的制单人</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedom(DNTBaseArch.Windows.Forms.ToolBarEx,Popedom.OperaterPopedomCollection)">
+            <summary>
+            设置权限
+            </summary>
+            <param name="tbex"></param>
+            <param name="ops">权限集</param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedomOnlyonce">
+            <summary>
+            仅设置一次按钮权限
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedom(DNTBaseArch.Windows.Forms.ToolBarEx)">
+            <summary>
+            设置权限
+            </summary>
+            <param name="tbex"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPopedom(System.String)">
+            <summary>
+            获取指定ID，是否有权限
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPopedom(System.String,Popedom.OperaterPopedomCollection)">
+            <summary>
+            获取指定ID，是否有权限
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPopedom(System.String,Popedom.OperaterPopedomCollection,System.Data.DataRow)">
+            <summary>
+            获取指定ID，是否有权限
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPopedom(System.String,Popedom.OperaterPopedomCollection,System.Data.DataRow,System.String)">
+            <summary>
+            获取指定ID，是否有权限
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._UserGroupData">
+            <summary>
+            用户数据功能权限检测部门表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._UserDepartData">
+            <summary>
+            用户数据功能权限检测部门表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._UserCompanyData">
+            <summary>
+            用户数据功能权限检测公司表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._UserCompayAllData">
+            <summary>
+            当前用户所在公司及下属的人员表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm._CompayAllData">
+            <summary>
+            当前用户所在公司及下属公司的公司编码表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.datapopedomflag">
+            <summary>
+            权限范围标记1--服务2--订单3--销售
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.PopedomCheckedFieldIgnore">
+            <summary>
+            数据范围检测字段若不存在是否忽略提示
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.CheckDataPopedom_New(Popedom.OperaterPopedom,System.Data.DataRow)">
+            <summary>
+            检测是否有权限
+            </summary>
+            <param name="searchpopedom">查询权限</param>
+            <param name="currentRow"></param>
+            <param name="currentUser">当前用户</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetPopedom(DevComponents.DotNetBar.BaseItem,Popedom.OperaterPopedomCollection,System.Data.DataRow,System.String)">
+            <summary>
+            设置项是否可用
+            </summary>
+            <param name="item"></param>
+            <param name="ops"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.AuthControl(System.Collections.Specialized.StringCollection,System.Windows.Forms.Control)">
+            <summary>
+            设置控件的有效性
+            </summary>
+            <param name="controlNames"></param>
+            <param name="control"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.AddToMainForm(DNTBaseArch.Windows.MisForms.MisChildForm)">
+            <summary>
+            子窗体加到父窗体
+            </summary>
+            <param name="child">子窗体</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.AddToMainForm(DNTBaseArch.Windows.MisForms.MisChildForm,System.Boolean,System.Boolean)">
+            <summary>
+            子窗体加到父窗体
+            </summary>
+            <param name="child">子窗体</param>
+            <param name="replace">是否替换已有窗体</param>
+            <param name="checkkey"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitControls(System.Windows.Forms.Control)">
+            <summary>
+            邦定所有表对应的控件
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitControls(System.Windows.Forms.Control,System.String)">
+            <summary>
+            绑定特定表对应的控件
+            </summary>
+            <param name="c"></param>
+            <param name="tName">特定表名</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ProcSQL(System.String@,System.Collections.Hashtable@)">
+            <summary>
+            替换所有sql中的@变量
+            </summary>
+            <param name="sql"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ProcValue(System.String)">
+            <summary>
+            处理值，替换所有参数
+            默认处理表达式
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ProcValue(System.String,System.Boolean)">
+            <summary>
+            处理值，替换参数
+            </summary>
+            <param name="value">需要检查的</param>
+            <param name="exec">是否处理表达式</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.AddToDatas(System.Data.DataTable)">
+            <summary>
+            增加表到页面数据
+            </summary>
+            <param name="table">要增加的表</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SaveToTable(System.String,System.String,System.String)">
+            <summary>
+            回写方法默认所属行集为0
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="datavalue">值</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SaveToTable(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            回写方法
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="row">所属行</param>
+            <param name="datavalue">值</param>
+            <returns>是否更新数据</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetFromTable(System.String,System.String)">
+            <summary>
+            获取表中的数据做绑定数据用默认行集为0
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetFromTable(System.String,System.String,System.Int32)">
+            <summary>
+            获取表中的数据做绑定数据用
+            </summary>
+            <param name="tname">表名</param>
+            <param name="fname">字段名</param>
+            <param name="row">数据所属行</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitFormData">
+            <summary>
+            根据FormSettings获取表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitFormData(System.String)">
+            <summary>
+            根据ID获取特定数据
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetControlsProperty(System.String)">
+            <summary>
+            获取界面属性
+            </summary>
+            <param name="tableName"></param>
+            <remarks>默认为非保存</remarks>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetControlsProperty(System.String,System.Boolean)">
+            <summary>
+            获取界面属性
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetControlsProperty(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            获取界面控件属性
+            </summary>
+            <param name="form">当前form</param>
+            <param name="isFristload">是否第一次加载</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetGroupPanleExProperty(DNTBaseArch.Windows.Forms.GroupPanleEx,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            tiler add 2011.09.02 获取GroupPanleExProperty
+            </summary>
+            <param name="col"></param>
+            <param name="tableName"></param>
+            <param name="isLoad"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetDateTimeControlValue(System.String)">
+            <summary>
+            因日期获取焦点时，不能强制转换，故添加此方法转换
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetControlsValue(System.String,System.Windows.Forms.Control,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            获取控件值
+            </summary>
+            <param name="isFristload">是不是第一次加载</param>
+            <param name="tableName">数据表名</param>
+            <param name="ctl">控件</param>
+            <param name="isSave">是不是保存</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.DataBandingToform(System.Data.DataRow,System.String)">
+            <summary>
+            窗体数据绑定到新的窗体
+            </summary>
+            <param name="dataTable"></param>
+            <param name="form"></param>
+            <param name="fromName"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetTextBoxExValue(DNTBaseArch.Windows.Forms.TextBoxEx,System.String)">
+            <summary>
+            设置文本框的值2011.10.01
+            </summary>
+            <param name="textbox"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.BangingDataToControl(System.Windows.Forms.Control,System.Boolean,System.Data.DataRow,System.String)">
+            <summary>
+            绑定数据到控件
+            </summary>
+            <param name="ctl">控件</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ClearControlsValueForForm(System.String)">
+            <summary>
+            清空界面控件值
+            </summary>
+            <param name="form">当前form</param>
+            <param name="tableName">数据表名|查询</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ClearControlsValue(System.String,System.Windows.Forms.Control)">
+            <summary>
+            清空控件值
+            </summary>
+            <param name="tableName">数据表名</param>
+            <param name="ctl">控件</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.MessageNotEmpty(System.Collections.Generic.List{System.String})">
+            <summary>
+            不为空消息提示
+            </summary>
+            <param name="msgList"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SaveDataEntity(System.String,System.Data.DataRow,System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            新增，更改 处理方法
+            </summary>
+            <param name="oldData">第一次加载数据,若是新增则为NULL，更新则为数据库中的值</param>
+            <param name="newFlowNo">流水号</param>
+            <param name="tableName">数据表名称</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.CheckNotEmpty">
+            <summary>
+            检测必填项是否OK
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SaveDataEntity(System.String,System.Data.DataRow,System.Collections.Hashtable,System.String,System.String,System.String)">
+            <summary>
+            新增，更改 处理方法
+            </summary>
+            <param name="oldData">第一次加载数据,若是新增则为NULL，更新则为数据库中的值</param>
+            <param name="newFlowNo">流水号</param>
+            <param name="tableName">数据表名称</param>
+            <param name="flowNoField">流水号对应的字段</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SaveDataEntity(System.String,System.Data.DataRow,System.Collections.Hashtable,System.String,System.String,System.String,System.String)">
+            <summary>
+            新增，更改 处理方法
+            </summary>
+            <param name="oldData">第一次加载数据,若是新增则为NULL，更新则为数据库中的值</param>
+            <param name="newFlowNo">流水号</param>
+            <param name="tableName">数据表名称</param>
+            <param name="flowNoField">流水号对应的字段</param>
+            <param name="filter">过滤条件</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetUpdateData(System.String,System.String,System.String,System.String)">
+            <summary>
+            获取更新数据
+            </summary>
+            <param name="dataBaseTable">表名</param>
+            <param name="primaryKey">主键字段</param>
+            <param name="primaryKeyValue">主键值</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InsertControlsValueForForm(System.String,System.Collections.Hashtable,System.String,System.String)">
+            <summary>
+            通过窗体获取控件值插入数据库
+            </summary>
+            <param name="newFlowNo">主单流水号</param>
+            <param name="tableName">数据表名称|插入</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.CheckHashtableHaveKey(System.Collections.Hashtable,System.String)">
+            <summary>
+            检测哈希表中是否包含Key，不区分大小写
+            </summary>
+            <param name="hs"></param>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.BindDataFieldDt(System.Data.DataTable,System.Collections.Hashtable,System.String)">
+            <summary>
+            绑定hs信息到dataFieldDt
+            </summary>
+            <param name="dataFieldDt"></param>
+            <param name="hs"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.UpdateControlsValueForForm(System.String,System.Data.DataRow,System.Collections.Hashtable,System.String)">
+            <summary>
+            通过窗体获取控件值更新到数据库
+            </summary>
+            <param name="tableName">数据库表名|更新</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.LogicDeleteControlsValueForForm(System.String,System.String,System.String,System.String)">
+            <summary>
+            删除当前窗体控件值(逻辑)
+            </summary>
+            <param name="tableName">数据表名称</param>
+            <param name="isEnableField">删除字段标识</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.PhysicalDeleteControlsValueForForm(System.String,System.String)">
+            <summary>
+            删除当前窗体控件值(物理)
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SelectDataForFormControlsVlaue(System.String,System.String,System.String)">
+            <summary>
+            通过界面控件值查询数据
+            </summary>
+            <param name="tableName">数据表名|查询</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SelectDataForFormControlsVlaue(System.String,System.String,System.String,System.String)">
+            <summary>
+            通过界面控件值查询数据
+            </summary>
+            <param name="tableName">数据表名|查询</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SelectDataForFormControlsVlaue(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            通过界面控件值查询数据
+            </summary>
+            <param name="tableName">数据表名|查询</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.QuickSearch(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            快速查询
+            </summary>
+            <param name="tableName"></param>
+            <param name="wheresql"></param>
+            <param name="withSQL"></param>
+            <param name="datapopedomSQL"></param>
+            <param name="fields"></param>
+            <param name="orderby"></param>
+            <param name="conString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SelectDataForFormControlsVlaue(System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            通过界面控件值查询数据
+            </summary>
+            <param name="tableName">数据表名|查询</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.UpdateLoadFile(System.Int32,System.String,System.String)">
+            <summary>
+            文件上传
+            </summary>
+            <param name="mb">文件大小限制 以M为单位</param>
+            <param name="datatName">数据表名称</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.DownLoadFlie(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="keyWord">关键字/主键字符串</param>
+            <param name="fileNameCol">文件名称列</param>
+            <param name="fileImageCol">文件存储列</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowMessageByID(System.String)">
+            <summary>
+            根据提示ID显示消息
+            </summary>
+            <param name="promptID">提示ID</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowMessageByID(System.String,System.Object)">
+            <summary>
+            根据提示ID,格式参数显示消息
+            </summary>
+            <param name="promptID">提示ID</param>
+            <param name="formatarg">格式参数</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowMessageByID(System.String,System.Object[])">
+            <summary>
+            根据提示ID,格式参数显示消息
+            </summary>
+            <param name="promptID">提示ID</param>
+            <param name="formatargs">格式参数</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetPrompt(System.String,System.Object[])">
+            <summary>
+            获取消息ID获取提示
+            </summary>
+            <param name="promptID"></param>
+            <param name="formatargs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowQuestionMessageByID(System.String,System.Object[])">
+            <summary>
+            显示提示消息统一使用
+            </summary>
+            <param name="promptID">消息ID</param>
+            <param name="formatargs">格式内容</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowMessage(System.String)">
+            <summary>
+            显示提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowMessage(System.String,System.String)">
+            <summary>
+            显示提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowQuestionMessageByID(VJing.VLP.Common.Prompt)">
+            <summary>
+            显示询问提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowQuestionMessage(System.String)">
+            <summary>
+            显示询问提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowQuestionMessage(System.String,System.String)">
+            <summary>
+            显示询问提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowQuestionMessage(System.String,System.Windows.Forms.MessageBoxButtons)">
+            <summary>
+            显示询问提示消息统一使用
+            </summary>
+            <param name="tipInfo"></param>
+            <param name="buttons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowErrorMessage(System.Exception)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="err"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.ShowErrorMessage(System.String)">
+            <summary>
+            显示错误信息
+            </summary>
+            <param name="errinfo"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetControlTextByID(System.String)">
+            <summary>
+            根据控件ID，获取对应的名称
+            </summary>
+            <param name="controlID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetControlText(System.Windows.Forms.Control)">
+            <summary>
+            设置控件的Text值
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetTextBoxReadOnly(System.Boolean,DNTBaseArch.Windows.Forms.TextBoxEx[])">
+            <summary>
+            设置控件是否只读
+            </summary>
+            <param name="readOnly"></param>
+            <param name="textboxs"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetTextBoxReadOnly(System.Boolean,System.Windows.Forms.Control)">
+            <summary>
+            
+            </summary>
+            <param name="readOnly"></param>
+            <param name="c"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.AdminUserCode">
+            <summary>
+            超级用户编码
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.IsAdminFlag(System.String)">
+            <summary>
+            是否为管理员用户
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.IsAdminFlag">
+            <summary>
+            是否为管理员用户
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitTextDisplayType(DNTBaseArch.Windows.Forms.TextBoxEx)">
+            <summary>
+            根据CheckTable初始文本框的下拉属性
+            </summary>
+            <param name="textbox"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetSearchDesc(System.Windows.Forms.Control)">
+            <summary>
+            获取查询条件描述
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetTextBoxExs(System.Windows.Forms.Control)">
+            <summary>
+            获取容器中的TextBoxEx
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetTextBoxExs(System.Windows.Forms.Control[])">
+            <summary>
+            获取容器中的TextBoxEx
+            </summary>
+            <param name="cs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.GetTextBoxExs(System.Windows.Forms.Control,System.Collections.ObjectModel.Collection{DNTBaseArch.Windows.Forms.TextBoxEx})">
+            <summary>
+            获取容器中的TextBoxEx
+            </summary>
+            <param name="c"></param>
+            <param name="txts"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.SetControlVisble(System.Windows.Forms.Control[],System.Boolean)">
+            <summary>
+            设置控件是否可见
+            </summary>
+            <param name="controls"></param>
+            <param name="visible"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.IsTrue(System.String)">
+            <summary>
+            判断值是不是True
+            </summary>
+            <param name="value">当为0、false时返回false，反之true</param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.MisChildForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.MisChildForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.MisChildForm.UpdateOtherFormHandle">
+            <summary>
+            更新事件，一般用于明细更新后，对列表的更新
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.IsLoadData">
+            <summary>
+            是否加载过数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.DataAccess">
+            <summary>
+            关联的数据连结
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.IsLoadFlag">
+            <summary>
+            窗体是否执行Load事件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.IsNeedColseForm">
+            <summary>
+            是否需要关闭窗体
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.ModuleCode">
+            <summary>
+            模块编号，请在构造函数中指定
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.IsEditForm">
+            <summary>
+            是否为编辑窗体，若为编辑窗体，系统会自动根据功能权限的范围，处理按钮是否可用
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.Popedoms">
+            <summary>
+            当前模块的权限
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.FirstOps">
+            <summary>
+            初始界面权限的第一次权限集
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.IsNewPopedom">
+            <summary>
+            是否采用新的权限模式
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.UserGroupData">
+            <summary>
+            当前用户所在部门的人员表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.UserDepartData">
+            <summary>
+            当前用户所在部门的人员表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.UserCompanyData">
+            <summary>
+            当前用户所在公司的人员表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.UserCompayAllData">
+            <summary>
+            当前用户所在公司及下属的人员表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.CompayAllData">
+            <summary>
+            当前用户所在公司及下属公司的公司编码表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.DatapopedomFlag">
+            <summary>
+            权限范围标记1--服务2--订单3--销售 4-操作
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.ModuleOP">
+            <summary>
+            模块对应的OP表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.DataFieldEnty">
+            <summary>
+            数据实体表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.MisChildForm.DataFieldDt">
+            <summary>
+            数据属性表
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.MisChildForm.OnSetTextBoxExValue">
+            <summary>
+            设置文本框值时触发的事件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.FrmChangeValueList.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FrmChangeValueList.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FrmChangeValueList.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.CheckEditorForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.CheckEditorForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.CheckEditorForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GridSetting">
+            <summary>
+            Grid设置运行类
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.GridSetting.OnSettingChanged(DNTBaseArch.Windows.MisForms.SettingChangedEventArgs)">
+            <summary>
+            引发设置更改事件
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.GridSetting.Setting">
+            <summary>
+            获取或设置Grid设置表
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.LoadDataTableHandle">
+            <summary>
+            加载数据表委托
+            </summary>
+            <param name="tableName"></param>
+            <param name="sql"></param>
+            <param name="cnn"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.FormLoadDataTableHandle">
+            <summary>
+            加载数据表委托
+            </summary>
+            <param name="tableName"></param>
+            <param name="sql"></param>
+            <param name="cnn"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DisplayTypeManager">
+            <summary>
+            显示类型（数据字典）管理类
+            </summary>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.GetConfigColumnsX(DNTBaseArch.Windows.Forms.UltraDataGruidX,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.SaveGridViewConfigX(System.String,System.String,DNTBaseArch.Windows.Forms.UltraDataGruidX)">
+            <summary>
+            保存列度及顺序信息
+            </summary>
+            <param name="frmGridName"></param>
+            <param name="id"></param>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.GetConfigColumns(DNTBaseArch.Windows.Forms.DataGridViewEx)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.GetSuperGridConfigColumns(DNTBaseArch.Windows.Forms.SuperGridEx)">
+            <summary>
+            获取列信息
+            </summary>
+            <param name="grd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.GetStatisticsColumns(DNTBaseArch.Windows.Forms.DataGridViewEx,System.String)">
+            <summary>
+            获取列信息
+            </summary>
+            <param name="grd"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.SaveGridViewConfig(System.Windows.Forms.DataGridView)">
+            <summary>
+            保存列度及顺序信息
+            </summary>
+            <param name="grd"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.SaveSuperGridGridViewConfig(DNTBaseArch.Windows.Forms.SuperGridEx)">
+            <summary>
+            保存列度及顺序信息
+            </summary>
+            <param name="grd"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DisplayTypeManager.SystemDBStr">
+            <summary>
+            系统连接字符串
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DisplayTypeManager.BusinessDBStr">
+            <summary>
+            业务连接字符串
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DisplayTypeManager.BaseDBStr">
+            <summary>
+            基础数据连接字符串
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.LoadBaseData(System.String,System.String,System.String)">
+            <summary>
+            加载基础数据，前期为测试使用
+            </summary>
+            <param name="sysdbStr"></param>
+            <param name="basedbStr"></param>
+            <param name="businessdbStr"></param>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.AddDisplayType(DNTBaseArch.CommonClass.DisplayType)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DisplayTypeManager.GetDisplayType(System.String)">
+            <summary>
+            返回显示类型,如未找到，则返回异常
+            </summary>
+            <param name="typeName"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.SystemMenuDesigner.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.SystemMenuDesigner.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.SystemMenuDesigner.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.ItemBelong.Menu">
+            <summary>
+            菜单项
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.ItemBelong.ToolBar">
+            <summary>
+            工具栏按钮
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.ItemBelong.Other">
+            <summary>
+            其他设置
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.ManagerTxt">
+            <summary>
+            处理控件委托
+            </summary>
+            <param name="dt"></param>
+            <param name="txt"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.InitUserTextBox">
+            <summary>
+            初始用户文本框
+            </summary>
+            <param name="txt"></param>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.Login.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.Login.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.Login.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.FrmSearchSetting.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FrmSearchSetting.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.FrmSearchSetting.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.BaseDicsEditor.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.BaseDicsEditor.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.BaseDicsEditor.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.BaseDicsEditor.DoConnect">
+            <summary>
+            后台连接
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.TextEditorForm.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TextEditorForm.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.TextEditorForm.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.RightOper.RightOperDt(System.String,System.String,System.String)">
+            <summary>
+            操作人权限
+            </summary>
+            <param name="code">ID号</param>
+            <param name="user">登陆人</param>
+            <param name="toolStripButtonEx">按钮</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.RightOper.GetRightStrSql(System.String,System.String)">
+            <summary>
+            获取权限SQL字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.RightOper.GetRightCol(System.String,System.Data.DataTable,System.String)">
+            <summary>
+            获取权限列名(权限组模块)
+            </summary>
+            <param name="rightSql"></param>
+            <param name="rightmDt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.RightOper.GetRightPerCol(System.String,System.Data.DataTable,System.String,System.String)">
+            <summary>
+            获取权限列名(权限组个人操作)
+            </summary>
+            <param name="rightSql"></param>
+            <param name="rightmDt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetForm">
+            <summary>
+            获取窗体委托
+            </summary>
+            <param name="key"></param>
+            <param name="keyField"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.HanderInfo">
+            <summary>
+            委托
+            </summary>
+            <param name="txt"></param>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.LinkFormManager">
+            <summary>
+            打开窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.LinkFormManager.GetMisFormByFieldInfo">
+            <summary>
+            根据字段信息获取窗体
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.LinkFormManager.Add(DNTBaseArch.Windows.Forms.TextBoxEx)">
+            <summary>
+            添加需要超链接的控件
+            </summary>
+            <param name="txt"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.LinkFormManager.Add(DNTBaseArch.Windows.Forms.TextBoxEx,System.String,System.String)">
+            <summary>
+            添加需要超链接的控件
+            </summary>
+            <param name="txt">链接文本框</param>
+            <param name="tableName">数据表名</param>
+            <param name="keyField">关键字</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.LinkFormManager.Add(DNTBaseArch.Windows.Forms.TextBoxEx,DNTBaseArch.Windows.MisForms.HanderInfo)">
+            <summary>
+            添加需要超链接的控件
+            </summary>
+            <param name="txt">链接文本框</param>
+            <param name="handerInfo">获取相关信息</param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.UpdateHandle">
+            <summary>
+            更新委托
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.UpdateArgs">
+            <summary>
+            更新事件参数
+            </summary>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.UpdateArgs.#ctor(DNTBaseArch.Windows.MisForms.UpdateType)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.UpdateArgs.#ctor(DNTBaseArch.Windows.MisForms.UpdateType,DNTBaseArch.Windows.MisForms.DBManager)”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateArgs.Type">
+            <summary>
+            更新类型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateArgs.Args">
+            <summary>
+            其它参数
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.UpdateType">
+            <summary>
+            更新类型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateType.Add">
+            <summary>
+            新增
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateType.Update">
+            <summary>
+            更新
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateType.Delete">
+            <summary>
+            删除
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.UpdateType.Other">
+            <summary>
+            其它
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetEditMisChildForm">
+            <summary>
+            获取编辑窗体的委托
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetHashtableHandle">
+            <summary>
+            获取Hashtable
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetOtherWhereSQL">
+            <summary>
+            获取其它限制条件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetPopedomWhereSQL">
+            <summary>
+            根据模块编码，获取数据权限SQL
+            </summary>
+            <param name="moduleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.GetWhereSQL">
+            <summary>
+            获取限制条件
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManagerHandler">
+            <summary>
+            加载数据
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <!-- 对于成员“T:DNTBaseArch.Windows.MisForms.GetTable”忽略有格式错误的 XML 注释 -->
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager">
+            <summary>
+            日常数据库通用方法
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.ModalFormIsAddSearchPopedom">
+            <summary>
+            后台查询是否添加权限条件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.GetFlowNo">
+            <summary>
+            获取流水号
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.GetComplexFilterControls">
+            <summary>
+            获取复杂过滤SQL控件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._IsDisabledTables">
+            <summary>
+            设置不可用的表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.AddDisabledTable(System.String)">
+            <summary>
+            添加需要设置不可用的表,即删除时只将其设置不可用
+            </summary>
+            <param name="tableName"></param>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.IsNeedDisabled(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._Key">
+            <summary>
+            主键
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._IsAutoLoad">
+            <summary>
+            是否自动加载数据
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._TableName">
+            <summary>
+            对应表名
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._LoadOtherControls">
+            <summary>
+            需要加载的控件集
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.GetTableHandle">
+            <summary>
+            获取数据表,用于取数据初始窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._ToolBar">
+            <summary>
+            工具栏
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._SelecctKeyField">
+            <summary>
+            关键字，用于查询使用
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._DeafultValue">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._NoUpdateControls">
+            <summary>
+            不需要更新的控件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._Grid">
+            <summary>
+            当前列表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.IsLoad">
+            <summary>
+            是否已经加载数据
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.IsAutoUpdateGridView">
+            <summary>
+            是否更新列表
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.DBManager.UpdateOtherFormTable”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.GetBillFlowNo">
+            <summary>
+            获取流水号,若未指定，则使用静态方法DBManager.GetFlowNo
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.DBManager._ConnectionString”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._FocusControl">
+            <summary>
+            新增时获得焦点的控件
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.DBManager.FlowNoTextBox”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.DBManager.AddClearFlag”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.SetKeyValue(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._IsCheckLayoutPopedom">
+            <summary>
+            是否已经检测过是否有权限打开窗口
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.#ctor(DNTBaseArch.Windows.Forms.ToolBarEx,System.String,System.Windows.Forms.Control,System.String,System.String)">
+            <summary>
+            构造方法(此方法用于保存)
+            </summary>
+            <param name="toolBar">命令bar,系统会自动处理一些定义的命令</param>
+            <param name="tableName">表名</param>
+            <param name="focusControl">新增时，需要获得焦点的控件</param>
+            <param name="connectionString">数据库连接</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.#ctor(System.String,System.Windows.Forms.Control,System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="tableName">表名</param>
+            <param name="focusControl">新增时，需要获得焦点的控件</param>
+            <param name="connectionString">数据库连接</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.#ctor(DNTBaseArch.Windows.Forms.ToolBarEx,System.String,System.String,DNTBaseArch.Windows.Forms.DataGridViewEx,System.String)">
+            <summary>
+            构造方法(此方法用于查询)
+            </summary>
+            <param name="toolBar">命令bar,系统会自动处理一些定义的命令</param>
+            <param name="tableName">表名</param>
+            <param name="connectionString">数据库连接</param>
+            <param name="grid">显示列表</param>
+            <param name="keyField">主键,用于取出列表中主键值</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager._Form_Load(System.Object,System.EventArgs)">
+            <summary>
+            窗体Load方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._IsLoadDisabledData">
+            <summary>
+            是否加载删除的数据
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Load(System.String)">
+            <summary>
+            加载数据,当keyvalue为空时，则代表新增
+            </summary>
+            <param name="keyvalue"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Load(System.String,System.Boolean)">
+            <summary>
+            加载数据,当keyvalue为空时，则代表新增
+            </summary>
+            <param name="keyvalue">关键值</param>
+            <param name="checkPopedom">是否检测权限</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.ClearLoadOtherControls">
+            <summary>
+            清除加载本表以外的其它控件
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindLoadOtherControls(System.Data.DataRow)">
+            <summary>
+            邦定值
+            </summary>
+            <param name="row"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Load(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            加载数据,当keyvalue为空时，则代表新增
+            </summary>
+            <param name="keyvalue">关键值</param>
+            <param name="checkPopedom">是否检测权限</param>
+            <param name="loadEvent">是否加载OnLoad事件</param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager._UserGroupTable">
+            <summary>
+            用户组所
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CheckHavePopedomOpenForm(System.String,System.String,System.Data.DataRow,Popedom.SuperPopedomType,System.Boolean)">
+            <summary>
+            检测是否有权限
+            </summary>
+            <param name="field1">校验字段1</param>
+            <param name="field2">校验字段2</param>
+            <param name="row">数据行</param>
+            <param name="popetype">权限类型</param>
+            <param name="groupflag">组权限</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.SetOrderUserInfoOnlyService(System.Data.DataRow)">
+            <summary>
+            设置数据行的客服、销售信息，仅对服务有效
+            </summary>
+            <param name="row"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CheckHavePopedomOpenForm(System.Data.DataRow)">
+            <summary>
+            检测是否有权限打开此窗体
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager._GridX_DoubleClickRow(System.Object,Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs)">
+            <summary>
+            双击明细
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CellMouseDoubleClickX">
+            <summary>
+            wang
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager._Grid_CellMouseDoubleClick(System.Object,System.Windows.Forms.DataGridViewCellMouseEventArgs)">
+            <summary>
+            双击显示明细
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CellMouseDoubleClick">
+            <summary>
+            双击显示明细
+            </summary>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.AddDeafultValue(System.Windows.Forms.Control,System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.AddNoUpdateControl(System.Windows.Forms.Control[])”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.AddNoUpdateControl(System.Windows.Forms.Control)">
+            <summary>
+            添加不需要更新的控件
+            </summary>
+            <param name="c">不需要更新的控件</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.SetNoUpdateControlReadOnly(System.Boolean)">
+            <summary>
+            设置不能更新的控件是否可修改
+            </summary>
+            <param name="isReadOnly"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.ToolBar_ItemClick(System.Object,System.EventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.RefreshTabControl">
+            <summary>
+            刷新
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager._ToolBar_ItemClick(System.Object,System.EventArgs)">
+            <summary>
+            按钮事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.QuickSearch">
+            <summary>
+            快速查询
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetQuickComplexFilterSQL(DNTBaseArch.Windows.Forms.TextBoxEx[])">
+            <summary>
+            获取指定控件集的快速查询SQL
+            </summary>
+            <param name="txts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetComplexFilterSQL(DNTBaseArch.Windows.Forms.TextBoxEx[])">
+            <summary>
+            获取复杂SQL查询,返回信息中，前面带AND
+            </summary>
+            <param name="txts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetQuickSearchSQLFilter(System.String,System.String,DNTBaseArch.Windows.MisForms.MisChildForm)">
+            <summary>
+            获取快速查询
+            </summary>
+            <param name="tableName"></param>
+            <param name="value"></param>
+            <param name="form"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetQuickSearchSQLFilter(System.String,System.Windows.Forms.Control,System.Text.StringBuilder,System.String)">
+            <summary>
+            获取指定控件包括的文本框的快速查询条件
+            </summary>
+            <param name="tableName"></param>
+            <param name="c"></param>
+            <param name="sb"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.InitDeafultValue">
+            <summary>
+            初始默认值
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CheckUniqueKeysValid">
+            <summary>
+            检测唯一键是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.CheckUniqueKeysValid(System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.GetUniqueKeyControlByValueFieldName(System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.GetFlowNoStr(System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Save(System.Collections.Hashtable)">
+            <summary>
+            保存方法
+            </summary>
+            <param name="hs">需要保存的其它字段值信息</param>
+            <returns>成功返回KeyValue值</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Save(System.Collections.Hashtable,System.String)">
+            <summary>
+            保存方法
+            </summary>
+            <param name="hs">需要保存的其它字段值信息</param>
+            <returns>成功返回KeyValue值</returns>
+            <param name="filter">过滤条件</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.SetFormText">
+            <summary>
+            设置窗体文本显示,前提是需要设置FlowNoTextBox属性
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Save">
+            <summary>
+            保存方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Delete(System.Boolean)">
+            <summary>
+            删除
+            </summary>
+            <param name="isClose">删除后，是否关闭窗体</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Close">
+            <summary>
+            关闭窗体
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Add(System.Windows.Forms.Control,System.Boolean)">
+            <summary>
+            新增按钮功能
+            </summary>
+            <param name="c">需要获得焦点的控件</param>
+            <param name="clearFlag">是否清除控件值</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.Add(System.Windows.Forms.Control)">
+            <summary>
+            新增按钮功能
+            </summary>
+            <param name="c">需要获得焦点的控件</param>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.DBManager.AddToMainForm(DNTBaseArch.Windows.MisForms.MisChildForm)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.AddForm">
+            <summary>
+            新增方法,将添加新窗体
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindDataX(DNTBaseArch.Windows.Forms.UltraDataGruidX)">
+            <summary>
+            绑定数据列表
+            </summary>
+            <param name="grdList">待绑定的列表</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindDataX(DNTBaseArch.Windows.Forms.UltraDataGruidX,System.String)">
+            <summary>
+            绑定数据列表 wang
+            </summary>
+            <param name="grdList">待绑定的列表</param>
+            <param name="otherwheresql">除查询条件之外的条件，如权限等</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindData(DNTBaseArch.Windows.Forms.DataGridViewEx)">
+            <summary>
+            绑定数据列表
+            </summary>
+            <param name="grdList">待绑定的列表</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindData(DNTBaseArch.Windows.Forms.DataGridViewEx,System.String)">
+            <summary>
+            绑定数据列表
+            </summary>
+            <param name="grdList">待绑定的列表</param>
+            <param name="otherwheresql">除查询条件之外的条件，如权限等</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.BindStatisticsGridList(DNTBaseArch.Windows.Forms.DataGridViewEx)">
+            <summary>
+            邦定统计列表
+            </summary>
+            <param name="grdList"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.frmedi_UpdateOtherFormHandle(System.Object,DNTBaseArch.Windows.MisForms.UpdateArgs)">
+            <summary>
+            更新列表方法
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.RefreshGridList(DNTBaseArch.Windows.Forms.DataGridViewEx,System.String,System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            刷新列表
+            </summary>
+            <param name="grid"></param>
+            <param name="tableName"></param>
+            <param name="keyfield"></param>
+            <param name="connection"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetPopedomWhereSQL(System.Object,System.String,System.String@)">
+            <summary>
+            获取数据权限过滤条件
+            </summary>
+            <param name="sender"></param>
+            <param name="moduleCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetPopedomWhereSQL(System.String,System.String,System.String@)">
+            <summary>
+            获取数据权限
+            </summary>
+            <param name="moduleCode"></param>
+            <param name="userCode"></param>
+            <param name="withSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetPopedomWhereSQL(Popedom.OperaterPopedomCollection,System.String,System.String@)">
+            <summary>
+            获取数据权限
+            </summary>
+            <param name="ops">指定模块的数据权限集</param>
+            <param name="datatypeFlag">模块类型标记</param>
+            <param name="withSQL">权限传出的WITHSQL</param>
+            <returns>过滤条件</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetPopedomWhereSQL_New(Popedom.OperaterPopedom,System.String,System.String@)">
+            <summary>
+            获取数据权限
+            </summary>
+            <param name="searchpopedom">查询条件权限</param>
+            <param name="moduleCode">模块标记</param>
+            <param name="withSQL">权限传出的WITHSQL</param>
+            <returns>过滤条件</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.CheckDataPopedomFlag(System.String)">
+            <summary>
+            检测模块的数据范围返回空，仅制单人,1--所有用于服务处理2--订单（客服、销售）3、销售
+            </summary>
+            <param name="moduleCode">模块或菜单编号</param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.MisForms.DBManager.GetCompanyField">
+            <summary>
+            根据模块获取公司字段
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetWhereSQL_New(Popedom.PopedomType,System.Boolean,System.String,System.String,System.String@)">
+            <summary>
+            根据查询条件权限,获取SQL
+            </summary>
+            <param name="searchpopedomtype"></param>
+            <param name="groupFlag"></param>
+            <param name="field"></param>
+            <param name="withSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetWhereSQL_New(Popedom.OperaterCompanyPopedom,System.String,System.String@)">
+            <summary>
+            根据查询条件权限,获取SQL
+            </summary>
+            <param name="searchpopedomtype"></param>
+            <param name="groupFlag"></param>
+            <param name="field"></param>
+            <param name="withSQL"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.DBManager.GetWhereSQL(Popedom.SuperPopedomType,System.Boolean,System.String,System.String@,System.String)">
+            <summary>
+            检测模块的数据范围返回空，仅制单人,1--所有用于服务处理2--订单（客服、销售）3、销售
+            </summary>
+            <param name="supertype"></param>
+            <param name="groupFlag"></param>
+            <param name="field"></param>
+            <param name="withSQL"></param>
+            <param name="dataPopedomFlag"></param>
+            <returns></returns>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.BeforInit">
+            <summary>
+            取出数据行初始界面数据之前
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.FlowNoType">
+            <summary>
+            流水号类型
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.BeforSave">
+            <summary>
+            是否可以保存
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.BeforDelete">
+            <summary>
+            是否可以
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.CanSearch">
+            <summary>
+            是否可以查询
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.GetEditForm">
+            <summary>
+            取得编辑窗体
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.GetSaveHashtable">
+            <summary>
+            获取需要额外保存的信息
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.GetOtherWhereSQL">
+            <summary>
+            获取其它限制条件
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.OnLoadData">
+            <summary>
+            加载数据后的事件
+            </summary>
+        </member>
+        <!-- 对于成员“E:DNTBaseArch.Windows.MisForms.DBManager.OnAdd”忽略有格式错误的 XML 注释 -->
+        <member name="E:DNTBaseArch.Windows.MisForms.DBManager.AfterSave">
+            <summary>
+            保存后事件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.RefreshTabControlExs">
+            <summary>
+            刷新需要处理的Tab控件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.IsAutoLoad">
+            <summary>
+            是否自动加载数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.NeedCheckCanView">
+            <summary>
+            是否需要检查单据有没有权限查看
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.Form">
+            <summary>
+            对应窗体
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.IsMain">
+            <summary>
+            是否为主，用于判断权限的CurrentRow
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.LoadOtherFields">
+            <summary>
+            加载表以外的其它数据字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.LoadOtherControls">
+            <summary>
+            需要加载的控件集
+            </summary>
+        </member>
+        <!-- 对于成员“P:DNTBaseArch.Windows.MisForms.DBManager.KeyValue”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“P:DNTBaseArch.Windows.MisForms.DBManager.UniqueKeyControls”忽略有格式错误的 XML 注释 -->
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.KeyIshaveZero">
+            <summary>
+            KEY值中是不是含有0
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.IsLoadDisabledData">
+            <summary>
+            是否加载删除的数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.MisForms.DBManager.UserGroupTable">
+            <summary>
+            当前用户所在工作组的用户集
+            </summary>
+        </member>
+        <!-- 对于成员“P:DNTBaseArch.Windows.MisForms.DBManager.CurrentDataRow”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“P:DNTBaseArch.Windows.MisForms.DBManager.IsNew”忽略有格式错误的 XML 注释 -->
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager.GetTable">
+            <summary>
+            返回表
+            </summary>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager.GetFlowNoHandle">
+            <summary>
+            
+            </summary>
+            <param name="flownoType"></param>
+            <param name="other"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager.CanHandle">
+            <summary>
+            是否可以执行
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager.CanSaveHandle">
+            <summary>
+            是否可以保存
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.DBManager.GetFilterControls">
+            <summary>
+            获取
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.MisForms.KeyValue">
+            <summary>
+            key和Value
+            </summary>
+        </member>
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.KeyValue.#ctor(System.String,System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.KeyValue.Key”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“F:DNTBaseArch.Windows.MisForms.KeyValue.Value”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“T:DNTBaseArch.Windows.MisForms.ViewServiceHelper”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.ViewServiceHelper.#ctor(DNTBaseArch.Windows.MisForms.DBManager,DevComponents.DotNetBar.ComboBoxItem,DevComponents.DotNetBar.LabelItem,DevComponents.DotNetBar.ButtonItem,DevComponents.DotNetBar.ButtonItem,DevComponents.DotNetBar.ButtonItem,DevComponents.DotNetBar.ButtonItem)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.ViewServiceHelper.BindJobNos(System.Data.DataRow[],System.String)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.MisForms.ViewServiceHelper.BindJobNos(System.Data.DataTable,System.String)”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.MisForms.ViewServiceHelper.SetButtonEnabled">
+            <summary>
+            设置按钮是否可用
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.MisForms.ViewServiceHelper._CbiJobNos_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            重新加载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+    </members>
+</doc>

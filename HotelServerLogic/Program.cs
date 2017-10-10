@@ -25,7 +25,8 @@ namespace HotelServerLogic
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
             Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
-            string v = Console.ReadLine();
+            //string v = Console.ReadLine();
+            string v = "1,2000,2017-10-11,2017-11-09";
             Logger.WriteLog(v,false);
             string city = "北京";
             string area = "北京西城区酒店";
@@ -115,6 +116,7 @@ namespace HotelServerLogic
                         r.HotelPlatID = m.HotelPlatID;
                         r.BaseRoomID = item.ParentNode.SelectSingleNode("td").Id;
                         r.RoomName = item.InnerText.Trim().Split('\n')[0];
+                        r.RoomID = "";
                         var c = DbHelperSQL.GetSingle("SELECT   COUNT(1)  FROM [Rooms]  WHERE [HotelPlatID]='" + m.HotelPlatID + "' AND PlatID=" + m.PlatID + " AND BaseRoomID='" + r.BaseRoomID + "'");
                         if (Convert.ToInt32(c.ToString()) == 0)
                         {
@@ -135,7 +137,7 @@ namespace HotelServerLogic
                             p.BaseRoomID = r.BaseRoomID;
                             p.InDate = indate;
                             p.OutDate = outdate;
-
+                            p.RoomID = "";
                             var nodeprice = node.SelectSingleNode("td/div/a");
                             if (nodeprice == null)
                                 continue;

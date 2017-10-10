@@ -1,0 +1,2802 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DNTBaseArch.Windows.Forms</name>
+    </assembly>
+    <members>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.GetGridColumns">
+            <summary>
+            获取GRID列配置
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.OpenFormHandler">
+            <summary>
+            打开链接窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.OpenComplexForm">
+            <summary>
+            打开链接窗体，用于复杂的情况,比如根据单号、类型打开不同的窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.SaveColumnsConfig">
+            <summary>
+            保存列的配置信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.IsInitColumnsByDB">
+            <summary>
+            是否自动根据配置信息初始列
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.UltraDataGruidX.ColumnParentTableInfo">
+            <summary>
+            列信息对应的表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.AutoInitColumnsByDB">
+            <summary>
+            从数据库或数据缓存中，初始列信息
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.CreateMenu">
+            <summary>
+            创建菜单
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.CreateMenu(System.Int32)">
+            <summary>
+            创建菜单
+            </summary>
+            <param name="bandID"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.ToolStripMenuItems(System.Windows.Forms.ToolStripMenuItem)">
+            <summary>
+            获取菜单子集（启用）
+            </summary>
+            <param name="layOutSet"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.Check_UserLayout(System.Object,System.EventArgs)">
+            <summary>
+            用户选择布局
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.Manage_UserLayout(System.Object,System.EventArgs)">
+            <summary>
+            布局管理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.SaveColumnWithAndOrder(System.Object,System.EventArgs)">
+            <summary>
+            保存列宽及顺序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.ToExcel(System.Object,System.EventArgs)">
+            <summary>
+            导出Excel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.CopyContent(System.Object,System.EventArgs)">
+            <summary>
+            复制当前单元格内容
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.GridSetting_Click(System.Object,System.EventArgs)">
+            <summary>
+            设置列方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.InitColumns(DNTBaseArch.Windows.Forms.UltraDataGruidX,Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs,System.Int32,System.String,System.String)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="db"></param>
+            <param name="empID">人员编码</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.InitColumns(DNTBaseArch.Windows.Forms.UltraDataGruidX,System.Boolean)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="db"></param>
+            <param name="empID">人员编码</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.InitColumns(DNTBaseArch.Windows.Forms.UltraDataGruidX,Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs,System.Int32,System.String,System.Boolean)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="id">ID</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.GetSQLSelectedFields(System.Int32)">
+            <summary>
+            获取查询列,列与列用逗号分隔,若为空，则返回*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.SetUltraGridSytle(DNTBaseArch.Windows.Forms.UltraDataGruidX)">
+            <summary>
+            设置表格样式
+            </summary>
+            <param name="ultWinGrid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.SetGridColumnHeads(DNTBaseArch.Windows.Forms.UltraDataGruidX,System.Int32,System.String,System.String,System.Boolean,Infragistics.Win.HAlign,System.Int32,System.String,Infragistics.Win.UltraWinGrid.ColumnStyle,System.String,System.String,System.Boolean)">
+            <summary>
+            设置表格列头
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.UltraDataGruidX.SetGridColumnHeads(Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs,System.Int32,System.String,System.String,System.Boolean,Infragistics.Win.HAlign,System.Int32,System.String,Infragistics.Win.UltraWinGrid.ColumnStyle,System.String,System.String,System.Boolean)">
+            <summary>
+            设置表格列头（多层）
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.UserCode">
+            <summary>
+            用户编号,用于自定义列
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.ExpoutExcel">
+            <summary>
+            是否管理布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.ManageLayout">
+            <summary>
+            是否管理布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.CheckLayOut">
+            <summary>
+            是否启用布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.AddLayOut">
+            <summary>
+            是否新增布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.Copy">
+            <summary>
+            是否显示复制
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.UltraDataGruidX.ShowMenu">
+            <summary>
+            是否显示菜单
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.UltraDataGruidX.HandleGridColumnsConfig">
+            <summary>
+            获取GRID列配置委托
+            </summary>
+            <param name="grd"></param>
+            <param name="empid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.UltraDataGruidX.LinkFormComplexs">
+            <summary>
+            打开窗体委托
+            </summary>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.UltraDataGruidX.SaveColumnsConfigHandle">
+            <summary>
+            保存列配置信息
+            </summary>
+            <param name="dtConfig"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.GetControlText">
+            <summary>
+            获取控件Text值
+            </summary>
+            <param name="controlID"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.LabelEx.GetControlText">
+            <summary>
+            获取控件Text值
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.LabelEx._SetTextFlag">
+            <summary>
+            是否根据语言类型设置文本
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.FrmCheckMac.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmCheckMac.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmCheckMac.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmCheckMac.InsertMac">
+            <summary>
+            插入MAC地址 wcp 2009/10/18 Add
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmCheckMac.GetMacAddress">
+            <summary>
+            获取MAC地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmCheckMac.buttonEx2_Click(System.Object,System.EventArgs)">
+            <summary>
+            取消
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DatePicker.components">
+            <summary> 
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DatePicker.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DatePicker.InitializeComponent">
+            <summary> 
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.TooltipList.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TooltipList.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TooltipList.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.Forms.TooltipList.AlternatingRowBackColor">
+            <summary>
+            奇数行颜色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TooltipList.BackColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TabControlEx.RefreshData">
+            <summary>
+            刷新数据
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TabControlEx._TemplateHandle">
+            <summary>
+            是否开启模板功能
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TabControlEx.CreateTabEx(System.String)">
+            <summary>
+            创建PageEx
+            </summary>
+            <param name="tabText">标题</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TabControlEx.CreateTabEx(System.String,System.Int32)">
+            <summary>
+            创建PageEx
+            </summary>
+            <param name="tabText">标题</param>
+            <param name="insertAt">插入位置</param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.GetGridColumns">
+            <summary>
+            获取GRID列配置
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.OpenComplexForm">
+            <summary>
+            打开链接窗体，用于复杂的情况,比如根据单号、类型打开不同的窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.SaveColumnsConfig">
+            <summary>
+            保存列的配置信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.IsInitColumnsByDB">
+            <summary>
+            是否自动根据配置信息初始列
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.ColumnsTableInfo">
+            <summary>
+            /// 列信息对应的表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.SuperGridEx.m_IsAutoFilter">
+            <summary>
+            是否自动设置过滤条件
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.GetColumnByDataPropertyName(DevComponents.DotNetBar.SuperGrid.GridPanel,System.String)">
+            <summary>
+            根据数据字段属性，获取列
+            </summary>
+            <param name="dataPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.GetPanelLevel(DevComponents.DotNetBar.SuperGrid.GridPanel)">
+            <summary>
+            获取Panel级别
+            </summary>
+            <param name="p"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.GetSQLSelectedFields(System.Int32)">
+            <summary>
+            获取列表中的字段“,”分开
+            </summary>
+            <param name="level">第几层，从0开始</param>
+            <returns>未找到则返回*</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.CreateMenu">
+            <summary>
+            创建菜单
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.CreateMenu(System.Int32)">
+            <summary>
+            创建菜单
+            </summary>
+            <param name="bandID"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.SaveColumnWithAndOrder(System.Object,System.EventArgs)">
+            <summary>
+            保存列宽及顺序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.ToolStripMenuItems(System.Windows.Forms.ToolStripMenuItem)">
+            <summary>
+            获取菜单子集（启用）
+            </summary>
+            <param name="layOutSet"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.CopyContent(System.Object,System.EventArgs)">
+            <summary>
+            复制当前单元格内容
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.GridSetting_Click(System.Object,System.EventArgs)">
+            <summary>
+            设置列方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.Manage_UserLayout(System.Object,System.EventArgs)">
+            <summary>
+            布局管理
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.InitColumns(DNTBaseArch.Windows.Forms.SuperGridEx,System.Boolean)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="db"></param>
+            <param name="empID">人员编码</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.InitColumns(DevComponents.DotNetBar.SuperGrid.GridPanel,System.Data.DataTable)">
+            <summary>
+            根据配置表，初始列信息
+            </summary>
+            <param name="gridpanel"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.SuperGridEx.GetSelectFields(DevComponents.DotNetBar.SuperGrid.GridPanel)">
+            <summary>
+            获取需要查询的字段
+            </summary>
+            <param name="gridpanel"></param>
+            <returns></returns>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.SuperGridEx.SetGridPanelInfo">
+            <summary>
+            设置面版信息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.UserCode">
+            <summary>
+            用户编号,用于自定义列
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.IsAutoFilter">
+            <summary>
+            是否自动设置过滤条件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.ExpoutExcel">
+            <summary>
+            是否管理布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.ManageLayout">
+            <summary>
+            是否管理布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.CheckLayOut">
+            <summary>
+            是否启用布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.AddLayOut">
+            <summary>
+            是否新增布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.Copy">
+            <summary>
+            是否显示复制
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.ShowMenu">
+            <summary>
+            是否显示菜单
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.SuperGridEx.CurrentGridPanel">
+            <summary>
+            当前Panel
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.SuperGridEx.HandleGridColumnsConfig">
+            <summary>
+            获取GRID列配置委托
+            </summary>
+            <param name="grd"></param>
+            <param name="empid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.SuperGridEx.SetGridPanel">
+            <summary>
+            设置Panel显示
+            </summary>
+            <param name="panel"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.SuperGridEx.LinkFormComplexs">
+            <summary>
+            打开窗体委托
+            </summary>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.SuperGridEx.SaveColumnsConfigHandle">
+            <summary>
+            保存列配置信息
+            </summary>
+            <param name="dtConfig"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ButtonEx">
+            <summary>
+            扩展Button
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.LoadType">
+            <summary>
+            按钮命令中重新load数据表相关类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.TimeStampField">
+            <summary>
+            时间戳字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.KeyField">
+            <summary>
+            命令对应的表主键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.ChengeKey">
+            <summary>
+            是否更新窗体主键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.Message">
+            <summary>
+            运行前显示的消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.Clear">
+            <summary>
+            是否清除窗体数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.CanExecute">
+            <summary>
+            是否调用窗体方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.CheckType">
+            <summary>
+            用于按钮命令检查数据的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.DefaultType">
+            <summary>
+            用于设置默认值的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.CloseWindow">
+            <summary>
+            是否执行完成功能后关闭窗体
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.Changed">
+            <summary>
+            执行完成后需要更新的内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.CommandName">
+            <summary>
+            按钮命令名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.DBTable">
+            <summary>
+            按钮命令需要处理的实际数据表
+            用,分隔多个可处理表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.TableName">
+            <summary>
+            按钮命令对应的内存表
+            用,分隔处理多个表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.OkMessage">
+            <summary>
+            命令成功消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.EnableField">
+            <summary>
+            控制Enable属性的表和字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ButtonEx.TextField">
+            <summary>
+            可以通过设置绑定显示文本
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.ProgressBarEx.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.ProgressBarEx.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.ProgressBarEx.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="P:DNTBaseArch.Windows.Forms.ProgressBarEx.TextColor">
+            <summary>
+            文字颜色
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ProgressBarEx.Text">
+            <summary>
+            显示文本
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ProgressBarEx.TextAlign">
+            <summary>
+            文本对齐方式
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.Docking.DockContent.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.Docking.DockContent.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.Docking.DockContent.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.FrmTextBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmTextBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmTextBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.FrmSetGridView.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmSetGridView.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmSetGridView.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.LoginForm.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.LoginForm.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.LoginForm.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.Forms.LoginForm.CurrentUserCode">
+            <summary>
+            当前用户编码
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.LoginForm.CurrentUserEmpID">
+            <summary>
+            当前用户对应的EMPID
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.LoginForm.BaseConfigTable">
+            <summary>
+            基础数据配置表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.LoginForm.CheckMac(System.String)">
+            <summary>
+            获取MAC  wcp 2009/10/18 Add
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.LoginForm.CanCloseFlag">
+            <summary>
+            是否可以关闭窗口
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.LoginForm.COMPANY_CODE">
+            <summary>
+            当前用户所有公司
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.LoginForm.EmpIDKeyField">
+            <summary>
+            EMPID对应的字段
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.ConnectionForm.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.ConnectionForm.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.ConnectionForm.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.Forms.ConnectionForm.SysDBstr">
+            <summary>
+            系统数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ConnectionForm.GetPassword(System.String)">
+            <summary>
+            用MD5设置密码
+            </summary>
+            <param name="pass">明文密码</param>
+            <returns>Base64密文密码</returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ConnectionForm.GetConnectionStr">
+            <summary>
+            获取配置文件字符串
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ConnectionForm.SaveAppSetsingConfig(System.String)">
+            <summary>
+            写入app.config
+            </summary>
+            <param name="conStr"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ConnectionForm.SetConnectionStr">
+            <summary>
+            设置数据库字符串
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ConnectionForm.ConnectionStr">
+            <summary>
+            连接类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ConnectionForm.Settings">
+            <summary>
+            设置或获取连接节名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ConnectionForm.ConnectionType">
+            <summary>
+            数据库连接类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ConnectionForm.ConnectionString">
+            <summary>
+            数据库连接字符串
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.BitmapRegion.CreateControlRegion(System.Windows.Forms.Control,System.Drawing.Bitmap)">
+            <summary> 
+            创建支持位图区域的控件（目前有button和form）
+            </summary> 
+            <param name="control">控件</param> 
+            <param name="bitmap">位图</param> 
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.BitmapRegion.CreateControlRegion(System.Windows.Forms.Control,System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary> 
+            创建支持位图区域的控件（目前有button和form）
+            </summary> 
+            <param name="control">控件</param> 
+            <param name="bitmap">位图</param> 
+            <param name="transColor">透明颜色</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.BitmapRegion.CalculateControlGraphicsPath(System.Drawing.Bitmap,System.Drawing.Color)">
+            <summary> 
+            //计算位图中不透明部分的边界
+            </summary> 
+            <param name="bitmap">位图</param> 
+            <returns>计算得出的图片路径集</returns> 
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.LoadType">
+            <summary>
+            按钮命令中重新load数据表相关类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.TimeStampField">
+            <summary>
+            时间戳字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.KeyField">
+            <summary>
+            命令对应的表主键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.Clear">
+            <summary>
+            是否清除窗体数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.CanExecute">
+            <summary>
+            是否调用窗体方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.CheckType">
+            <summary>
+            用于按钮命令检查数据的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.DefaultType">
+            <summary>
+            用于设置默认值的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.CloseWindow">
+            <summary>
+            是否执行完成功能后关闭窗体
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.Changed">
+            <summary>
+            执行完成后需要更新的内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.CommandName">
+            <summary>
+            按钮命令名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.DBTable">
+            <summary>
+            按钮命令需要处理的实际数据表
+            用,分隔多个可处理表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.TableName">
+            <summary>
+            按钮命令对应的内存表
+            用,分隔处理多个表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.OkMessage">
+            <summary>
+            命令成功消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.EnableField">
+            <summary>
+            控制Enable属性的表和字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripMenuItemEx.TextField">
+            <summary>
+            可以通过设置绑定显示文本
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ManagerToolBar">
+            <summary>
+            处理ToolBar
+            </summary>
+            <param name="toolBar"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.ToolBarEx.ManagerToolBar">
+            <summary>
+            设置ToolBar
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.ToolBarEx.ItemClickHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolBarEx.IsAddQuickSearch">
+            <summary>
+            是否启用快速查询
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxExForGrid">
+            <summary>
+            扩展TextBox为自动数据处理准备
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxExForGrid.GetDataSource">
+            <summary>
+            获取数据源
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxExForGrid.GetRefDataTable">
+            <summary>
+            获取相关数据表，主要用于联动等特殊控制
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxExForGrid.HaveSetDataEvent">
+            <summary>
+            是否已经有SetData事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxExForGrid.SetDataMethod">
+            <summary>
+            调用SetData
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.TextBoxExForGrid.GetData">
+            <summary>
+            数据检查事件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.DataSource">
+            <summary>
+            文本字段所绑定的数据源
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TextField">
+            <summary>
+            数据所在内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.FieldTable">
+            <summary>
+            数据对应的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.ValueField">
+            <summary>
+            数据对应值字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.Value">
+            <summary>
+            对应数据值
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.DataCheck">
+            <summary>
+            数据检查类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.EnabledField">
+            <summary>
+            设置获取是否有效的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.Computing">
+            <summary>
+            设置或获取计算界面简单计算方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.SendTab">
+            <summary>
+            是否将回车转换成tab发送
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.AlertColor">
+            <summary>
+            字典检查错误时更改文本框背景色
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.ErrMessage">
+            <summary>
+            字典检查错误时弹出消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipShortcut">
+            <summary>
+            下拉列表使用的按键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.CheckTable">
+            <summary>
+            用于检查和显示下拉列表的数据表名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.CheckField">
+            <summary>
+            用于字典的检查字段‘，’分隔可用于界面其他数据做条件检查
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.OtherCheck">
+            <summary>
+            和CheckField配合的其他检查项值所在字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.ShowField">
+            <summary>
+            用于字典的显示字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.SaveField">
+            <summary>
+            用于字典的保存字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipColumns">
+            <summary>
+            用于下拉列表的显示字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipLine">
+            <summary>
+            用于下拉列表显示的条数，可使用%
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipHeight">
+            <summary>
+            用于下拉列表显示的最大行数超出部分使用滚动
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.ForceCheck">
+            <summary>
+            是否作为强制检测，不强制检测则可将录入信息保存
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.CheckExists">
+            <summary>
+            是否检查已经存在的值，若存在则为错误，与字典相反
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.FromTextField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前文本的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.FromValueField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前值的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipTable">
+            <summary>
+            下拉列表所在的表或视图
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.TooltipFilter">
+            <summary>
+            下拉列表默认过滤条件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxExForGrid.CheckString">
+            <summary>
+            用户自定义正则表达式
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxExForGrid.GetDataHandler">
+            <summary>
+            检查数据用到的委托
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="sql">检查用的SQL</param>
+            <returns>检查得到的表</returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxExForGrid.SetDataHandler">
+            <summary>
+            设置字段的值
+            </summary>
+            <param name="sneder"></param>
+            <param name="field"></param>
+            <param name="value"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.InputBox.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.InputBox.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.InputBox.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.frmGridSettings.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.frmGridSettings.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.frmGridSettings.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="M:DNTBaseArch.Windows.Forms.frmGridSettings.#ctor(System.Data.DataTable,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="GridSettings"></param>
+            <param name="newflag">新方法</param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.FrmSetGridCol.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmSetGridCol.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmSetGridCol.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.#ctor(System.String,System.String,System.String)">
+            <summary>
+            重构函数
+            </summary>
+            <param name="listStr"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.FrmGridLayOut_Load(System.Object,System.EventArgs)">
+            <summary>
+            窗体加载
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.RefreachData">
+            <summary>
+            数据刷新
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.toolStripButtonEx3_Click(System.Object,System.EventArgs)">
+            <summary>
+            窗体关闭
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.toolStripButtonEx4_Click(System.Object,System.EventArgs)">
+            <summary>
+            编辑
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.toolStripButtonEx2_Click(System.Object,System.EventArgs)">
+            <summary>
+            删除
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.toolStripButtonEx1_Click(System.Object,System.EventArgs)">
+            <summary>
+            保存
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.FrmGridLayOut.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.Dispose(System.Boolean)">
+            <summary>
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.FrmGridLayOut.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="F:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.AlternatingRowBackColor">
+            <summary>
+            奇数行颜色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.BackColor">
+            <summary>
+            背景色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList._Timer">
+            <summary>
+            计时器，用于焦点离开时，自动关闭
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList._Timer_Tick(System.Object,System.EventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TooltipMultiSelectionList.BindTextValue">
+            <summary>
+            绑定文本框的值
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GridLayOut.LayOutLoad(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            布局加载
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GridLayOut.OpenCurrentLaoyout(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            启用当前布局
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GridLayOut.GetUserLayOutSet(System.String,System.String,System.String)">
+            <summary>
+            获取用户布局名称
+            </summary>
+            <param name="id"></param>
+            <param name="conString"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ControlTipInfo">
+            <summary>
+            控件提示委托
+            </summary>
+            <param name="sender"></param>
+            <param name="info"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.LinkForm">
+            <summary>
+            打开窗体委托
+            </summary>
+            <param name="tableName"></param>
+            <param name="keyField"></param>
+            <param name="key"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.LinkFormComplex">
+            <summary>
+            打开窗体委托
+            </summary>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataSourceHandle">
+            <summary>
+            获取数据源结构
+            </summary>
+            <param name="sender"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataGridViewEx">
+            <summary>
+            扩展DataGridView
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.OpenFormHandler">
+            <summary>
+            打开链接窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.InitID">
+            <summary>
+            加载列表列对应的ID
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.DefaultNoSelected">
+            <summary>
+            默认是否没有选择行
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.NeedTextboxExParents">
+            <summary>
+            必填项的父控件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.OpenComplexForm">
+            <summary>
+            打开链接窗体，用于复杂的情况,比如根据单号、类型打开不同的窗体
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.SetStatisticTemplateHandle">
+            <summary>
+            设置统计模板
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.TipInfoHandler">
+            <summary>
+            处理控件提示信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.GetGridColumns">
+            <summary>
+            获取GRID列配置
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.GetStatisticsGridColumns">
+            <summary>
+            获取GRID统计配置列
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.GetAllGridColumns">
+            <summary>
+            获取所有GRID列配置
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.SaveColumnsConfig">
+            <summary>
+            保存列的配置信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.GetDataSourceScheme">
+            <summary>
+            获取数据源结构
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.ColumnTableInfo">
+            <summary>
+            列信息对应的表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.StatisticsTemplateName">
+            <summary>
+            统计模板名称
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.OnlyStatisticsTotal">
+            <summary>
+            是否仅显示合计
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx._EdiFlag">
+            <summary>
+            编辑标志
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx._IsStatistic">
+            <summary>
+            是否为统计表格
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.CreateMenu(System.String)">
+            <summary>
+            创建右键菜单项
+            </summary>
+            <param name="txt">菜单文本</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.SetColumnsReadOnly(System.String[],System.Boolean)">
+            <summary>
+            设置列是否为只读
+            </summary>
+            <param name="fields"></param>
+            <param name="readOnly"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.SetOtherColumnsReadOnly(System.String[],System.Boolean)">
+            <summary>
+            设置指定列以外的列是否为只读
+            </summary>
+            <param name="fields"></param>
+            <param name="readOnly"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.m_StatisticNeedControlDT">
+            <summary>
+            统计查询条件必填表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.m_StatisticConfigDT">
+            <summary>
+            统计配置表
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.m_StatisticTemplateDT">
+            <summary>
+            统计模板表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.ToolStripMenuItems(System.Windows.Forms.ToolStripMenuItem)">
+            <summary>
+            获取菜单子集（启用）
+            </summary>
+            <param name="layOutSet"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.SaveColumnWithAndOrder(System.Object,System.EventArgs)">
+            <summary>
+            保存列宽及顺序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.ShowOrHideColumn(System.Object,System.EventArgs)">
+            <summary>
+            显示或隐藏列
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetLastVisbleIndx">
+            <summary>
+            获取最后可视列的ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.ToExcel(System.Object,System.EventArgs)">
+            <summary>
+            ToExcel
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetExcelFormat">
+            <summary>
+            获取导出Excel的格式字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetExcelContent(System.String,System.Boolean)">
+            <summary>
+            将DataTable转换为Excel内容
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.PrintTemplateHandler">
+            <summary>
+            打印委托
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.itemprint_Click(System.Object,System.EventArgs)">
+            <summary>
+            打印统计表
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GridSetTemplate_Click(System.Object,System.EventArgs)">
+            <summary>
+            设置列方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GridSetting_Click(System.Object,System.EventArgs)">
+            <summary>
+            设置列方法
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.CopyContent(System.Object,System.EventArgs)">
+            <summary>
+            复制当前单元格内容
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.SetRowsColorBySetting">
+            <summary>
+            根据配置设置行颜色
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.SetColor(System.String,System.Data.DataRow[],System.String)">
+            <summary>
+            根据字典数据，设置颜色
+            </summary>
+            <param name="valueField"></param>
+            <param name="colorRows"></param>
+            <param name="checkFied"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx._CanEditFlag">
+            <summary>
+            是否可以编辑
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.OnCellEnter(System.Windows.Forms.DataGridViewCellEventArgs)">
+            <summary>
+            重写，当为编辑列表时，启用获得焦点时可编辑功能
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.InitLayout">
+            <summary>
+            重载InitLayout，初始列表
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.AutoInitColumnsByDB">
+            <summary>
+            从数据库或数据缓存中，初始列信息
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.HandlerTipInfo">
+            <summary>
+            处理提示信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx.IsInitColumnsByDB">
+            <summary>
+            是否自动根据配置信息初始列
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.InitColumns(DNTBaseArch.Windows.Forms.DataGridViewEx,System.Boolean)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="db"></param>
+            <param name="empID">人员编码</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetLinkColumn">
+             <summary>
+            获取Link列
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.InitLinkColumnStyle(System.Windows.Forms.DataGridViewLinkColumn)">
+            <summary>
+            设置Link列的样式
+            </summary>
+            <param name="linkcolumn"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.InitColumns(DNTBaseArch.Windows.Forms.DataGridViewEx,System.String,System.Boolean)">
+            <summary>
+            根据配置信息初始列集合
+            </summary>
+            <param name="grid">GridID</param>
+            <param name="id">ID</param>
+            <param name="onlyView">仅用于查看</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.CheckStatisticNeedControl">
+            <summary>
+            检测统计模板中必填值是否填写
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetSQLSelectedFields">
+            <summary>
+            获取查询列,列与列用逗号分隔,若为空，则返回*
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetColumnByDataPropertyName(System.String)">
+            <summary>
+            根据数据字段属性，获取列
+            </summary>
+            <param name="dataPropertyName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetColumnByDataPropertyName(System.String,System.Boolean)">
+            <summary>
+            根据数据字段属性，获取列
+            </summary>
+            <param name="dataPropertyName">数据字段属性</param>
+            <param name="noerr">true未找到时返回NULL，false未找到时抛出异常</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetSelectedNos(System.String,System.Boolean)">
+            <summary>
+            获取选中账单的index,用逗号隔开
+            </summary>
+            <param name="fieldName">字段</param>
+            <param name="onlySelected">是否为仅选中的</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetSelectedNos(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            获取选中账单的index,用逗号隔开
+            </summary>
+            <param name="fieldName">字段</param>
+            <param name="onlySelected">是否为仅选中的</param>
+            <param name="withSQLChar">是否带单引号</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.UpdateGridList(System.Data.DataTable,System.String)">
+            <summary>
+            更新列表内容
+            </summary>
+            <param name="newdt">新表</param>
+            <param name="keyName">主键名称</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.GetDataSourceTable">
+            <summary>
+            获取数据源表,若不是table或DataView,则返回null
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewEx._NotEmptyColumns">
+            <summary>
+            不为空的列
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.CheckRowValid">
+            <summary>
+            检测当前行是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.DataGridViewEx.CheckRowValid(System.Int32)">
+            <summary>
+            检测指定行是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.UserCode">
+            <summary>
+            用户编号,用于自定义列
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.EdiFlag">
+            <summary>
+            是否为编辑GRID
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.IsStatistic">
+            <summary>
+            是否为统计列表，若为统计列表，则系统自动统一格式
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.SetStatisticTemplateMenuItem">
+            <summary>
+            统计模板菜单
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.StatisticNeedControlDT">
+            <summary>
+            统计查询条件必填表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.StatisticConfigDT">
+            <summary>
+            统计配置表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.TemplateChangeFlag">
+            <summary>
+            模板是否改变
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.ShowMenu">
+            <summary>
+            是否显示行号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.SetStatisticTemplate">
+            <summary>
+            是否启用布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.DesginStatisticTemplate">
+            <summary>
+            是否新增布局
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.MouseOnCellStyle">
+            <summary>
+            鼠标悬停时样式
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.DataTable">
+            <summary>
+            Grid所用的表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.KeyChange">
+            <summary>
+            是否在选定后更新窗体KeyData
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.ListTable">
+            <summary>
+            需要按照当前数据显示的表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.SelectTable">
+            <summary>
+            需要在窗体上显示的表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.ColumnDefaultValues">
+            <summary>
+            默认值
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.IsToExcel">
+            <summary>
+            是否创建导入Excel右键菜单
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.DataGridViewEx.NotEmptyColumns">
+            <summary>
+            不为空的列,key为检测列，value为提示列
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.DataGridViewEx.OnRowAfterValidating">
+            <summary>
+            有效验证后
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.DataGridViewEx.OnSaveRowData">
+             <summary>
+            保存数据行
+             </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataGridViewEx.HandleGridColumnsConfig">
+            <summary>
+            获取GRID列配置委托
+            </summary>
+            <param name="grd"></param>
+            <param name="empid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataGridViewEx.HandleGridStatisticsColumnsConfig">
+            <summary>
+            获取GRID统计列配置委托
+            </summary>
+            <param name="grd"></param>
+            <param name="empid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataGridViewEx.SaveColumnsConfigHandle">
+            <summary>
+            保存列配置信息
+            </summary>
+            <param name="dtConfig"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.GridCommandEventArgs">
+            <summary>
+            Grid命令事件参数
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GridCommandEventArgs.#ctor">
+            <summary>
+            默认构造
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GridCommandEventArgs.#ctor(System.Int32,System.String)">
+            <summary>
+            构造行，命令
+            </summary>
+            <param name="row">行</param>
+            <param name="commandname">命令名</param>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.GridCommandEventArgs.Row">
+            <summary>
+            当前行
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.GridCommandEventArgs.CommandName">
+            <summary>
+            当前命令
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewComboBoxExColumn._DisplayType">
+            <summary>
+            显示类型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewComboBoxExColumn._ValueFiled">
+            <summary>
+            值对应的列
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataGridViewComboBoxExColumn.GetRefDataTable">
+             <summary>
+            获取下拉数据源
+             </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.DataGridViewComboBoxExNewColumn">
+            <summary>
+            下拉选项列
+            <remarks>为防止重命，又重新命了一次，具体代码应在DataGridViewComboBoxExColumn处理</remarks>
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.CheckedListBoxEx._ValueDataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.CheckedListBoxEx.BindValueDataSouce">
+            <summary>
+            绑定值
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.CheckedListBoxEx.BindDataSource(System.String[])">
+            <summary>
+            绑定数据值
+            </summary>
+            <param name="values"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.CheckedListBoxEx.GetNowValueDataSource">
+            <summary>
+            获取当前值，注意调用此方法前提是要指定ValueDataSource
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.CheckedListBoxEx._DataSource">
+            <summary>
+            数据源
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.CheckedListBoxEx.BindDataSouce">
+            <summary>
+            绑定数据源
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckedListBoxEx.ValueDataSource">
+            <summary>
+            获取或设置值的数据源
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckedListBoxEx.IsValueChanged">
+            <summary>
+            值是否改变
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckedListBoxEx.DataSource">
+            <summary>
+            获取或设置数据源
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.GroupPanleEx.components">
+            <summary>
+            必需的设计器变量。
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GroupPanleEx.Dispose(System.Boolean)">
+            <summary> 
+            清理所有正在使用的资源。
+            </summary>
+            <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GroupPanleEx.InitializeComponent">
+            <summary>
+            设计器支持所需的方法 - 不要
+            使用代码编辑器修改此方法的内容。
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.GroupPanleEx._TemplateHandle">
+            <summary>
+            是否开启模板功能
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GroupPanleEx.SetControlReadOnly(System.Windows.Forms.Control,System.Windows.Forms.Control[],System.Boolean)">
+            <summary>
+            设置控件的只读属性
+            </summary>
+            <param name="control">容器控件</param>
+            <param name="noSetControls">不需要设置的控件</param>
+            <param name="isReadOnly">是否为只读</param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.GroupPanleEx.GetControls(System.Boolean)">
+            <summary>
+            获取只读或非只能控件
+            </summary>
+            <param name="isReadOnly"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.MacAddress.GetMacAddress">
+            <summary>
+            获取MAC地址
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.LoadType">
+            <summary>
+            按钮命令中重新load数据表相关类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.TimeStampField">
+            <summary>
+            时间戳字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.KeyField">
+            <summary>
+            命令对应的表主键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.ChengeKey">
+            <summary>
+            是否更新窗体主键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.Message">
+            <summary>
+            运行前显示的消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.Clear">
+            <summary>
+            是否清除窗体数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.CanExecute">
+            <summary>
+            是否调用窗体方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.CheckType">
+            <summary>
+            用于按钮命令检查数据的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.DefaultType">
+            <summary>
+            用于设置默认值的相关号
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.CloseWindow">
+            <summary>
+            是否执行完成功能后关闭窗体
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.Changed">
+            <summary>
+            执行完成后需要更新的内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.CommandName">
+            <summary>
+            按钮命令名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.DBTable">
+            <summary>
+            按钮命令需要处理的实际数据表
+            用,分隔多个可处理表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.TableName">
+            <summary>
+            按钮命令对应的内存表
+            用,分隔处理多个表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.OkMessage">
+            <summary>
+            命令成功消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.EnableField">
+            <summary>
+            控制Enable属性的表和字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripButtonEx.TextField">
+            <summary>
+            可以通过设置绑定显示文本
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ExcelManager">
+            <summary>
+            Excel管理类
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ExcelManager.OpenExcelFile(System.String,System.Collections.Specialized.NameValueCollection,System.Boolean,System.Int32)">
+            <summary>
+            打开指定的工作簿,并返回TABLE
+            </summary>
+            <param name="file">文件</param>
+            <param name="config">配置列</param>
+            <param name="isRemoveFirst">是否移除第一行</param>
+            <param name="worksheetIndx">要打开工作簿的INDX</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ExcelManager.OpenExcelFile(System.String,System.Collections.Specialized.NameValueCollection,System.Boolean)">
+            <summary>
+            打开指定的工作簿,并返回TABLE
+            </summary>
+            <param name="file">文件</param>
+            <param name="config">配置列</param>
+            <param name="isRemoveFirst">是否移除第一行</param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ExcelManager.GetImportExcelConfig(System.String,System.String)">
+            <summary>
+            获取导入Excel的配置信息
+            </summary>
+            <param name="name"></param>
+            <param name="connectionStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ExcelManager.GetImportExcelConfigNV(System.String,System.String)">
+            <summary>
+            获取导入Excel的配置信息
+            </summary>
+            <param name="name"></param>
+            <param name="connectionStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ExcelManager.GetNameValue(System.Data.DataTable)">
+            <summary>
+            将表转换为
+            </summary>
+            <param name="dt"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.CheckBoxEx">
+            <summary>
+            扩展CheckBox
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckBoxEx.TextField">
+            <summary>
+            数据所在字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckBoxEx.FieldTable">
+            <summary>
+            数据所在表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckBoxEx.ValueField">
+            <summary>
+            暂时无用
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.CheckBoxEx.Split">
+            <summary>
+            在数据所在字段中按位拆分
+            </summary>
+        </member>
+        <!-- 对于成员“F:DNTBaseArch.Windows.Forms.TreeViewEx.components”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TreeViewEx.Dispose(System.Boolean)”忽略有格式错误的 XML 注释 -->
+        <!-- 对于成员“M:DNTBaseArch.Windows.Forms.TreeViewEx.InitializeComponent”忽略有格式错误的 XML 注释 -->
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.ImageField">
+            <summary>
+            节点图片索引字段
+            </summary>
+        </member>
+        <!-- 对于成员“P:DNTBaseArch.Windows.Forms.TreeViewEx.CommandName”忽略有格式错误的 XML 注释 -->
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.ListTable">
+            <summary>
+            节点选择后更新其他表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.SelectTable">
+            <summary>
+            节点选择后更新界面用的表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.GroupField">
+            <summary>
+            自动分组字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.TextField">
+            <summary>
+            文本显示字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.ValueField">
+            <summary>
+            索引字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TreeViewEx.FieldTable">
+            <summary>
+            数据表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.NodeCommandArgs.Command">
+            <summary>
+            命令名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.NodeCommandArgs.Node">
+            <summary>
+            节点
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.GetData">
+            <summary>
+            数据检查事件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TextField">
+            <summary>
+            数据所在内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.FieldTable">
+            <summary>
+            数据对应的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.ValueField">
+            <summary>
+            数据对应值字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.Value">
+            <summary>
+            对应数据值
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.DataCheck">
+            <summary>
+            数据检查类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.EnabledField">
+            <summary>
+            设置获取是否有效的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.Computing">
+            <summary>
+            设置或获取计算界面简单计算方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.SendTab">
+            <summary>
+            是否将回车转换成tab发送
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.AlertColor">
+            <summary>
+            字典检查错误时更改文本框背景色
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.ErrMessage">
+            <summary>
+            字典检查错误时弹出消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipShortcut">
+            <summary>
+            下拉列表使用的按键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.CheckTable">
+            <summary>
+            用于检查和显示下拉列表的数据表名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.CheckField">
+            <summary>
+            用于字典的检查字段‘，’分隔可用于界面其他数据做条件检查
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.OtherCheck">
+            <summary>
+            和CheckField配合的其他检查项值所在字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.ShowField">
+            <summary>
+            用于字典的显示字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.SaveField">
+            <summary>
+            用于字典的保存字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipColumns">
+            <summary>
+            用于下拉列表的显示字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipLine">
+            <summary>
+            用于下拉列表显示的条数，可使用%
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipHeight">
+            <summary>
+            用于下拉列表显示的最大行数超出部分使用滚动
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.ForceCheck">
+            <summary>
+            是否作为强制检测，不强制检测则可将录入信息保存
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.CheckExists">
+            <summary>
+            是否检查已经存在的值，若存在则为错误，与字典相反
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.FromTextField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前文本的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.FromValueField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前值的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipTable">
+            <summary>
+            下拉列表所在的表或视图
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.TooltipFilter">
+            <summary>
+            下拉列表默认过滤条件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.CheckString">
+            <summary>
+            用户自定义正则表达式
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.GetDataHandler">
+            <summary>
+            检查数据用到的委托
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="sql">检查用的SQL</param>
+            <returns>检查得到的表</returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.ToolStripTextBoxEx.SetDataHandler">
+            <summary>
+            设置字段的值
+            </summary>
+            <param name="sneder"></param>
+            <param name="field"></param>
+            <param name="value"></param>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.FilterType">
+            <summary>
+            过滤类型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.Datetime">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.Int">
+            <summary>
+            整型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.Decimal">
+            <summary>
+            浮点型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.EnString">
+            <summary>
+            英文字符
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DataTypes.EnCapsString">
+            <summary>
+            英文大写字符
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.RegExp">
+            <summary>
+            检查类型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.None">
+            <summary>
+            不用校验
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.E_Mail">
+            <summary>
+            电子邮件
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.URL">
+            <summary>
+            超级连接
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.ID_card">
+            <summary>
+            身份证号
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.PostalCode">
+            <summary>
+             邮政编码
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.DateTime">
+            <summary>
+            日期格式
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.IP">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Password">
+            <summary>
+            密码字符
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Numeric">
+            <summary>
+            数字型
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Telphone">
+            <summary>
+            电话号码
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Mobile">
+            <summary>
+            手机号码
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Dics">
+            <summary>
+            来自于字典
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.LocalDics">
+            <summary>
+            取自本地字典
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Date">
+            <summary>
+            日期不包含时间
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Time">
+            <summary>
+            时间不包含日期
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.Week">
+            <summary>
+            只读时间显示为周
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.RegExp.UserDefine">
+            <summary>
+            用户自定义检查
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DateSE.DataTo">
+            <summary>
+            开始日期
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DateSE.DataFrom">
+            <summary>
+            结束日期
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.DateSE.None">
+             <summary>
+            默认没有
+             </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxEx">
+            <summary>
+            扩展TextBox为自动数据处理准备
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.GetKeyState(System.Int32)">
+            <summary>
+            获取键状态
+            </summary>
+            <param name="keyCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.keybd_event(System.Byte,System.Byte,System.UInt32,System.UIntPtr)">
+            <summary>
+            改变键状态
+            </summary>
+            <param name="bVk"></param>
+            <param name="bScan"></param>
+            <param name="dwFlags"></param>
+            <param name="dwExtraInfo"></param>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.CapsLockFlag">
+            <summary>
+            默认大小写是否锁定
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.GetHandleInfomation">
+            <summary>
+            获取数据信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.IsAutoMouseMoveFoucs">
+            <summary>
+            是否启用当鼠标移动到控件时获取焦点
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.GetSQLFilteType(DNTBaseArch.Windows.Forms.FilterType)">
+            <summary>
+            获取过滤类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.SearchEmptyFlag">
+            <summary>
+            查询字段为空的特殊字符
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx._ShowTipKey">
+            <summary>
+            触发下拉显示键
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.GetDataSource">
+            <summary>
+            获取数据源
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.LinkCheckTableInfoHandler">
+            <summary>
+            查看下拉表的详细信息
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.GetLinkEditFormInfo">
+            <summary>
+            获取链接对应的表名称
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx._LinkInfoCheckTables">
+            <summary>
+            需要查看详细信息的CheckTable
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.ReadOnlyBackColor">
+            <summary>
+            只读时的背景色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.InvalidBackColor">
+            <summary>
+            数据无效时的颜色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.DefaultBackColor">
+            <summary>
+            默认时的颜色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.EditLanguageFields">
+            <summary>
+            编辑多语言字段委托
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx._IsSetMaxLength">
+            <summary>
+            内部标记是否设置MaxLength属性
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx._MultiSelected">
+            <summary>
+            针对下拉框是否可以多选
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.CanAutoSetBackColor">
+            <summary>
+            是否可以自动设置背景颜色
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.GetRefDataTable">
+            <summary>
+            获取相关数据表，主要用于联动等特殊控制
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.HaveSetDataEvent">
+            <summary>
+            是否已经有SetData事件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx._ApplyChangeHandler">
+            <summary>
+            申请修改的委托
+            </summary>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.TextBoxApplyChangeHanler">
+            <summary>
+            文本框申请修改委托
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.SetMultiValue(System.String[])">
+            <summary>
+            设置多选文本
+            </summary>
+            <param name="multilValue"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.SetMultiSelectedText">
+             <summary>
+            设置多选的文本框
+             </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.CheckMenuItemExist(System.String)">
+            <summary>
+            检测菜单是否存在
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DNTBaseArch.Windows.Forms.TextBoxEx.EditDetailHanlder">
+            <summary>
+            编辑控件对应的编辑窗体
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.itemApplyChange_Click(System.Object,System.EventArgs)">
+            <summary>
+            申请修改事件
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.EditLanguageFields_Click(System.Object,System.EventArgs)">
+            <summary>
+            编辑多语言
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx._MultTips_CloseHandle(System.Object,System.Object,System.Data.DataTable)">
+            <summary>
+            多选提示下拉列表关闭
+            </summary>
+            <param name="sender"></param>
+            <param name="dt"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.ClearValue">
+            <summary>
+            清除值
+            </summary>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.TextBoxEx.SetWatermarkText">
+            <summary>
+            设置水印字
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CapsLock">
+            <summary>
+            设置大小写锁定
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.NumLock">
+            <summary>
+            设备数字锁定
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ScrollLock">
+            <summary>
+            设置滚动锁定
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ShowTipKey">
+            <summary>
+            触发下拉显示键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.LinkInfoCheckTables">
+            <summary>
+            需要查看详细信息的CheckTable
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.EditLanguageConnectionString">
+            <summary>
+            编辑多语言用到的连接
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.FilterSQL">
+            <summary>
+            过滤条件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ComplexFilterSQL">
+            <summary>
+            复杂的查询SQL，当值为XX时，执行的过滤条件
+            </summary>
+        </member>
+        <member name="E:DNTBaseArch.Windows.Forms.TextBoxEx.GetData">
+            <summary>
+            数据检查事件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.MultiSelected">
+            <summary>
+            针对下拉框是否可以多选
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.Complex">
+            <summary>
+            是否为复杂设置，即可下拉，又可直接输入
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.DataSource">
+            <summary>
+            文本字段所绑定的数据源
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TextField">
+            <summary>
+            数据所在内存表
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.FieldTable">
+            <summary>
+            数据对应的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ValueField">
+            <summary>
+            数据对应值字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.Value">
+            <summary>
+            对应数据值
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.DataCheck">
+            <summary>
+            数据检查类型
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.EnabledField">
+            <summary>
+            设置获取是否有效的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.Computing">
+            <summary>
+            设置或获取计算界面简单计算方法
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.SendTab">
+            <summary>
+            是否将回车转换成tab发送
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.AlertColor">
+            <summary>
+            字典检查错误时更改文本框背景色
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ErrMessage">
+            <summary>
+            字典检查错误时弹出消息
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipShortcut">
+            <summary>
+            下拉列表使用的按键
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CheckTable">
+            <summary>
+            用于检查和显示下拉列表的数据表名称
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CheckField">
+            <summary>
+            用于字典的检查字段‘，’分隔可用于界面其他数据做条件检查
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.OtherCheck">
+            <summary>
+            和CheckField配合的其他检查项值所在字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ShowField">
+            <summary>
+            用于字典的显示字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.SaveField">
+            <summary>
+            用于字典的保存字段‘，’分隔可用于同时更新其他数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipColumns">
+            <summary>
+            用于下拉列表的显示字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipLine">
+            <summary>
+            用于下拉列表显示的条数，可使用%
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipHeight">
+            <summary>
+            用于下拉列表显示的最大行数超出部分使用滚动
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.ForceCheck">
+            <summary>
+            是否作为强制检测，不强制检测则可将录入信息保存
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CheckExists">
+            <summary>
+            是否检查已经存在的值，若存在则为错误，与字典相反
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.FromTextField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前文本的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.FromValueField">
+            <summary>
+            通过其他文本框设置的字典属性更新当前值的字段
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipTable">
+            <summary>
+            下拉列表所在的表或视图
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.TooltipFilter">
+            <summary>
+            下拉列表默认过滤条件
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CheckString">
+            <summary>
+            用户自定义正则表达式
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.CanApplyChange">
+            <summary>
+            是否可以申请修改
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.IsShowInvalid">
+            <summary>
+            是否显示无效数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TextBoxEx.MultiValue">
+            <summary>
+            多选值
+            </summary>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxEx.GetDataHandler">
+            <summary>
+            检查数据用到的委托
+            </summary>
+            <param name="sender">当前控件</param>
+            <param name="sql">检查用的SQL</param>
+            <returns>检查得到的表</returns>
+        </member>
+        <member name="T:DNTBaseArch.Windows.Forms.TextBoxEx.SetDataHandler">
+            <summary>
+            设置字段的值
+            </summary>
+            <param name="sneder"></param>
+            <param name="field"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:DNTBaseArch.Windows.Forms.ITabPageInit.InitData(DNTBaseArch.Windows.Forms.TabPageEx)">
+            <summary>
+            初始数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TabPageEx.IsSelectedNeedInit">
+            <summary>
+            是否需要初始数据
+            </summary>
+        </member>
+        <member name="P:DNTBaseArch.Windows.Forms.TabPageEx.InitPageData">
+            <summary>
+            初始Tab页委托
+            </summary>
+        </member>
+    </members>
+</doc>
