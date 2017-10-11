@@ -31,11 +31,13 @@ namespace CtripHotelPrice
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnRoom = new DevComponents.DotNetBar.ButtonX();
+            this.btnHotel = new DevComponents.DotNetBar.ButtonX();
             this.cLabel2 = new bxyztSkin.CControls.CLabel();
             this.txtroom = new bxyztSkin.CControls.CTextBox();
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
@@ -77,8 +79,14 @@ namespace CtripHotelPrice
             this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.winFormPager1 = new bxyztSkin.Editors.WinFormPager();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.btnHotel = new DevComponents.DotNetBar.ButtonX();
-            this.btnRoom = new DevComponents.DotNetBar.ButtonX();
+            this.cLabel7 = new bxyztSkin.CControls.CLabel();
+            this.comBedType = new System.Windows.Forms.ComboBox();
+            this.cLabel8 = new bxyztSkin.CControls.CLabel();
+            this.comBreakFirst = new System.Windows.Forms.ComboBox();
+            this.cLabel9 = new bxyztSkin.CControls.CLabel();
+            this.comStar = new System.Windows.Forms.ComboBox();
+            this.cLabel10 = new bxyztSkin.CControls.CLabel();
+            this.comIsCancel = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
@@ -97,6 +105,14 @@ namespace CtripHotelPrice
             this.panel2.Controls.Add(this.dateTimeInput2);
             this.panel2.Controls.Add(this.dateTimeInput1);
             this.panel2.Controls.Add(this.btnQuery);
+            this.panel2.Controls.Add(this.comIsCancel);
+            this.panel2.Controls.Add(this.cLabel10);
+            this.panel2.Controls.Add(this.comStar);
+            this.panel2.Controls.Add(this.cLabel9);
+            this.panel2.Controls.Add(this.comBreakFirst);
+            this.panel2.Controls.Add(this.cLabel8);
+            this.panel2.Controls.Add(this.comBedType);
+            this.panel2.Controls.Add(this.cLabel7);
             this.panel2.Controls.Add(this.comboxPlat);
             this.panel2.Controls.Add(this.cLabel4);
             this.panel2.Controls.Add(this.cLabel3);
@@ -112,6 +128,30 @@ namespace CtripHotelPrice
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 80);
             this.panel2.TabIndex = 6;
+            // 
+            // btnRoom
+            // 
+            this.btnRoom.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRoom.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnRoom.Location = new System.Drawing.Point(1008, 46);
+            this.btnRoom.Name = "btnRoom";
+            this.btnRoom.Size = new System.Drawing.Size(75, 31);
+            this.btnRoom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRoom.TabIndex = 9;
+            this.btnRoom.Text = "房型";
+            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
+            // 
+            // btnHotel
+            // 
+            this.btnHotel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnHotel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnHotel.Location = new System.Drawing.Point(1008, 13);
+            this.btnHotel.Name = "btnHotel";
+            this.btnHotel.Size = new System.Drawing.Size(75, 31);
+            this.btnHotel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnHotel.TabIndex = 9;
+            this.btnHotel.Text = "酒店";
+            this.btnHotel.Click += new System.EventHandler(this.btnHotel_Click);
             // 
             // cLabel2
             // 
@@ -371,18 +411,18 @@ namespace CtripHotelPrice
             // cDataGridView1
             // 
             this.cDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.cDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            this.cDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cDataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.cDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.cDataGridView1.ColumnHeadersHeight = 26;
             this.cDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -408,28 +448,28 @@ namespace CtripHotelPrice
             this.UpdateDate,
             this.PlatName,
             this.Area});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cDataGridView1.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.cDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cDataGridView1.EnableHeadersVisualStyles = false;
             this.cDataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.cDataGridView1.Name = "cDataGridView1";
             this.cDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.cDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.cDataGridView1.RowTemplate.Height = 23;
             this.cDataGridView1.Size = new System.Drawing.Size(1095, 443);
@@ -463,8 +503,8 @@ namespace CtripHotelPrice
             this.HotelID.Name = "HotelID";
             this.HotelID.ReadOnly = true;
             this.HotelID.ToolTipText = "HotelID";
+            this.HotelID.Visible = false;
             this.HotelID.Width = 80;
-            HotelID.Visible = false;
             // 
             // PlatID
             // 
@@ -474,8 +514,8 @@ namespace CtripHotelPrice
             this.PlatID.Name = "PlatID";
             this.PlatID.ReadOnly = true;
             this.PlatID.ToolTipText = "PlatID";
+            this.PlatID.Visible = false;
             this.PlatID.Width = 80;
-            PlatID.Visible = false;
             // 
             // RoomID
             // 
@@ -490,7 +530,7 @@ namespace CtripHotelPrice
             // RoomName
             // 
             this.RoomName.DataPropertyName = "RoomName";
-            this.RoomName.HeaderText = "RoomName";
+            this.RoomName.HeaderText = "房型";
             this.RoomName.MinimumWidth = 30;
             this.RoomName.Name = "RoomName";
             this.RoomName.ReadOnly = true;
@@ -535,8 +575,8 @@ namespace CtripHotelPrice
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
             this.ID.ToolTipText = "ID";
+            this.ID.Visible = false;
             this.ID.Width = 80;
-            ID.Visible = false;
             // 
             // BedType
             // 
@@ -691,29 +731,103 @@ namespace CtripHotelPrice
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
-            // btnHotel
+            // cLabel7
             // 
-            this.btnHotel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnHotel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnHotel.Location = new System.Drawing.Point(1008, 13);
-            this.btnHotel.Name = "btnHotel";
-            this.btnHotel.Size = new System.Drawing.Size(75, 31);
-            this.btnHotel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnHotel.TabIndex = 9;
-            this.btnHotel.Text = "酒店";
-            this.btnHotel.Click += new System.EventHandler(this.btnHotel_Click);
+            this.cLabel7.AutoSize = true;
+            this.cLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel7.Location = new System.Drawing.Point(349, 16);
+            this.cLabel7.Name = "cLabel7";
+            this.cLabel7.Size = new System.Drawing.Size(29, 12);
+            this.cLabel7.TabIndex = 2;
+            this.cLabel7.Text = "床型";
             // 
-            // btnRoom
+            // comBedType
             // 
-            this.btnRoom.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnRoom.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnRoom.Location = new System.Drawing.Point(1008, 46);
-            this.btnRoom.Name = "btnRoom";
-            this.btnRoom.Size = new System.Drawing.Size(75, 31);
-            this.btnRoom.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnRoom.TabIndex = 9;
-            this.btnRoom.Text = "房型";
-            this.btnRoom.Click += new System.EventHandler(this.btnRoom_Click);
+            this.comBedType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comBedType.FormattingEnabled = true;
+            this.comBedType.Items.AddRange(new object[] {
+            "所有",
+            "大床",
+            "双床"});
+            this.comBedType.Location = new System.Drawing.Point(384, 12);
+            this.comBedType.Name = "comBedType";
+            this.comBedType.Size = new System.Drawing.Size(52, 20);
+            this.comBedType.TabIndex = 3;
+            // 
+            // cLabel8
+            // 
+            this.cLabel8.AutoSize = true;
+            this.cLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel8.Location = new System.Drawing.Point(453, 17);
+            this.cLabel8.Name = "cLabel8";
+            this.cLabel8.Size = new System.Drawing.Size(29, 12);
+            this.cLabel8.TabIndex = 2;
+            this.cLabel8.Text = "含餐";
+            // 
+            // comBreakFirst
+            // 
+            this.comBreakFirst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comBreakFirst.FormattingEnabled = true;
+            this.comBreakFirst.Items.AddRange(new object[] {
+            "所有",
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.comBreakFirst.Location = new System.Drawing.Point(488, 13);
+            this.comBreakFirst.Name = "comBreakFirst";
+            this.comBreakFirst.Size = new System.Drawing.Size(52, 20);
+            this.comBreakFirst.TabIndex = 3;
+            // 
+            // cLabel9
+            // 
+            this.cLabel9.AutoSize = true;
+            this.cLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel9.Location = new System.Drawing.Point(558, 16);
+            this.cLabel9.Name = "cLabel9";
+            this.cLabel9.Size = new System.Drawing.Size(29, 12);
+            this.cLabel9.TabIndex = 2;
+            this.cLabel9.Text = "星级";
+            // 
+            // comStar
+            // 
+            this.comStar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comStar.FormattingEnabled = true;
+            this.comStar.Items.AddRange(new object[] {
+            "所有",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comStar.Location = new System.Drawing.Point(593, 12);
+            this.comStar.Name = "comStar";
+            this.comStar.Size = new System.Drawing.Size(52, 20);
+            this.comStar.TabIndex = 3;
+            // 
+            // cLabel10
+            // 
+            this.cLabel10.AutoSize = true;
+            this.cLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel10.Location = new System.Drawing.Point(656, 17);
+            this.cLabel10.Name = "cLabel10";
+            this.cLabel10.Size = new System.Drawing.Size(65, 12);
+            this.cLabel10.TabIndex = 2;
+            this.cLabel10.Text = "是否可取消";
+            // 
+            // comIsCancel
+            // 
+            this.comIsCancel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comIsCancel.FormattingEnabled = true;
+            this.comIsCancel.Items.AddRange(new object[] {
+            "所有",
+            "不可取消",
+            "可取消"});
+            this.comIsCancel.Location = new System.Drawing.Point(727, 12);
+            this.comIsCancel.Name = "comIsCancel";
+            this.comIsCancel.Size = new System.Drawing.Size(92, 20);
+            this.comIsCancel.TabIndex = 3;
             // 
             // frmPrice
             // 
@@ -783,5 +897,13 @@ namespace CtripHotelPrice
         private DataGridViewTextBoxColumn Area;
         private DevComponents.DotNetBar.ButtonX btnRoom;
         private DevComponents.DotNetBar.ButtonX btnHotel;
+        private ComboBox comBreakFirst;
+        private bxyztSkin.CControls.CLabel cLabel8;
+        private ComboBox comBedType;
+        private bxyztSkin.CControls.CLabel cLabel7;
+        private ComboBox comStar;
+        private bxyztSkin.CControls.CLabel cLabel9;
+        private ComboBox comIsCancel;
+        private bxyztSkin.CControls.CLabel cLabel10;
     }
 }

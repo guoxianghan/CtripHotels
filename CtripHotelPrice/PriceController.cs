@@ -1,4 +1,5 @@
 ﻿using CommonHelper;
+using HotelServerLogic;
 using HtmlAgilityPack;
 using HttpHotelServer;
 using Maticsoft.DAL;
@@ -11,19 +12,21 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace HotelServerLogic
+namespace CtripHotelPrice
 {
-    public class CtripHotelLogic
+    public class PriceController : ThreadController
     {
-        public CtripHotelLogic()
+        public PriceController()
         {
-            server = new CtripHotelHttpServer();
+            _RunAction = FindPrice;
         }
-        CtripHotelHttpServer server = null;
+        public string sql { get; set; }
+        public DateTime d1 { get; set; }
+        public DateTime d2 { get; set; }
+        public object Newtonsoft { get; private set; }
 
-        public bool IsStop { get; set; } = true;
-        public void FindPrice(string sql, DateTime d1, DateTime d2)
-        {
+        public void FindPrice()
+        {//string sql, DateTime d1, DateTime d2
             CtripHotelHttpServer ctrip = new CtripHotelHttpServer();
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
@@ -45,7 +48,7 @@ namespace HotelServerLogic
                 m = list[i];
                 for (int j = 0; j < days; j++)
                 {
-                    if (!IsStop)
+                    if (!IsRunning)
                     {
                         goto BREAK;
                     }
@@ -72,7 +75,7 @@ namespace HotelServerLogic
                     CtripHotelPriceJSON json = null;
                     try
                     {
-                        json = Newtonsoft.Json.JsonConvert.DeserializeObject<CtripHotelPriceJSON>(html);
+                        json = JsonConvert.DeserializeObject<CtripHotelPriceJSON>(html);
                     }
                     catch (Exception ex)
                     {
@@ -206,6 +209,5 @@ and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' 
             BREAK:
             Console.WriteLine("所有酒店查询完毕");
         }
-
     }
 }

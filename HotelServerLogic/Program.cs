@@ -18,29 +18,31 @@ namespace HotelServerLogic
     {
         static void Main(string[] args)
         {
-            PlatServer platserver = new PlatServer();
-            var ds = platserver.GetList("");
             CtripHotelHttpServer ctrip = new CtripHotelHttpServer();
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
             Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
             //string v = Console.ReadLine();
-            string v = "1,2000,2017-10-11,2017-11-09";
-            Logger.WriteLog(v,false);
-            string city = "北京";
-            string area = "北京西城区酒店";
-            int count = h.GetRecordCount("[PlatID]=1 AND [City]='" + city + "'");
+            //string v = "1,2000,2017-10-11,2017-11-09";
+            //Logger.WriteLog(v, false);
+            //string city = "北京";
+            //string area = "北京西城区酒店";
+            //int count = h.GetRecordCount("[PlatID]=1 AND [City]='" + city + "'");
+            string sql = "";
+            DateTime d1 = DateTime.MinValue;
+            DateTime d2= DateTime.MinValue;
             Logger.WriteLog("正在加载所选酒店....");
-            List<HotelDetailViewModel> list = h.GetModelList($"[PlatID]=1 AND [City]='北京' and id>=" + v.Split(',')[0] + " AND ID<=" + v.Split(',')[1]);//AND [AREA]='北京西城区酒店'
-            //List<HotelDetailViewModel> list = h.GetModelList("hotelplatid ='439773'");//AND [AREA]='北京西城区酒店'
+            //List<HotelDetailViewModel> list = h.GetModelList($"[PlatID]=1 AND [City]='北京' and id>=" + v.Split(',')[0] + " AND ID<=" + v.Split(',')[1]);//AND [AREA]='北京西城区酒店'
+            List<HotelDetailViewModel> list = h.GetModelList(sql);//AND [AREA]='北京西城区酒店'
             Logger.WriteLog($"所选酒店{list.Count}条加载完毕");
             DataTable dtprice = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM HotelPrice");
             DataTable dtclone = dtprice.Clone();
             DataTable dtroom = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM Rooms");
             DataTable dtroomclone = dtroom.Clone();
-            DateTime dtbegin = Convert.ToDateTime(v.Split(',')[2]);
-            int days = (Convert.ToDateTime(v.Split(',')[3])-dtbegin).Days;
+            DateTime dtbegin = d1;// Convert.ToDateTime(v.Split(',')[2]);
+            //int days = (Convert.ToDateTime(v.Split(',')[3]) - dtbegin).Days;
+            int days = (d2 - d1).Days;
             Random ran = new Random(DateTime.Now.Millisecond);
             HotelDetailViewModel m = null;
             string parse_hotelid = "";
@@ -68,7 +70,7 @@ namespace HotelServerLogic
                            + "&startDate=" + indate.ToString("yyyy-MM-dd") + "&depDate=" + outdate.ToString("yyyy-MM-dd")
                            + "&IsFlash=F&RequestTravelMoney=F&hsids=&IsJustConfirm=&contyped=0&priceInfo=-1"
                            + "&equip=&filter=bed|0,bf|0,network|0,policy|0,hourroom|0,&productcode=&couponList=&abForHuaZhu=&defaultLoad=F"
-                           + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689"; ;
+                           + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689"; 
                     string referer = "http://hotels.ctrip.com/hotel/" + m.HotelPlatID + ".html";
                     string log = m.HotelName + "," + referer + "," + indate.ToString("yyyy-MM-dd");
                     //Console.WriteLine(log);
@@ -171,7 +173,9 @@ namespace HotelServerLogic
                             p.RoomCount = node.SelectSingleNode("td/div/div").InnerText;
                             var modellist = priceserver.GetModelList($@"SaleTitle='{p.SaleTitle}' and BedType='{p.BedType}' and BreakfirstType='{p.BreakfirstType}' and InDate='{p.InDate.ToString("yyyy-MM-dd")}' and OutDate='{p.OutDate.ToString("yyyy-MM-dd")}'
 and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' and BaseRoomID='{p.BaseRoomID}'");
-                            coun++;
+
+                            if (!p.SaleTitle.Contains("尊享惊喜优惠"))
+                                coun++;
                             if (coun <= 4)
                             {
                                 if (!p.SaleTitle.Contains("代理") && !p.Tag.Contains("担保") && !p.Tag.Contains("到店付"))
@@ -196,7 +200,7 @@ and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' 
                                     }
                             }
                             #endregion
-                            Logger.WriteLog("携程自营价格" + prices.FindAll(x => x.IsAgentPrivate).Count() + "条," + m.HotelPlatName + "," + r.RoomName + ",[" + indate.ToShortDateString() + "," + m.HotelPlatID +","+m.ID+ "]");
+                            Logger.WriteLog("携程自营价格" + prices.FindAll(x => x.IsAgentPrivate).Count() + "条," + m.HotelPlatName + "," + r.RoomName + ",[" + indate.ToShortDateString() + "," + m.HotelPlatID + "," + m.ID + "]");
                         }
                         #endregion
 

@@ -68,6 +68,13 @@
     <Reference Include="DNTBaseArch.Windows.MisForms">
       <HintPath>..\SysDll\DNTBaseArch.Windows.MisForms.dll</HintPath>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.0.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\dll\HtmlAgilityPack.DLL</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>D:\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -99,6 +106,7 @@
     <Compile Include="frmRoom.Designer.cs">
       <DependentUpon>frmRoom.cs</DependentUpon>
     </Compile>
+    <Compile Include="PriceController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHotel.resx">
@@ -131,9 +139,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
+      <Project>{C3E9CBC3-0D42-4591-A9C4-0E93FA431090}</Project>
+      <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CtripHotels\CtripHotels.csproj">
+      <Project>{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}</Project>
+      <Name>CtripHotels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HotelManage\HotelManage.csproj">
       <Project>{1a63704c-1997-4349-9bf1-3322db3f90d0}</Project>
       <Name>HotelManage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelServerLogic\HotelServerLogic.csproj">
+      <Project>{A669155B-E675-483F-B46E-2BD9533FA6C2}</Project>
+      <Name>HotelServerLogic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
