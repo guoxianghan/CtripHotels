@@ -43,6 +43,14 @@ namespace CtripHotelPrice
             this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.btnQuery = new DNTBaseArch.Windows.Forms.ButtonEx();
+            this.comIsCancel = new System.Windows.Forms.ComboBox();
+            this.cLabel10 = new bxyztSkin.CControls.CLabel();
+            this.comStar = new System.Windows.Forms.ComboBox();
+            this.cLabel9 = new bxyztSkin.CControls.CLabel();
+            this.comBreakFirst = new System.Windows.Forms.ComboBox();
+            this.cLabel8 = new bxyztSkin.CControls.CLabel();
+            this.comBedType = new System.Windows.Forms.ComboBox();
+            this.cLabel7 = new bxyztSkin.CControls.CLabel();
             this.comboxPlat = new System.Windows.Forms.ComboBox();
             this.cLabel4 = new bxyztSkin.CControls.CLabel();
             this.cLabel3 = new bxyztSkin.CControls.CLabel();
@@ -79,14 +87,6 @@ namespace CtripHotelPrice
             this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.winFormPager1 = new bxyztSkin.Editors.WinFormPager();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.cLabel7 = new bxyztSkin.CControls.CLabel();
-            this.comBedType = new System.Windows.Forms.ComboBox();
-            this.cLabel8 = new bxyztSkin.CControls.CLabel();
-            this.comBreakFirst = new System.Windows.Forms.ComboBox();
-            this.cLabel9 = new bxyztSkin.CControls.CLabel();
-            this.comStar = new System.Windows.Forms.ComboBox();
-            this.cLabel10 = new bxyztSkin.CControls.CLabel();
-            this.comIsCancel = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
@@ -302,6 +302,104 @@ namespace CtripHotelPrice
             this.btnQuery.TimeStampField = "";
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
+            // comIsCancel
+            // 
+            this.comIsCancel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comIsCancel.FormattingEnabled = true;
+            this.comIsCancel.Items.AddRange(new object[] {
+            "所有",
+            "不可取消",
+            "可取消"});
+            this.comIsCancel.Location = new System.Drawing.Point(744, 10);
+            this.comIsCancel.Name = "comIsCancel";
+            this.comIsCancel.Size = new System.Drawing.Size(92, 20);
+            this.comIsCancel.TabIndex = 3;
+            // 
+            // cLabel10
+            // 
+            this.cLabel10.AutoSize = true;
+            this.cLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel10.Location = new System.Drawing.Point(673, 15);
+            this.cLabel10.Name = "cLabel10";
+            this.cLabel10.Size = new System.Drawing.Size(65, 12);
+            this.cLabel10.TabIndex = 2;
+            this.cLabel10.Text = "是否可取消";
+            // 
+            // comStar
+            // 
+            this.comStar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comStar.FormattingEnabled = true;
+            this.comStar.Items.AddRange(new object[] {
+            "所有",
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.comStar.Location = new System.Drawing.Point(593, 12);
+            this.comStar.Name = "comStar";
+            this.comStar.Size = new System.Drawing.Size(52, 20);
+            this.comStar.TabIndex = 3;
+            // 
+            // cLabel9
+            // 
+            this.cLabel9.AutoSize = true;
+            this.cLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel9.Location = new System.Drawing.Point(558, 16);
+            this.cLabel9.Name = "cLabel9";
+            this.cLabel9.Size = new System.Drawing.Size(29, 12);
+            this.cLabel9.TabIndex = 2;
+            this.cLabel9.Text = "星级";
+            // 
+            // comBreakFirst
+            // 
+            this.comBreakFirst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comBreakFirst.FormattingEnabled = true;
+            this.comBreakFirst.Items.AddRange(new object[] {
+            "所有",
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.comBreakFirst.Location = new System.Drawing.Point(488, 13);
+            this.comBreakFirst.Name = "comBreakFirst";
+            this.comBreakFirst.Size = new System.Drawing.Size(52, 20);
+            this.comBreakFirst.TabIndex = 3;
+            // 
+            // cLabel8
+            // 
+            this.cLabel8.AutoSize = true;
+            this.cLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel8.Location = new System.Drawing.Point(453, 17);
+            this.cLabel8.Name = "cLabel8";
+            this.cLabel8.Size = new System.Drawing.Size(29, 12);
+            this.cLabel8.TabIndex = 2;
+            this.cLabel8.Text = "含餐";
+            // 
+            // comBedType
+            // 
+            this.comBedType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comBedType.FormattingEnabled = true;
+            this.comBedType.Items.AddRange(new object[] {
+            "所有",
+            "大床",
+            "双床"});
+            this.comBedType.Location = new System.Drawing.Point(384, 12);
+            this.comBedType.Name = "comBedType";
+            this.comBedType.Size = new System.Drawing.Size(52, 20);
+            this.comBedType.TabIndex = 3;
+            // 
+            // cLabel7
+            // 
+            this.cLabel7.AutoSize = true;
+            this.cLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.cLabel7.Location = new System.Drawing.Point(349, 16);
+            this.cLabel7.Name = "cLabel7";
+            this.cLabel7.Size = new System.Drawing.Size(29, 12);
+            this.cLabel7.TabIndex = 2;
+            this.cLabel7.Text = "床型";
+            // 
             // comboxPlat
             // 
             this.comboxPlat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -311,7 +409,7 @@ namespace CtripHotelPrice
             "携程"});
             this.comboxPlat.Location = new System.Drawing.Point(744, 40);
             this.comboxPlat.Name = "comboxPlat";
-            this.comboxPlat.Size = new System.Drawing.Size(121, 20);
+            this.comboxPlat.Size = new System.Drawing.Size(92, 20);
             this.comboxPlat.TabIndex = 3;
             // 
             // cLabel4
@@ -730,104 +828,6 @@ namespace CtripHotelPrice
             this.bindingNavigator.Size = new System.Drawing.Size(1095, 30);
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator1";
-            // 
-            // cLabel7
-            // 
-            this.cLabel7.AutoSize = true;
-            this.cLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.cLabel7.Location = new System.Drawing.Point(349, 16);
-            this.cLabel7.Name = "cLabel7";
-            this.cLabel7.Size = new System.Drawing.Size(29, 12);
-            this.cLabel7.TabIndex = 2;
-            this.cLabel7.Text = "床型";
-            // 
-            // comBedType
-            // 
-            this.comBedType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBedType.FormattingEnabled = true;
-            this.comBedType.Items.AddRange(new object[] {
-            "所有",
-            "大床",
-            "双床"});
-            this.comBedType.Location = new System.Drawing.Point(384, 12);
-            this.comBedType.Name = "comBedType";
-            this.comBedType.Size = new System.Drawing.Size(52, 20);
-            this.comBedType.TabIndex = 3;
-            // 
-            // cLabel8
-            // 
-            this.cLabel8.AutoSize = true;
-            this.cLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.cLabel8.Location = new System.Drawing.Point(453, 17);
-            this.cLabel8.Name = "cLabel8";
-            this.cLabel8.Size = new System.Drawing.Size(29, 12);
-            this.cLabel8.TabIndex = 2;
-            this.cLabel8.Text = "含餐";
-            // 
-            // comBreakFirst
-            // 
-            this.comBreakFirst.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comBreakFirst.FormattingEnabled = true;
-            this.comBreakFirst.Items.AddRange(new object[] {
-            "所有",
-            "0",
-            "1",
-            "2",
-            "3"});
-            this.comBreakFirst.Location = new System.Drawing.Point(488, 13);
-            this.comBreakFirst.Name = "comBreakFirst";
-            this.comBreakFirst.Size = new System.Drawing.Size(52, 20);
-            this.comBreakFirst.TabIndex = 3;
-            // 
-            // cLabel9
-            // 
-            this.cLabel9.AutoSize = true;
-            this.cLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.cLabel9.Location = new System.Drawing.Point(558, 16);
-            this.cLabel9.Name = "cLabel9";
-            this.cLabel9.Size = new System.Drawing.Size(29, 12);
-            this.cLabel9.TabIndex = 2;
-            this.cLabel9.Text = "星级";
-            // 
-            // comStar
-            // 
-            this.comStar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comStar.FormattingEnabled = true;
-            this.comStar.Items.AddRange(new object[] {
-            "所有",
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.comStar.Location = new System.Drawing.Point(593, 12);
-            this.comStar.Name = "comStar";
-            this.comStar.Size = new System.Drawing.Size(52, 20);
-            this.comStar.TabIndex = 3;
-            // 
-            // cLabel10
-            // 
-            this.cLabel10.AutoSize = true;
-            this.cLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.cLabel10.Location = new System.Drawing.Point(656, 17);
-            this.cLabel10.Name = "cLabel10";
-            this.cLabel10.Size = new System.Drawing.Size(65, 12);
-            this.cLabel10.TabIndex = 2;
-            this.cLabel10.Text = "是否可取消";
-            // 
-            // comIsCancel
-            // 
-            this.comIsCancel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comIsCancel.FormattingEnabled = true;
-            this.comIsCancel.Items.AddRange(new object[] {
-            "所有",
-            "不可取消",
-            "可取消"});
-            this.comIsCancel.Location = new System.Drawing.Point(727, 12);
-            this.comIsCancel.Name = "comIsCancel";
-            this.comIsCancel.Size = new System.Drawing.Size(92, 20);
-            this.comIsCancel.TabIndex = 3;
             // 
             // frmPrice
             // 

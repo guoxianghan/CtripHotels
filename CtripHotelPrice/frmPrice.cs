@@ -84,6 +84,10 @@ namespace CtripHotelPrice
             {
                 sql.Append("[BedType] = '" + comBedType.SelectedItem.ToString() + "' AND");
             }
+            if (comStar.SelectedIndex != 0)
+            {
+                sql.Append("[Star] = '" + (comStar.SelectedIndex - 1) + "' AND");
+            }
             if (comBreakFirst.SelectedIndex != 0)
             {
                 sql.Append("[BreakfirstType] = " + (comBreakFirst.SelectedIndex - 1) + "");

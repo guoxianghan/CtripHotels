@@ -22,8 +22,7 @@ namespace CtripHotelPrice
         }
         public string sql { get; set; }
         public DateTime d1 { get; set; }
-        public DateTime d2 { get; set; }
-        public object Newtonsoft { get; private set; }
+        public DateTime d2 { get; set; } 
 
         public void FindPrice()
         {//string sql, DateTime d1, DateTime d2
@@ -31,7 +30,7 @@ namespace CtripHotelPrice
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
-            Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
+            //Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
             Logger.WriteLog("正在加载所选酒店....");
             List<HotelDetailViewModel> list = h.GetModelList(sql);//AND [AREA]='北京西城区酒店'
             Logger.WriteLog($"所选酒店{list.Count}条加载完毕");

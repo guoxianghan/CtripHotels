@@ -192,6 +192,10 @@ namespace Maticsoft.DAL
                 {
                     model.HotelID = int.Parse(row["HotelID"].ToString());
                 }
+                if (row["Star"] != null && row["Star"].ToString() != "")
+                {
+                    model.Star = int.Parse(row["Star"].ToString());
+                }
                 if (row["HotelName"] != null)
                 {
                     model.HotelName = row["HotelName"].ToString();

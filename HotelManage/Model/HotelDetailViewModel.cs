@@ -83,8 +83,9 @@ namespace Maticsoft.Model
 		}
         public string City { get; set; }
         public string Area { get; set; }
-		#endregion Model
+        public int Star { get; internal set; }
+        #endregion Model
 
-	}
+    }
 }
 
