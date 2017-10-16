@@ -28,15 +28,19 @@ namespace Maticsoft.DAL
     /// <summary>
     /// 数据访问类:HotelPriceView
     /// </summary>
-    public  class HotelPriceViewServer
+    public class HotelPriceViewServer
     {
         public HotelPriceViewServer()
         { }
         #region  BasicMethod
 
 
-
-
+        public DataTable GetTable(string sqlwhere)
+        {
+            var ds = GetList(sqlwhere); 
+            var dt = ds.Tables[0];
+            return dt;
+        }
         public List<HotelPriceViewModel> GetModelList(string sqlwhere)
         {
             var ds = GetList(sqlwhere);

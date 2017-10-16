@@ -108,7 +108,6 @@
     <Compile Include="EPPlusExcel.cs" />
     <Compile Include="ErrorCode.cs" />
     <Compile Include="ExcelHelper.cs" />
-    <Compile Include="ExcelResult.cs" />
     <Compile Include="FormHelper.cs" />
     <Compile Include="IniConfig.cs" />
     <Compile Include="IniFile.cs" />

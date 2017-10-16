@@ -23,13 +23,16 @@ namespace CtripHotelPrice
             comIsCancel.SelectedIndex = 0;
             comStar.SelectedIndex = 0;
             winFormPager1.PageSize = 100;
+
+            saveFileDialog1.Filter = "xls files(*.xls)|";
             winFormPager1.EventPaging += WinFormPager1_EventPaging;
+            btnQuery_Click(null, null);
         }
 
         private int WinFormPager1_EventPaging(bxyztSkin.Editors.EventPagingArg e)
         {
             string sql = sqlwhere();
-            this.cDataGridView1.DataSource = server.GetModelList(sql, "ID", (winFormPager1.PageCurrent - 1) * 100, winFormPager1.PageCurrent * 100);
+            this.cDataGridView1.DataSource = server.GetListByPage(sql, "ID", (winFormPager1.PageCurrent - 1) * 100, winFormPager1.PageCurrent * 100).Tables[0];
             int count = server.GetRecordCount(sql);
             return count;
         }
@@ -39,7 +42,7 @@ namespace CtripHotelPrice
         private void btnQuery_Click(object sender, EventArgs e)
         {
             winFormPager1.PageCurrent = 1;
-            WinFormPager1_EventPaging(null); 
+            WinFormPager1_EventPaging(null);
         }
         private string sqlwhere()
         {
@@ -96,7 +99,7 @@ namespace CtripHotelPrice
             //{
             //    sql.Append("[BreakfirstType] = '" + comIsCancel.SelectedIndex+"'");
             //}
-            return sql.ToString().Trim('N', 'A', 'D');
+            return sql.ToString().Trim('A', 'N', 'D', ' ');
         }
 
         private void btnHotel_Click(object sender, EventArgs e)
@@ -109,6 +112,45 @@ namespace CtripHotelPrice
         {
             frmRoom r = new CtripHotelPrice.frmRoom();
             r.Show();
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+            var dr = saveFileDialog1.ShowDialog();
+            if (dr != DialogResult.OK)
+            {
+                return;
+            }
+            string sql = sqlwhere();
+            var count = server.GetRecordCount(sql);
+            if (count > 50000)
+            {
+                MessageBox.Show("数据量大于5万条,请筛选数据", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                var dt = server.GetTable(sql);
+                NPOIExcelHelperV2 npoi = new NPOIExcelHelperV2(saveFileDialog1.FileName + ".xls");
+                foreach (DataGridViewColumn col in this.cDataGridView1.Columns)
+                {
+                    foreach (DataColumn item in dt.Columns)
+                    {
+                        if (col.Name == item.ColumnName)
+                        {
+                            item.ColumnName = col.HeaderText;
+                            break;
+                        }
+                    }
+                }
+                npoi.DataTableToExcel(dt, "sheet1", true);
+                MessageBox.Show("导出成功");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

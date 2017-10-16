@@ -31,10 +31,10 @@ namespace CtripHotelPrice
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnRoom = new DevComponents.DotNetBar.ButtonX();
             this.btnHotel = new DevComponents.DotNetBar.ButtonX();
@@ -87,6 +87,8 @@ namespace CtripHotelPrice
             this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.winFormPager1 = new bxyztSkin.Editors.WinFormPager();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.btnImport = new DNTBaseArch.Windows.Forms.ButtonEx();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
@@ -98,6 +100,7 @@ namespace CtripHotelPrice
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnImport);
             this.panel2.Controls.Add(this.btnRoom);
             this.panel2.Controls.Add(this.btnHotel);
             this.panel2.Controls.Add(this.cLabel2);
@@ -509,18 +512,18 @@ namespace CtripHotelPrice
             // cDataGridView1
             // 
             this.cDataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
-            this.cDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(229)))), ((int)(((byte)(248)))));
+            this.cDataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.cDataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.cDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cDataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.cDataGridView1.ColumnHeadersHeight = 26;
             this.cDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.cDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -546,28 +549,28 @@ namespace CtripHotelPrice
             this.UpdateDate,
             this.PlatName,
             this.Area});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Wheat;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.cDataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Wheat;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.DarkSlateBlue;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cDataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.cDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cDataGridView1.EnableHeadersVisualStyles = false;
             this.cDataGridView1.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cDataGridView1.Location = new System.Drawing.Point(0, 0);
             this.cDataGridView1.Name = "cDataGridView1";
             this.cDataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cDataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.cDataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.cDataGridView1.RowTemplate.Height = 23;
             this.cDataGridView1.Size = new System.Drawing.Size(1095, 443);
@@ -829,6 +832,39 @@ namespace CtripHotelPrice
             this.bindingNavigator.TabIndex = 0;
             this.bindingNavigator.Text = "bindingNavigator1";
             // 
+            // btnImport
+            // 
+            this.btnImport.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnImport.CanExecute = true;
+            this.btnImport.Changed = "";
+            this.btnImport.CheckNull = "";
+            this.btnImport.CheckType = "";
+            this.btnImport.ChengeKey = false;
+            this.btnImport.Clear = false;
+            this.btnImport.CloseWindow = false;
+            this.btnImport.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnImport.CommandName = "";
+            this.btnImport.ControlMemo = null;
+            this.btnImport.DBTable = "";
+            this.btnImport.DefaultType = "";
+            this.btnImport.EnableField = "";
+            this.btnImport.FormName = "";
+            this.btnImport.KeyField = "";
+            this.btnImport.LoadType = null;
+            this.btnImport.Location = new System.Drawing.Point(871, 3);
+            this.btnImport.Message = "";
+            this.btnImport.Name = "btnImport";
+            this.btnImport.OkMessage = "";
+            this.btnImport.RightGrid = "";
+            this.btnImport.Size = new System.Drawing.Size(75, 31);
+            this.btnImport.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnImport.TabIndex = 10;
+            this.btnImport.TableName = "";
+            this.btnImport.Text = "导出";
+            this.btnImport.TextField = "";
+            this.btnImport.TimeStampField = "";
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
             // frmPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -837,6 +873,7 @@ namespace CtripHotelPrice
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "frmPrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "酒店价格信息";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -905,5 +942,7 @@ namespace CtripHotelPrice
         private bxyztSkin.CControls.CLabel cLabel9;
         private ComboBox comIsCancel;
         private bxyztSkin.CControls.CLabel cLabel10;
+        private DNTBaseArch.Windows.Forms.ButtonEx btnImport;
+        private SaveFileDialog saveFileDialog1;
     }
 }
