@@ -17,6 +17,69 @@ namespace CtripHotels
     {
         static void Main(string[] args)
         {
+            FindHotelStar("sitemap-beijing1", "3");
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="citymap"></param>
+        /// <param name=""></param>
+        /// <param name="star"></param>
+        private static void FindHotelStar(string citymap= "sitemap-beijing1",string star="3")
+        {
+            HotelServer server = new Maticsoft.DAL.HotelServer();
+            HotelDetailViewServer vserver = new HotelDetailViewServer();
+            HotelDetailServer dserver = new HotelDetailServer();
+            HttpServer http = new HttpServer();
+            HttpResult result;
+            //string star = "5";//星级,3,4,5
+            HtmlAgilityPack.HtmlDocument doc = new HtmlDocument();
+            http.Host = "m.ctrip.com";
+            http.Accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
+            http.AcceptEncoding = "gzip,deflate,sdch";
+            http.AcceptLanguage = "zh-CN,zh;q=0.8";
+            http.Method = "get";
+            http.Referer = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star;
+            http.Url = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star + "/1";
+            result = http.GetHttpResult();
+            doc.LoadHtml(result.Html);
+            var nodes = doc.DocumentNode.SelectNodes("//a[@class=\"noramla ainfooter\"]");
+            if (nodes == null || nodes.Count == 0)
+            {
+                Console.WriteLine("获取的HTML有错误");
+            }
+            for (int i = 1; i <= nodes.Count; i++)
+            {
+                Random ran = new Random(DateTime.Now.Millisecond);
+                Thread.Sleep(ran.Next(2000, 5000));
+                http.Url = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star + "/" + i;
+                result = http.GetHttpResult();
+                doc.LoadHtml(result.Html);
+                var hotelnodes = doc.DocumentNode.SelectNodes("//a[@class=\"noramla line2items\"]");//j获取酒店节点
+                if (hotelnodes == null || hotelnodes.Count == 0)
+                {
+                    Console.WriteLine("获取的HTML有错误");
+                    continue;
+                }
+                foreach (var item in hotelnodes)
+                {
+                    string id = Regex.Match(item.Attributes["href"].Value, @"/(?<id>\d+)\.").Groups[1].Value;
+                    var list = vserver.GetModelList($"HotelPlatID='{id}' and PlatID='1'");
+                    if (list.Count == 0)
+                    {
+                        int newid = server.Add(new Maticsoft.Model.HotelModel() { City = "北京", HotelName = item.InnerText, Star = Convert.ToInt32(star), CreateDate = DateTime.Now });
+                       int nid= dserver.Add(new Maticsoft.Model.HotelDetailModel() { HotelPlatID = id, PlatID = 1, HotelID = newid, HotelName = item.InnerText, CreateDate = DateTime.Now });
+                    }
+                    list = vserver.GetModelList($"HotelPlatID='{id}' and PlatID='1'");
+                    int cou = DbHelperSQL.ExecuteSql("UPDATE [Hotel] set [Star]=" + star + "WHERE ID=" + list[0].HotelID);
+                    Console.WriteLine($"{id},{item.InnerText}");
+                }
+                Console.WriteLine($"北京{star}星级,第{i}页查询完毕");
+            }
+        }
+        private static void GetAllHotelInfo()
+        {
             PlatServer p = new PlatServer();
             var ds = p.GetList("");
             HttpServer http = new HttpServer();

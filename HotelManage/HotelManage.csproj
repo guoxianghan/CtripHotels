@@ -54,7 +54,6 @@
     <Compile Include="BLL\HotelPriceView.cs" />
     <Compile Include="BLL\Plat.cs" />
     <Compile Include="BLL\Rooms.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CommandInfo.cs" />
     <Compile Include="Model\HotelRoomViewModel.cs" />
     <Compile Include="Server\HotelRoomViewServer.cs" />

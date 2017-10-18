@@ -22,19 +22,20 @@ namespace HotelServerLogic
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
-            Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
-            //string v = Console.ReadLine();
-            //string v = "1,2000,2017-10-11,2017-11-09";
-            //Logger.WriteLog(v, false);
-            //string city = "北京";
-            //string area = "北京西城区酒店";
-            //int count = h.GetRecordCount("[PlatID]=1 AND [City]='" + city + "'");
+            Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:(如:992,2000,2017-10-09,2017-11-09)\r\n");
+
+            string v = Console.ReadLine();
+            //string v = "1,2000,2017-10-19,2017-10-30";
+            Logger.WriteLog(v, false);
+            string city = "北京";
+            string area = "北京西城区酒店";
+            int count = h.GetRecordCount("[PlatID]=1 AND [City]='" + city + "'");
             string sql = "";
-            DateTime d1 = DateTime.MinValue;
-            DateTime d2= DateTime.MinValue;
+            DateTime d1 = Convert.ToDateTime(v.Split(',')[2]);
+            DateTime d2 = Convert.ToDateTime(v.Split(',')[3]);
             Logger.WriteLog("正在加载所选酒店....");
-            //List<HotelDetailViewModel> list = h.GetModelList($"[PlatID]=1 AND [City]='北京' and id>=" + v.Split(',')[0] + " AND ID<=" + v.Split(',')[1]);//AND [AREA]='北京西城区酒店'
-            List<HotelDetailViewModel> list = h.GetModelList(sql);//AND [AREA]='北京西城区酒店'
+            List<HotelDetailViewModel> list = h.GetModelList($"[PlatID]=1 AND [City]='北京' and id>=" + v.Split(',')[0] + " AND ID<=" + v.Split(',')[1]);//AND [AREA]='北京西城区酒店'
+            //List<HotelDetailViewModel> list = h.GetModelList(sql);//AND [AREA]='北京西城区酒店'
             Logger.WriteLog($"所选酒店{list.Count}条加载完毕");
             DataTable dtprice = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM HotelPrice");
             DataTable dtclone = dtprice.Clone();

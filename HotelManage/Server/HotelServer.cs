@@ -28,21 +28,18 @@ namespace Maticsoft.DAL
 	/// <summary>
 	/// 数据访问类:Hotel
 	/// </summary>
-	public partial class HotelServer
+	public  class HotelServer
 	{
 		public HotelServer()
 		{}
         #region  BasicMethod
-        /// <summary>
-        /// 是否存在该记录
-        /// </summary>
         public bool Exists(int ID)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from Hotel");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -57,19 +54,23 @@ namespace Maticsoft.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("insert into Hotel(");
-            strSql.Append("HotelName,City,Area,Star)");
+            strSql.Append("HotelName,City,Area,Star,CreateDate,UpdateDate)");
             strSql.Append(" values (");
-            strSql.Append("SQL2012HotelName,SQL2012City,SQL2012Area,SQL2012Star)");
+            strSql.Append("@HotelName,@City,@Area,@Star,@CreateDate,@UpdateDate)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012HotelName", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012City", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012Area", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012Star", SqlDbType.Int,4)};
+                    new SqlParameter("@HotelName", SqlDbType.VarChar,100),
+                    new SqlParameter("@City", SqlDbType.VarChar,100),
+                    new SqlParameter("@Area", SqlDbType.VarChar,100),
+                    new SqlParameter("@Star", SqlDbType.Int,4),
+                    new SqlParameter("@CreateDate", SqlDbType.DateTime),
+                    new SqlParameter("@UpdateDate", SqlDbType.DateTime)};
             parameters[0].Value = model.HotelName;
             parameters[1].Value = model.City;
             parameters[2].Value = model.Area;
             parameters[3].Value = model.Star;
+            parameters[4].Value = model.CreateDate;
+            parameters[5].Value = model.UpdateDate;
 
             object obj = DbHelperSQL.GetSingle(strSql.ToString(), parameters);
             if (obj == null)
@@ -86,24 +87,30 @@ namespace Maticsoft.DAL
         /// </summary>
         public bool Update(Maticsoft.Model.HotelModel model)
         {
-            StringBuilder strSql = new StringBuilder();
+            StringBuilder strSql =  new StringBuilder();
             strSql.Append("update Hotel set ");
-            strSql.Append("HotelName=SQL2012HotelName,");
-            strSql.Append("City=SQL2012City,");
-            strSql.Append("Area=SQL2012Area,");
-            strSql.Append("Star=SQL2012Star");
-            strSql.Append(" where ID=SQL2012ID");
-            SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012HotelName", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012City", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012Area", SqlDbType.VarChar,20),
-                    new SqlParameter("SQL2012Star", SqlDbType.Int,4),
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)};
+            strSql.Append("HotelName=@HotelName,");
+            strSql.Append("City=@City,");
+            strSql.Append("Area=@Area,");
+            strSql.Append("Star=@Star,");
+            strSql.Append("CreateDate=@CreateDate,");
+            strSql.Append("UpdateDate=@UpdateDate");
+            strSql.Append(" where ID=@ID");
+            SqlParameter[] parameters =  {
+                    new SqlParameter("@HotelName", SqlDbType.VarChar,100),
+                    new SqlParameter("@City", SqlDbType.VarChar,100),
+                    new SqlParameter("@Area", SqlDbType.VarChar,100),
+                    new SqlParameter("@Star", SqlDbType.Int,4),
+                    new SqlParameter("@CreateDate", SqlDbType.DateTime),
+                    new SqlParameter("@UpdateDate", SqlDbType.DateTime),
+                    new SqlParameter("@ID", SqlDbType.Int,4)};
             parameters[0].Value = model.HotelName;
             parameters[1].Value = model.City;
             parameters[2].Value = model.Area;
             parameters[3].Value = model.Star;
-            parameters[4].Value = model.ID;
+            parameters[4].Value = model.CreateDate;
+            parameters[5].Value = model.UpdateDate;
+            parameters[6].Value = model.ID;
 
             int rows = DbHelperSQL.ExecuteSql(strSql.ToString(), parameters);
             if (rows > 0)
@@ -124,9 +131,9 @@ namespace Maticsoft.DAL
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from Hotel ");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -167,10 +174,10 @@ namespace Maticsoft.DAL
         {
 
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select  top 1 ID,HotelName,City,Area,Star from Hotel ");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append("select  top 1 ID,HotelName,City,Area,Star,CreateDate,UpdateDate from Hotel ");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -215,6 +222,14 @@ namespace Maticsoft.DAL
                 {
                     model.Star = int.Parse(row["Star"].ToString());
                 }
+                if (row["CreateDate"] != null && row["CreateDate"].ToString() != "")
+                {
+                    model.CreateDate = DateTime.Parse(row["CreateDate"].ToString());
+                }
+                if (row["UpdateDate"] != null && row["UpdateDate"].ToString() != "")
+                {
+                    model.UpdateDate = DateTime.Parse(row["UpdateDate"].ToString());
+                }
             }
             return model;
         }
@@ -225,7 +240,7 @@ namespace Maticsoft.DAL
         public DataSet GetList(string strWhere)
         {
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("select ID,HotelName,City,Area,Star ");
+            strSql.Append("select ID,HotelName,City,Area,Star,CreateDate,UpdateDate ");
             strSql.Append(" FROM Hotel ");
             if (strWhere.Trim() != "")
             {
@@ -245,7 +260,7 @@ namespace Maticsoft.DAL
             {
                 strSql.Append(" top " + Top.ToString());
             }
-            strSql.Append(" ID,HotelName,City,Area,Star ");
+            strSql.Append(" ID,HotelName,City,Area,Star,CreateDate,UpdateDate ");
             strSql.Append(" FROM Hotel ");
             if (strWhere.Trim() != "")
             {
@@ -309,13 +324,13 @@ namespace Maticsoft.DAL
 		public DataSet GetList(int PageSize,int PageIndex,string strWhere)
 		{
 			SqlParameter[] parameters = {
-					new SqlParameter("SQL2012tblName", SqlDbType.VarChar, 255),
-					new SqlParameter("SQL2012fldName", SqlDbType.VarChar, 255),
-					new SqlParameter("SQL2012PageSize", SqlDbType.Int),
-					new SqlParameter("SQL2012PageIndex", SqlDbType.Int),
-					new SqlParameter("SQL2012IsReCount", SqlDbType.Bit),
-					new SqlParameter("SQL2012OrderType", SqlDbType.Bit),
-					new SqlParameter("SQL2012strWhere", SqlDbType.VarChar,1000),
+					new SqlParameter("tblName", SqlDbType.VarChar, 255),
+					new SqlParameter("fldName", SqlDbType.VarChar, 255),
+					new SqlParameter("PageSize", SqlDbType.Int),
+					new SqlParameter("PageIndex", SqlDbType.Int),
+					new SqlParameter("IsReCount", SqlDbType.Bit),
+					new SqlParameter("OrderType", SqlDbType.Bit),
+					new SqlParameter("strWhere", SqlDbType.VarChar,1000),
 					};
 			parameters[0].Value = "Hotel";
 			parameters[1].Value = "ID";
@@ -327,7 +342,7 @@ namespace Maticsoft.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-        #endregion  BasicMethod
+#endregion  BasicMethod
         public List<HotelModel> GetModelList(string sqlwhere)
         {
             var ds = GetList(sqlwhere);

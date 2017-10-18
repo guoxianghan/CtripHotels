@@ -50,7 +50,7 @@ namespace CtripHotelPrice
                 sql.Append("[PlatID]=" + comboxPlat.SelectedIndex);
             }
 
-            return sql.ToString().Trim('N', 'A', 'D');
+            return sql.ToString().Trim('N', 'A', 'D',' ');
         }
     }
 }

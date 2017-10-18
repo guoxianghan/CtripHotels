@@ -17,14 +17,14 @@
 using System;
 namespace Maticsoft.Model
 {
-	/// <summary>
-	/// Hotel:实体类(属性说明自动提取数据库字段的描述信息)
-	/// </summary>
-	[Serializable]
-	public partial class HotelModel
-	{
-		public HotelModel()
-		{}
+    /// <summary>
+    /// Hotel:实体类(属性说明自动提取数据库字段的描述信息)
+    /// </summary>
+    [Serializable]
+    public class HotelModel
+    {
+        public HotelModel()
+        { }
         #region Model
         private int _id;
         private string _hotelname;
@@ -71,6 +71,10 @@ namespace Maticsoft.Model
             set { _star = value; }
             get { return _star; }
         }
+        public DateTime? CreateDate
+        { get; set; }
+        public DateTime? UpdateDate
+        { get; set; }
         #endregion Model
 
     }

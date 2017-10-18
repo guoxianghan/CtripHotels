@@ -76,7 +76,7 @@ namespace CtripHotelPrice
             {
                 sql.Append("[Star] = '" + (comStar.SelectedIndex - 1) + "' AND");
             }
-            return sql.ToString().Trim('N', 'A', 'D');
+            return sql.ToString().Trim('A', 'N', 'D',' ');
         }
 
         private void btnQuery_Click(object sender, EventArgs e)

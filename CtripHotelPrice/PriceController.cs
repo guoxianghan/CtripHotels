@@ -44,10 +44,14 @@ namespace CtripHotelPrice
             HotelDetailViewModel m = null;
             for (int i = 0; i < list.Count; i++)
             {
+                if (!CtsFlag)
+                {
+                    goto BREAK;
+                }
                 m = list[i];
                 for (int j = 0; j < days; j++)
                 {
-                    if (!IsRunning)
+                    if (!CtsFlag)
                     {
                         goto BREAK;
                     }

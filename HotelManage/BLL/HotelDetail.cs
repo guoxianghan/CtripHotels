@@ -29,14 +29,7 @@ namespace Maticsoft.BLL
 		public HotelDetail()
 		{}
 		#region  BasicMethod
-
-		/// <summary>
-		/// 得到最大ID
-		/// </summary>
-		public int GetMaxId()
-		{
-			return dal.GetMaxId();
-		}
+ 
 
 		/// <summary>
 		/// 是否存在该记录

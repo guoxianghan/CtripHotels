@@ -175,7 +175,8 @@ namespace CommonHelper
             {
                 var c = new EventInstance(0, 0);
                 c.EntryType = EventLogEntryType.Error;
-                EventLog.WriteEvent("携程代驾", c, ex);
+                //EventLog.WriteEvent("携程代驾", c, ex);
+                Logger.WriteException(ex);
                 ShowText(ex.Message);
             }
 

@@ -70,9 +70,13 @@ namespace Maticsoft.Model
 		{
 			set{ _hotelname=value;}
 			get{return _hotelname;}
-		}
-		#endregion Model
+        }
+        public DateTime CreateDate
+        { get; set; }
+        public DateTime? UpdateDate
+        { get; set; }
+        #endregion Model
 
-	}
+    }
 }
 
