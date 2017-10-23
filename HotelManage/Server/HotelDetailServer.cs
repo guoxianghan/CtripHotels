@@ -39,9 +39,9 @@ namespace Maticsoft.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select count(1) from HotelDetail");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -58,15 +58,15 @@ namespace Maticsoft.DAL
             strSql.Append("insert into HotelDetail(");
             strSql.Append("HotelID,PlatID,HotelPlatID,HotelName,CreateDate,UpdateDate)");
             strSql.Append(" values (");
-            strSql.Append("SQL2012HotelID,SQL2012PlatID,SQL2012HotelPlatID,SQL2012HotelName,SQL2012CreateDate,SQL2012UpdateDate)");
+            strSql.Append("@HotelID,@PlatID,@HotelPlatID,@HotelName,@CreateDate,@UpdateDate)");
             strSql.Append(";select @@IDENTITY");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012HotelID", SqlDbType.Int,4),
-                    new SqlParameter("SQL2012PlatID", SqlDbType.Int,4),
-                    new SqlParameter("SQL2012HotelPlatID", SqlDbType.NVarChar,100),
-                    new SqlParameter("SQL2012HotelName", SqlDbType.NVarChar,100),
-                    new SqlParameter("SQL2012CreateDate", SqlDbType.DateTime),
-                    new SqlParameter("SQL2012UpdateDate", SqlDbType.DateTime)};
+                    new SqlParameter("@HotelID", SqlDbType.Int,4),
+                    new SqlParameter("@PlatID", SqlDbType.Int,4),
+                    new SqlParameter("@HotelPlatID", SqlDbType.NVarChar,100),
+                    new SqlParameter("@HotelName", SqlDbType.NVarChar,100),
+                    new SqlParameter("@CreateDate", SqlDbType.DateTime),
+                    new SqlParameter("@UpdateDate", SqlDbType.DateTime)};
             parameters[0].Value = model.HotelID;
             parameters[1].Value = model.PlatID;
             parameters[2].Value = model.HotelPlatID;
@@ -91,21 +91,21 @@ namespace Maticsoft.DAL
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("update HotelDetail set ");
-            strSql.Append("HotelID=SQL2012HotelID,");
-            strSql.Append("PlatID=SQL2012PlatID,");
-            strSql.Append("HotelPlatID=SQL2012HotelPlatID,");
-            strSql.Append("HotelName=SQL2012HotelName,");
-            strSql.Append("CreateDate=SQL2012CreateDate,");
-            strSql.Append("UpdateDate=SQL2012UpdateDate");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append("HotelID=@HotelID,");
+            strSql.Append("PlatID=@PlatID,");
+            strSql.Append("HotelPlatID=@HotelPlatID,");
+            strSql.Append("HotelName=@HotelName,");
+            strSql.Append("CreateDate=@CreateDate,");
+            strSql.Append("UpdateDate=@UpdateDate");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012HotelID", SqlDbType.Int,4),
-                    new SqlParameter("SQL2012PlatID", SqlDbType.Int,4),
-                    new SqlParameter("SQL2012HotelPlatID", SqlDbType.NVarChar,100),
-                    new SqlParameter("SQL2012HotelName", SqlDbType.NVarChar,100),
-                    new SqlParameter("SQL2012CreateDate", SqlDbType.DateTime),
-                    new SqlParameter("SQL2012UpdateDate", SqlDbType.DateTime),
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)};
+                    new SqlParameter("@HotelID", SqlDbType.Int,4),
+                    new SqlParameter("@PlatID", SqlDbType.Int,4),
+                    new SqlParameter("@HotelPlatID", SqlDbType.NVarChar,100),
+                    new SqlParameter("@HotelName", SqlDbType.NVarChar,100),
+                    new SqlParameter("@CreateDate", SqlDbType.DateTime),
+                    new SqlParameter("@UpdateDate", SqlDbType.DateTime),
+                    new SqlParameter("@ID", SqlDbType.Int,4)};
             parameters[0].Value = model.HotelID;
             parameters[1].Value = model.PlatID;
             parameters[2].Value = model.HotelPlatID;
@@ -133,9 +133,9 @@ namespace Maticsoft.DAL
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("delete from HotelDetail ");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -177,9 +177,9 @@ namespace Maticsoft.DAL
 
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select  top 1 ID,HotelID,PlatID,HotelPlatID,HotelName,CreateDate,UpdateDate from HotelDetail ");
-            strSql.Append(" where ID=SQL2012ID");
+            strSql.Append(" where ID=@ID");
             SqlParameter[] parameters = {
-                    new SqlParameter("SQL2012ID", SqlDbType.Int,4)
+                    new SqlParameter("@ID", SqlDbType.Int,4)
             };
             parameters[0].Value = ID;
 
@@ -326,13 +326,13 @@ namespace Maticsoft.DAL
 		public DataSet GetList(int PageSize,int PageIndex,string strWhere)
 		{
 			SqlParameter[] parameters = {
-					new SqlParameter("SQL2012tblName", SqlDbType.VarChar, 255),
-					new SqlParameter("SQL2012fldName", SqlDbType.VarChar, 255),
-					new SqlParameter("SQL2012PageSize", SqlDbType.Int),
-					new SqlParameter("SQL2012PageIndex", SqlDbType.Int),
-					new SqlParameter("SQL2012IsReCount", SqlDbType.Bit),
-					new SqlParameter("SQL2012OrderType", SqlDbType.Bit),
-					new SqlParameter("SQL2012strWhere", SqlDbType.VarChar,1000),
+					new SqlParameter("@tblName", SqlDbType.VarChar, 255),
+					new SqlParameter("@fldName", SqlDbType.VarChar, 255),
+					new SqlParameter("@PageSize", SqlDbType.Int),
+					new SqlParameter("@PageIndex", SqlDbType.Int),
+					new SqlParameter("@IsReCount", SqlDbType.Bit),
+					new SqlParameter("@OrderType", SqlDbType.Bit),
+					new SqlParameter("@strWhere", SqlDbType.VarChar,1000),
 					};
 			parameters[0].Value = "HotelDetail";
 			parameters[1].Value = "ID";

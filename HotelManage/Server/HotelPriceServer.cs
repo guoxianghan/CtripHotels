@@ -132,7 +132,7 @@ namespace Maticsoft.DAL
                     new SqlParameter("@UpdateDate", SqlDbType.DateTime),
                     new SqlParameter("@Tag", SqlDbType.VarChar,1000),
                     new SqlParameter("@IsAgentPrivate", SqlDbType.Bit,1),
-                    new SqlParameter("@SaleTitle", SqlDbType.VarChar,50),
+                    new SqlParameter("@SaleTitle", SqlDbType.VarChar,500),
                     new SqlParameter("@HotelPlatID", SqlDbType.VarChar,50),
                     new SqlParameter("@IsCancel", SqlDbType.NVarChar,50),
                     new SqlParameter("@RoomCount", SqlDbType.NVarChar,50),
@@ -392,6 +392,13 @@ namespace Maticsoft.DAL
                 return Convert.ToInt32(obj);
             }
         }
+        public void Update(params HotelPriceModel[] prices)
+        {
+            foreach (var item in prices)
+            {
+                Update(item);
+            }
+        }
         /// <summary>
         /// 分页获取数据列表
         /// </summary>
@@ -443,7 +450,7 @@ namespace Maticsoft.DAL
 			return DbHelperSQL.RunProcedure("UP_GetRecordByPage",parameters,"ds");
 		}*/
 
-#endregion  BasicMethod
+        #endregion  BasicMethod
         public List<HotelPriceModel> GetModelList(string sqlwhere)
         {
             var ds = GetList(sqlwhere);
@@ -453,14 +460,14 @@ namespace Maticsoft.DAL
             HotelPriceModel p = null;
             foreach (DataRow item in dt.Rows)
             {
-                p = GetModel(Convert.ToInt32(item["ID"].ToString()));
+                p = DataRowToModel(item);
                 list.Add(p);
             }
             return list;
         }
         public void UpdatePrice(decimal price, int id)
         {
-            DbHelperSQL.ExecuteSql("UPDATE HotelPrice SET PRICE=" + price + ",[UpdateDate]='"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")+"'  where id=" + id);
+            int cou = DbHelperSQL.ExecuteSql("UPDATE HotelPrice SET PRICE=" + price + ",[UpdateDate]='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'  where id=" + id);
         }
         #region  ExtensionMethod
 

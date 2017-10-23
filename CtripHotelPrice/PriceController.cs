@@ -7,9 +7,11 @@ using Maticsoft.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace CtripHotelPrice
@@ -22,7 +24,7 @@ namespace CtripHotelPrice
         }
         public string sql { get; set; }
         public DateTime d1 { get; set; }
-        public DateTime d2 { get; set; } 
+        public DateTime d2 { get; set; }
 
         public void FindPrice()
         {//string sql, DateTime d1, DateTime d2
@@ -32,6 +34,8 @@ namespace CtripHotelPrice
             RoomsServer roomsserver = new RoomsServer();
             //Logger.WriteLog("请输入要查询的ID范围,日期范围,用半角逗号分隔:");
             Logger.WriteLog("正在加载所选酒店....");
+            //sql = "hotelplatid='2570579'";
+
             List<HotelDetailViewModel> list = h.GetModelList(sql);//AND [AREA]='北京西城区酒店'
             Logger.WriteLog($"所选酒店{list.Count}条加载完毕");
             DataTable dtprice = DbHelperSQLEx.GetDataTable("SELECT TOP 1 * FROM HotelPrice");
@@ -57,19 +61,25 @@ namespace CtripHotelPrice
                     }
                     DateTime indate = dtbegin.AddDays(j);
                     DateTime outdate = dtbegin.AddDays(j + 1);
+                    var exists = priceserver.GetModelList($"HotelPlatID='{m.HotelPlatID}' AND  PlatID={m.PlatID} AND InDate='{indate.ToString("yyyy-MM-dd")}'");
+                    if (exists.Count != 0)
+                    {
+                        exists.ForEach(x => x.Price = 0);
+                        priceserver.Update(exists.ToArray());
+                    }
                     int cou = priceserver.GetRecordCount($"HotelPlatID='{m.HotelPlatID}' AND  PlatID={m.PlatID} AND InDate='{indate.ToString("yyyy-MM-dd")}' AND (UpdateDate>='{DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd")}'  or createdate>='{DateTime.Now.AddDays(-3).ToString("yyyy-MM-dd")}' )");//SELECT COUNT(1)  FROM [HotelPrice] HP  WHERE HP.HotelPlatID='' AND HP.PlatID=1 AND HP.InDate='' AND UpdateDate>=''
                     if (cou != 0)
                     {
-                        Logger.WriteLog(m.HotelName + "," + indate.ToShortDateString() + ",3天内已更新过");
-                        continue;
+                        //Logger.WriteLog(m.HotelName + "," + indate.ToShortDateString() + ",3天内已更新过");
+                        //continue;
                     }
                     #region 模拟请求
                     string url = "http://hotels.ctrip.com/Domestic/tool/AjaxHote1RoomListForDetai1.aspx?psid=&MasterHotelID=" + m.HotelPlatID
                            + "&hotel=" + m.HotelPlatID + "&EDM=F&roomId=&IncludeRoom=&city=1&supplier=&showspothotel=T&IsDecoupleSpotHotelAndGroup=F&contrast=0&brand=614"
-                           + "&startDate=" + indate.ToString("yyyy-MM-dd") + "&depDate=" + outdate.ToString("yyyy-MM-dd")
-                           + "&IsFlash=F&RequestTravelMoney=F&hsids=&IsJustConfirm=&contyped=0&priceInfo=-1"
-                           + "&equip=&filter=bed|0,bf|0,network|0,policy|0,hourroom|0,&productcode=&couponList=&abForHuaZhu=&defaultLoad=F"
-                           + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689";
+                           + "&startDate=" + indate.ToString("yyyy-MM-dd") + "&depDate=" + outdate.ToString("yyyy-MM-dd");
+                           //+ "&IsFlash=F&RequestTravelMoney=F&hsids=&IsJustConfirm=&contyped=0&priceInfo=-1"
+                           //+ "&equip=&filter=bed|0,bf|0,network|0,policy|0,hourroom|0,&productcode=&couponList=&abForHuaZhu=&defaultLoad=F"
+                           //+ "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689";
                     string referer = "http://hotels.ctrip.com/hotel/" + m.HotelPlatID + ".html";
                     string log = m.HotelName + "," + referer + "," + indate.ToString("yyyy-MM-dd");
                     //Console.WriteLine(log);
@@ -146,15 +156,29 @@ namespace CtripHotelPrice
                             try
                             {
                                 price = nodeprice.Attributes["data-order"].Value;
+                                //订完46554879,0,0.0,1539,FG,0.0,0.0,0,F,大床,1,免费取消,F,T,F,F,
+                                //有房46554945,0,0.0,2298,FG,0.0,0.0,0,T,大床,2,免费取消,F,T,F,F,
+                                //有房21706174,0,0.0,1562,PP,0,0.0,0,F,大床,1,不可取消,F,T,F,F,
+                                //有房              0,0,0.0,1242,PP,0,0.0,0,F,大床,1,,F,T,F,F,
                             }
                             catch (Exception ex)
                             {
+                                Logger.WriteException(ex);
                                 continue;
                             }
                             string[] pp = price.Split(',');
                             decimal ppp = Convert.ToDecimal(nodeprice.Attributes["data-price"].Value);
                             p.RoomID = pp[0];
                             p.Price = ppp - Convert.ToDecimal(pp[6]);
+                            if (pp[8] == "T")
+                            {
+                                //有房
+                            }
+                            else
+                            {
+                                //p.Price = 0;
+                                //没房
+                            }
                             var t = node.SelectSingleNode("td/span[@class='room_type_name']");
                             if (t != null)
                                 p.SaleTitle = t.InnerText;
@@ -162,9 +186,22 @@ namespace CtripHotelPrice
                             {
                                 p.SaleTitle = t.SelectSingleNode("span[@class=\"supplier_logo\"]").Attributes["style"].Value;//.Replace("", "").Replace("","");
                             }
+
                             if (node.SelectSingleNode("td/span[2]") != null)
                                 p.SaleTitle = p.SaleTitle + node.SelectSingleNode("td/span[2]").InnerText;
                             p.Tag = nodeprice.InnerText;// nodeprice.ParentNode.ParentNode.ParentNode.SelectSingleNode("//div[@class=\"btns_base22_skin02\"]").InnerText;
+                            if (p.SaleTitle.Contains("background-image"))
+                            {//background-image:url(http://pic.c-ctrip.com/hotels121118/supplier_logo/yichengb65x20.png)闪住
+                                foreach (var image in ConfigurationManager.AppSettings.Keys)
+                                {
+                                    if (p.SaleTitle.Contains(image.ToString()))
+                                    {
+                                        Regex reg = new Regex(@"background-image:url\(.*\)");
+                                        p.SaleTitle = reg.Replace(p.SaleTitle, ConfigurationManager.AppSettings[image.ToString()]);
+                                    }
+                                }
+                            }
+
 
                             p.IsCancel = pp[11];
                             p.BedType = pp[9];
@@ -173,7 +210,7 @@ namespace CtripHotelPrice
                             var modellist = priceserver.GetModelList($@"SaleTitle='{p.SaleTitle}' and BedType='{p.BedType}' and BreakfirstType='{p.BreakfirstType}' and InDate='{p.InDate.ToString("yyyy-MM-dd")}' and OutDate='{p.OutDate.ToString("yyyy-MM-dd")}'
 and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' and BaseRoomID='{p.BaseRoomID}'");
 
-                            if (!p.SaleTitle.Contains("尊享惊喜优惠"))
+                            if (!p.SaleTitle.Contains("尊享惊喜优惠") || !p.SaleTitle.Contains("亿程旅行社"))
                                 coun++;
                             if (coun <= 4)
                             {
@@ -184,6 +221,11 @@ and PlatID={p.PlatID} and RoomID='{p.RoomID}' and HotelPlatID='{p.HotelPlatID}' 
                             if (modellist.Count > 0)
                             {//更新价格 
                                 priceserver.UpdatePrice(p.Price, modellist[0].ID);
+                                //int id = modellist[0].ID;
+                                p.ID = modellist[0].ID;
+                                modellist[0] = p;
+
+                                priceserver.Update(modellist[0]);
                             }
                             else
                             {//添加 

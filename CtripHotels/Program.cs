@@ -18,6 +18,8 @@ namespace CtripHotels
         static void Main(string[] args)
         {
             FindHotelStar("sitemap-beijing1", "3");
+            FindHotelStar("sitemap-beijing1", "4");
+            FindHotelStar("sitemap-beijing1", "5");
         }
 
         /// <summary>
@@ -26,7 +28,7 @@ namespace CtripHotels
         /// <param name="citymap"></param>
         /// <param name=""></param>
         /// <param name="star"></param>
-        private static void FindHotelStar(string citymap= "sitemap-beijing1",string star="3")
+        private static void FindHotelStar(string citymap = "sitemap-beijing1", string star = "3")
         {
             HotelServer server = new Maticsoft.DAL.HotelServer();
             HotelDetailViewServer vserver = new HotelDetailViewServer();
@@ -40,8 +42,8 @@ namespace CtripHotels
             http.AcceptEncoding = "gzip,deflate,sdch";
             http.AcceptLanguage = "zh-CN,zh;q=0.8";
             http.Method = "get";
-            http.Referer = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star;
-            http.Url = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star + "/1";
+            http.Referer = "http://m.ctrip.com/html5/hotel/" + citymap + "/star" + star;
+            http.Url = "http://m.ctrip.com/html5/hotel/" + citymap + "/star" + star + "/1";
             result = http.GetHttpResult();
             doc.LoadHtml(result.Html);
             var nodes = doc.DocumentNode.SelectNodes("//a[@class=\"noramla ainfooter\"]");
@@ -53,7 +55,7 @@ namespace CtripHotels
             {
                 Random ran = new Random(DateTime.Now.Millisecond);
                 Thread.Sleep(ran.Next(2000, 5000));
-                http.Url = "http://m.ctrip.com/html5/hotel/sitemap-beijing1/star" + star + "/" + i;
+                http.Url = "http://m.ctrip.com/html5/hotel/"+ citymap + "/star" + star + "/" + i;
                 result = http.GetHttpResult();
                 doc.LoadHtml(result.Html);
                 var hotelnodes = doc.DocumentNode.SelectNodes("//a[@class=\"noramla line2items\"]");//j获取酒店节点
@@ -69,7 +71,7 @@ namespace CtripHotels
                     if (list.Count == 0)
                     {
                         int newid = server.Add(new Maticsoft.Model.HotelModel() { City = "北京", HotelName = item.InnerText, Star = Convert.ToInt32(star), CreateDate = DateTime.Now });
-                       int nid= dserver.Add(new Maticsoft.Model.HotelDetailModel() { HotelPlatID = id, PlatID = 1, HotelID = newid, HotelName = item.InnerText, CreateDate = DateTime.Now });
+                        int nid = dserver.Add(new Maticsoft.Model.HotelDetailModel() { HotelPlatID = id, PlatID = 1, HotelID = newid, HotelName = item.InnerText, CreateDate = DateTime.Now });
                     }
                     list = vserver.GetModelList($"HotelPlatID='{id}' and PlatID='1'");
                     int cou = DbHelperSQL.ExecuteSql("UPDATE [Hotel] set [Star]=" + star + "WHERE ID=" + list[0].HotelID);
