@@ -35,7 +35,7 @@ namespace HttpHotelServer
             _CtripServer.Referer = referer;
             _Result = _CtripServer.GetHttpResult();
             return _Result.Html;
-        } 
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -236,6 +236,31 @@ namespace HttpHotelServer
 
 
             return _Result.Html;
+        }
+
+        public override string QueryPriceHtml(string hid, string date1, string date2, out string info)
+        {
+            info = "";
+            _CtripServer.Url = "http://hotels.ctrip.com/Domestic/tool/AjaxHote1RoomListForDetai1.aspx?psid=&MasterHotelID=" + hid
+                   + "&hotel=" + hid + "&EDM=F&roomId=&IncludeRoom=&city=1&supplier=&showspothotel=T&IsDecoupleSpotHotelAndGroup=F&contrast=0&brand=614"
+                   + "&startDate=" + date1 + "&depDate=" + date2;
+            _CtripServer.Referer = "http://hotels.ctrip.com/hotel/" + hid + ".html";
+            _CtripServer.Method = "get";
+            _CtripServer.AcceptEncoding = "gzip,deflate,sdch";
+            _CtripServer.AcceptLanguage = "zh-CN,zh;q=0.8";
+            _CtripServer.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
+            //_CtripServer.HeaderCollection.Add("If-Modified-Since", "Thu, 01 Jan 1970 00:00:00 GMT");
+            _CtripServer.IfModifiedSince = DateTime.Parse("1970 01-01 01:00:00");
+            _Result = _CtripServer.GetHttpResult();
+            //string html2 = CompareHtml(hid, date1, date2);
+            string html = _Result.Html;
+            return html;
+        }
+
+        public override string QueryPriceHtml(string hid, DateTime date1, DateTime date2, out string info)
+        {
+            string html = QueryPriceHtml(hid, date1.ToString("yyyy-MM-dd"), date2.ToString("yyyy-MM-dd"), out info);
+            return html;
         }
     }
     public class CtripCityJson

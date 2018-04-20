@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotels", "CtripHotels\CtripHotels.csproj", "{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelServerLogic", "HotelServerLogic\HotelServerLogic.csproj", "{A669155B-E675-483F-B46E-2BD9533FA6C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotelPrice", "CtripHotelPrice\CtripHotelPrice.csproj", "{73166EC6-E56E-48CB-9ECC-AC37F775BB8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelPriceServer", "HotelPriceServer\HotelPriceServer.csproj", "{C3164962-8CC3-4824-B629-69B0534B96C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{73166EC6-E56E-48CB-9ECC-AC37F775BB8B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{73166EC6-E56E-48CB-9ECC-AC37F775BB8B}.Release|x86.ActiveCfg = Release|Any CPU
 		{73166EC6-E56E-48CB-9ECC-AC37F775BB8B}.Release|x86.Build.0 = Release|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Debug|x86.Build.0 = Debug|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|x86.ActiveCfg = Release|Any CPU
+		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

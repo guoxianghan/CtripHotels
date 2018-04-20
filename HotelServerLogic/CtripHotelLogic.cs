@@ -90,7 +90,7 @@ namespace HotelServerLogic
 
                     var room_types = doc.DocumentNode.SelectNodes("//td[contains(@class,'room_type')]");
                     RoomsModel r = null;
-                    HotelPriceModel p = null;
+                    Maticsoft.Model.HotelPriceModel p = null;
                     if (room_types == null)
                     {
                         Logger.WriteLog(log + "  没有查询到房间");
@@ -102,7 +102,7 @@ namespace HotelServerLogic
                     }
                     foreach (var item in room_types)
                     {
-                        List<HotelPriceModel> prices = new List<HotelPriceModel>();
+                        List<Maticsoft.Model.HotelPriceModel> prices = new List<Maticsoft.Model.HotelPriceModel>();
                         #region 所有房型
                         r = new RoomsModel();
                         r.PlatID = 1;
@@ -124,7 +124,7 @@ namespace HotelServerLogic
                         foreach (var node in roomprices)
                         {//子房型
                             #region 子房型以及价格
-                            p = new HotelPriceModel();
+                            p = new Maticsoft.Model.HotelPriceModel();
                             p.CreateDate = DateTime.Now;
                             p.HotelID = m.HotelID;
                             p.HotelPlatID = r.HotelPlatID;

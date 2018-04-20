@@ -84,5 +84,15 @@ namespace CtripHotels
         {
             throw new NotImplementedException();
         }
+
+        public override string QueryPriceHtml(string hid, string date1, string date2, out string info)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string QueryPriceHtml(string hid, DateTime date1, DateTime date2, out string info)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using Maticsoft.Model;
 using Newtonsoft.Json;
+using HotelPriceModel;
 namespace HotelServerLogic
 {
     class Program
@@ -19,6 +20,9 @@ namespace HotelServerLogic
         static void Main(string[] args)
         {
             CtripHotelHttpServer ctrip = new CtripHotelHttpServer();
+            string info = "";
+            string html7 = ctrip.QueryPriceHtml("939388", DateTime.Now.AddDays(1), DateTime.Now.AddDays(2), out info);
+            var rrrrr = ctrip.AnalysePriceHtml(html7, "",out info);
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
@@ -71,7 +75,7 @@ namespace HotelServerLogic
                            + "&startDate=" + indate.ToString("yyyy-MM-dd") + "&depDate=" + outdate.ToString("yyyy-MM-dd")
                            + "&IsFlash=F&RequestTravelMoney=F&hsids=&IsJustConfirm=&contyped=0&priceInfo=-1"
                            + "&equip=&filter=bed|0,bf|0,network|0,policy|0,hourroom|0,&productcode=&couponList=&abForHuaZhu=&defaultLoad=F"
-                           + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689"; 
+                           + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689";
                     string referer = "http://hotels.ctrip.com/hotel/" + m.HotelPlatID + ".html";
                     string log = m.HotelName + "," + referer + "," + indate.ToString("yyyy-MM-dd");
                     //Console.WriteLine(log);
@@ -98,7 +102,7 @@ namespace HotelServerLogic
 
                     var room_types = doc.DocumentNode.SelectNodes("//td[contains(@class,'room_type')]");
                     RoomsModel r = null;
-                    HotelPriceModel p = null;
+                    Maticsoft.Model.HotelPriceModel p = null;
                     if (room_types == null)
                     {
                         Logger.WriteLog(log + "  没有查询到房间");
@@ -110,7 +114,7 @@ namespace HotelServerLogic
                     }
                     foreach (var item in room_types)
                     {
-                        List<HotelPriceModel> prices = new List<HotelPriceModel>();
+                        List<Maticsoft.Model.HotelPriceModel> prices = new List<Maticsoft.Model.HotelPriceModel>();
                         #region 所有房型
                         r = new RoomsModel();
                         r.PlatID = 1;
@@ -132,7 +136,7 @@ namespace HotelServerLogic
                         foreach (var node in roomprices)
                         {//子房型
                             #region 子房型以及价格
-                            p = new HotelPriceModel();
+                            p = new Maticsoft.Model.HotelPriceModel();
                             p.CreateDate = DateTime.Now;
                             p.HotelID = m.HotelID;
                             p.HotelPlatID = r.HotelPlatID;

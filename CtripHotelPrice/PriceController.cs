@@ -29,6 +29,7 @@ namespace CtripHotelPrice
         public void FindPrice()
         {//string sql, DateTime d1, DateTime d2
             CtripHotelHttpServer ctrip = new CtripHotelHttpServer();
+            
             HotelDetailViewServer h = new HotelDetailViewServer();
             HotelPriceServer priceserver = new HotelPriceServer();
             RoomsServer roomsserver = new RoomsServer();
@@ -140,7 +141,7 @@ namespace CtripHotelPrice
                         foreach (var node in roomprices)
                         {//子房型
                             #region 子房型以及价格
-                            p = new HotelPriceModel();
+                            p = new Maticsoft.Model.HotelPriceModel();
                             p.CreateDate = DateTime.Now;
                             p.HotelID = m.HotelID;
                             p.HotelPlatID = r.HotelPlatID;
