@@ -106,5 +106,6 @@ namespace HotelPriceModel
         public string BedType { get; set; }
         public string Breadfast { get; set; }
         public int Price { get; set; }
+        public bool IsCancel { get; set; }
     }
 }

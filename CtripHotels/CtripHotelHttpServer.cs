@@ -137,20 +137,28 @@ namespace HttpHotelServer
             return _Result.Html;
         }
 
-        public override List<RoomTypes> AnalysePriceHtml(string html, string param, out string info)
+        public override List<RoomTypeEx> AnalysePriceHtml(string html, string param, out string info)
         {
             info = "";
 
             //List<CtripRoom> ctriproomlist = new List<CtripRoom>();
-            List<RoomTypes> list = new List<RoomTypes>();
-            CtripPriceHtml pricehtml = JsonConvert.DeserializeObject<CtripPriceHtml>(html);
+            List<RoomTypeEx> list = new List<RoomTypeEx>();
+            CtripPriceHtml pricehtml = null;
+            try
+            {
+                pricehtml = JsonConvert.DeserializeObject<CtripPriceHtml>(html);
+            }
+            catch (Exception ex)
+            {
+                info = ex.ToString();
+            }
             if (pricehtml == null)
                 return list;
             HtmlAgilityPack.HtmlDocument doc = new HtmlDocument();
             doc.LoadHtml(pricehtml.html);
             var nodes = doc.DocumentNode.SelectNodes("//tr[@expand]");
             var roomtypes = nodes.GroupBy(x => x.Attributes["brid"].Value);
-            RoomTypes r = null;
+            RoomTypeEx r = null;
             foreach (var item in roomtypes)
             {
                 var roomtype = doc.DocumentNode.SelectSingleNode("//tr[@expand=\"\" and @class=\"\" and @ brid=\"" + item.Key + "\"]");
@@ -159,18 +167,31 @@ namespace HttpHotelServer
                 string roomtypename = "";
                 try
                 {
-                    roomtypename = roomtype.SelectNodes("td")[0].InnerText.Trim().Replace("\n", "").Replace("查看详情", "");
+                    roomtypename = roomtype.SelectNodes("td")[0].InnerText.Trim().Replace("\n", "").Replace("查看详情", "").Trim();
                 }
                 catch (Exception ex)
                 {
+                    info = ex.ToString();
                 }
                 foreach (var i in item)
                 {
                     if (i.SelectSingleNode("td/span[@class=\"room_type_name\"]").SelectSingleNode("span") != null)
                     { continue; }
                     int price = 0;
-                    r = new RoomTypes();
+                    r = new RoomTypeEx();
+                    r.HotelId = param;
                     r.Name = roomtypename;
+                    r.CreateTime = DateTime.Now;
+                    try
+                    {
+                        if ((i.SelectSingleNode("td/span[@class=\"room_policy\"]")).InnerText.Contains("不可取消"))
+                            r.IsCancel = false;
+                        else r.IsCancel = true;
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
                     try
                     {
                         bool isnum = Int32.TryParse(i.SelectSingleNode("td/div/a").Attributes["data-price"].Value, out price);
@@ -180,6 +201,7 @@ namespace HttpHotelServer
                     }
                     catch (Exception ex)
                     {
+                        info = ex.ToString();
                         continue;
                     }
                     if (i.Equals(item.ToArray()[0]))
@@ -241,19 +263,27 @@ namespace HttpHotelServer
         public override string QueryPriceHtml(string hid, string date1, string date2, out string info)
         {
             info = "";
-            _CtripServer.Url = "http://hotels.ctrip.com/Domestic/tool/AjaxHote1RoomListForDetai1.aspx?psid=&MasterHotelID=" + hid
-                   + "&hotel=" + hid + "&EDM=F&roomId=&IncludeRoom=&city=1&supplier=&showspothotel=T&IsDecoupleSpotHotelAndGroup=F&contrast=0&brand=614"
-                   + "&startDate=" + date1 + "&depDate=" + date2;
-            _CtripServer.Referer = "http://hotels.ctrip.com/hotel/" + hid + ".html";
-            _CtripServer.Method = "get";
-            _CtripServer.AcceptEncoding = "gzip,deflate,sdch";
-            _CtripServer.AcceptLanguage = "zh-CN,zh;q=0.8";
-            _CtripServer.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
-            //_CtripServer.HeaderCollection.Add("If-Modified-Since", "Thu, 01 Jan 1970 00:00:00 GMT");
-            _CtripServer.IfModifiedSince = DateTime.Parse("1970 01-01 01:00:00");
-            _Result = _CtripServer.GetHttpResult();
-            //string html2 = CompareHtml(hid, date1, date2);
-            string html = _Result.Html;
+            string html = "";
+            try
+            {
+                _CtripServer.Url = "http://hotels.ctrip.com/Domestic/tool/AjaxHote1RoomListForDetai1.aspx?psid=&MasterHotelID=" + hid
+                           + "&hotel=" + hid + "&EDM=F&roomId=&IncludeRoom=&city=1&supplier=&showspothotel=T&IsDecoupleSpotHotelAndGroup=F&contrast=0&brand=614"
+                           + "&startDate=" + date1 + "&depDate=" + date2;
+                _CtripServer.Referer = "http://hotels.ctrip.com/hotel/" + hid + ".html";
+                _CtripServer.Method = "get";
+                _CtripServer.AcceptEncoding = "gzip,deflate,sdch";
+                _CtripServer.AcceptLanguage = "zh-CN,zh;q=0.8";
+                _CtripServer.ContentType = "application/x-www-form-urlencoded; charset=UTF-8";
+                //_CtripServer.HeaderCollection.Add("If-Modified-Since", "Thu, 01 Jan 1970 00:00:00 GMT");
+                _CtripServer.IfModifiedSince = DateTime.Parse("1970 01-01 01:00:00");
+                _Result = _CtripServer.GetHttpResult();
+                //string html2 = CompareHtml(hid, date1, date2);
+                html = _Result.Html;
+            }
+            catch (Exception ex)
+            {
+                info = ex.ToString();
+            }
             return html;
         }
 
@@ -261,6 +291,36 @@ namespace HttpHotelServer
         {
             string html = QueryPriceHtml(hid, date1.ToString("yyyy-MM-dd"), date2.ToString("yyyy-MM-dd"), out info);
             return html;
+        }
+
+        public override string QueryPriceHtml(string hid, string date1, out string info)
+        {
+            DateTime d = Convert.ToDateTime(date1);
+            return QueryPriceHtml(hid, d, d.AddDays(1), out info);
+        }
+
+        public override string QueryPriceHtml(string hid, DateTime date1, out string info)
+        {
+            return QueryPriceHtml(hid, date1, date1.AddDays(1), out info);
+        }
+
+        public override string InitRequest(string hid, DateTime date1, params string[] paras)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<RoomTypeEx> RunRequest(string hid, DateTime date1,out string info ,params string[] paras)
+        {
+            
+            string html = this.GetRequest("http://hotels.ctrip.com/hotel/" + hid + ".html#ctm_ref=hod_hp_hot_dl_n_2_1", "");
+            HtmlDocument doc = new HtmlDocument();
+            doc.LoadHtml(html);
+
+            string name = doc.DocumentNode.SelectSingleNode("//*[@id=\"J_htl_info\"]/div[2]/h2[1]")?.InnerText;
+            string html7 = this.QueryPriceHtml(hid, date1, date1.AddDays(1), out info);
+            var rrrrr = this.AnalysePriceHtml(html7, hid, out info);
+            rrrrr.ForEach(x => x.HotelName = name);
+            return rrrrr;
         }
     }
     public class CtripCityJson

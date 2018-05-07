@@ -23,9 +23,13 @@ namespace HttpHotelServer
         public abstract string GetHotelInfoHtml(string cityid, string hotelname, string param, out string info);
         public abstract string AnalyseHotelId(string html, out string info);
         public abstract string QueryPriceHtml(string cityid, string hid, string date1, string date2, string roomtype, out string info);
-        public abstract List<RoomTypes> AnalysePriceHtml(string html, string param, out string info);
+        public abstract List<RoomTypeEx> AnalysePriceHtml(string html, string param, out string info);
         public abstract string QueryPriceHtml(string hid, string date1, string date2, out string info);
+        public abstract string QueryPriceHtml(string hid, string date1,  out string info);
         public abstract string QueryPriceHtml(string hid, DateTime date1, DateTime date2, out string info);
+        public abstract string QueryPriceHtml(string hid, DateTime date1,out string info);
+        public abstract string InitRequest(string hid,DateTime date1,params string[] paras);
+        public abstract List<RoomTypeEx> RunRequest(string hid, DateTime date1, out string info, params string[] paras);
         public virtual void InitLoad()
         { }
     }

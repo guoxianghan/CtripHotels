@@ -65,7 +65,7 @@ namespace CtripHotels
             throw new NotImplementedException();
         }
 
-        public override List<RoomTypes> AnalysePriceHtml(string html, string param, out string info)
+        public override List<RoomTypeEx> AnalysePriceHtml(string html, string param, out string info)
         {
             throw new NotImplementedException();
         }
@@ -91,6 +91,26 @@ namespace CtripHotels
         }
 
         public override string QueryPriceHtml(string hid, DateTime date1, DateTime date2, out string info)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string QueryPriceHtml(string hid, string date1, out string info)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string QueryPriceHtml(string hid, DateTime date1, out string info)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string InitRequest(string hid, DateTime date1, params string[] paras)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override List<RoomTypeEx> RunRequest(string hid, DateTime date1, out string info, params string[] paras)
         {
             throw new NotImplementedException();
         }
