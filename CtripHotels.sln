@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotels", "CtripHotels\CtripHotels.csproj", "{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotelServer", "CtripHotels\CtripHotelServer.csproj", "{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpHelper", "HttpHelper\HttpHelper.csproj", "{0C34A621-0C58-4F8E-9313-02231B235EDC}"
 EndProject
@@ -18,6 +18,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotelPrice", "CtripHotelPrice\CtripHotelPrice.csproj", "{73166EC6-E56E-48CB-9ECC-AC37F775BB8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelPriceServer", "HotelPriceServer\HotelPriceServer.csproj", "{C3164962-8CC3-4824-B629-69B0534B96C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelHttpBase", "HotelHttpBase\HotelHttpBase.csproj", "{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiltonHotelServer", "HiltonHotelServer\HiltonHotelServer.csproj", "{B2ABB673-EFD2-4596-913D-D8AFA54705EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +95,22 @@ Global
 		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|x86.ActiveCfg = Release|Any CPU
 		{C3164962-8CC3-4824-B629-69B0534B96C7}.Release|x86.Build.0 = Release|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}.Release|x86.Build.0 = Release|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Debug|x86.Build.0 = Debug|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Release|x86.ActiveCfg = Release|Any CPU
+		{B2ABB673-EFD2-4596-913D-D8AFA54705EB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

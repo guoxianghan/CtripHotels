@@ -77,7 +77,6 @@
     <Compile Include="LocalDbContext.cs" />
     <Compile Include="Platforms.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RoomTypeEx.cs" />
     <Compile Include="RoomTypePlat.cs" />
     <Compile Include="RoomTypes.cs" />
   </ItemGroup>

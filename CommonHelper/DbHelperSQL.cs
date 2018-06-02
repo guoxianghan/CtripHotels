@@ -6,6 +6,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Common;
 using System.Collections.Generic;
+using System.Text;
+
 namespace CommonHelper
 {
     /// <summary>
@@ -389,6 +391,37 @@ namespace CommonHelper
                 throw e;
             }   
 
+        }
+        /// <summary>
+        /// 拼接分页查询的SQL语句
+        /// </summary>
+        /// <param name="strWhere"></param>
+        /// <param name="orderby"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <returns></returns>
+        private static StringBuilder SQLToPage(string table, string strWhere, string orderby, int startIndex, int endIndex)
+        {
+
+            StringBuilder strSql = new StringBuilder();
+            strSql.Append("SELECT * FROM ( ");
+            strSql.Append(" SELECT ROW_NUMBER() OVER (");
+            if (!string.IsNullOrEmpty(orderby.Trim()))
+            {
+                strSql.Append("order by T." + orderby);
+            }
+            else
+            {
+                strSql.Append("order by T.ID desc");
+            }
+            strSql.Append(")AS Row, T.*  from "+ table + " T ");
+            if (!string.IsNullOrEmpty(strWhere.Trim()))
+            {
+                strSql.Append(" WHERE " + strWhere);
+            }
+            strSql.Append(" TT");
+            strSql.AppendFormat(" WHERE TT.Row between {0} and {1}", startIndex, endIndex);
+            return strSql.Replace("  ", " ");
         }
         /// <summary>
         /// 执行查询语句，返回DataSet

@@ -7,8 +7,8 @@
     <ProjectGuid>{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CtripHotels</RootNamespace>
-    <AssemblyName>CtripHotels</AssemblyName>
+    <RootNamespace>CtripHotelServer</RootNamespace>
+    <AssemblyName>CtripHotelServer</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -57,9 +57,7 @@
     <Compile Include="CtripHotelHttpServer.cs" />
     <Compile Include="CtripPriceHtml.cs" />
     <Compile Include="CtripRoomType.cs" />
-    <Compile Include="HotelHttpServer.cs" />
     <Compile Include="JSON.cs" />
-    <Compile Include="Platform.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomListJSON.cs" />
@@ -73,6 +71,10 @@
     <ProjectReference Include="..\CommonHelper\CommonHelper.csproj">
       <Project>{c3e9cbc3-0d42-4591-a9c4-0e93fa431090}</Project>
       <Name>CommonHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelHttpBase\HotelHttpBase.csproj">
+      <Project>{2db44824-ee46-4d73-a6af-acb552e5dcd5}</Project>
+      <Name>HotelHttpBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\HotelManage\HotelManage.csproj">
       <Project>{1A63704C-1997-4349-9BF1-3322DB3F90D0}</Project>

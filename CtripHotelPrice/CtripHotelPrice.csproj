@@ -148,9 +148,13 @@
       <Project>{C3E9CBC3-0D42-4591-A9C4-0E93FA431090}</Project>
       <Name>CommonHelper</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CtripHotels\CtripHotels.csproj">
+    <ProjectReference Include="..\CtripHotels\CtripHotelServer.csproj">
       <Project>{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}</Project>
-      <Name>CtripHotels</Name>
+      <Name>CtripHotelServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HotelHttpBase\HotelHttpBase.csproj">
+      <Project>{2DB44824-EE46-4D73-A6AF-ACB552E5DCD5}</Project>
+      <Name>HotelHttpBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\HotelManage\HotelManage.csproj">
       <Project>{1a63704c-1997-4349-9bf1-3322db3f90d0}</Project>

@@ -18,7 +18,23 @@ namespace HttpHotelServer
         public object SupplierContractNoList { get; set; }
         public bool SupplierAutomaticPriceStatus { get; set; }
     }
-
+    public class CtripPricePolicy
+    {
+        public string hotelid { get; set; }
+        public string roomid { get; set; }
+        public string basicroomid { get; set; }
+        public string checkin { get; set; }
+        public string checkout { get; set; }
+        public string roomsort { get; set; }
+        public string roomsum { get; set; }
+        public string roomctype { get; set; }
+        public string lowerprice { get; set; }
+        public string type { get; set; }
+        public string agentname { get; set; }
+        public string supplyid { get; set; }
+        public string shadowid { get; set; }
+        public string cityid { get; set; }
+    }
     public class CtripRoomType
     {
         public int HotelId { get; set; }

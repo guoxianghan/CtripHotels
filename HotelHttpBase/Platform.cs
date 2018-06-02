@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HttpHotelServer
+namespace HotelHttpBase
 {
     public enum Platform
     {
@@ -32,7 +32,9 @@ namespace HttpHotelServer
         CtripConsole = 9,
 
         [Description("携程App")]
-        CtripApp = 10
+        CtripApp = 10,
+        [Description("希尔顿")]
+        Hilton = 11
     }
     public static class EnumDescription
     {
