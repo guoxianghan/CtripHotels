@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IQueryTicket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketDetail.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HttpHelper\HttpHelper.csproj">
+      <Project>{0C34A621-0C58-4F8E-9313-02231B235EDC}</Project>
+      <Name>HttpHelper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

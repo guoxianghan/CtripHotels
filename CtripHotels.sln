@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtripHotelServer", "CtripHotels\CtripHotelServer.csproj", "{ED09E197-01F5-44C1-986C-EC5DCE80B7DA}"
 EndProject
@@ -30,6 +30,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flyticketBase", "flyticketBase\flyticketBase.csproj", "{391FA813-66BE-4185-9907-ECBE98B71B95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonHttpServer", "CommonHttpServer\CommonHttpServer.csproj", "{C50999BC-C0C6-45B5-AC31-073C498C8752}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "twayairTicketServer", "twayairTicketServer\twayairTicketServer.csproj", "{14C4557A-30B3-46A0-A927-91C9270E0557}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +145,14 @@ Global
 		{C50999BC-C0C6-45B5-AC31-073C498C8752}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C50999BC-C0C6-45B5-AC31-073C498C8752}.Release|x86.ActiveCfg = Release|x86
 		{C50999BC-C0C6-45B5-AC31-073C498C8752}.Release|x86.Build.0 = Release|x86
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Debug|x86.Build.0 = Debug|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Release|x86.ActiveCfg = Release|Any CPU
+		{14C4557A-30B3-46A0-A927-91C9270E0557}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -150,5 +160,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{010E4F97-5172-4931-86B1-27BF49719A6D} = {9935F7A3-1A66-42EA-894F-2D5ADC8F49DC}
 		{391FA813-66BE-4185-9907-ECBE98B71B95} = {9935F7A3-1A66-42EA-894F-2D5ADC8F49DC}
+		{14C4557A-30B3-46A0-A927-91C9270E0557} = {9935F7A3-1A66-42EA-894F-2D5ADC8F49DC}
 	EndGlobalSection
 EndGlobal
