@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using HttpHelper;
 using CommonHelper;
 using System.Web;
 using Newtonsoft.Json;
 using HtmlAgilityPack;
-using HotelPriceModel;
-using Maticsoft.Model;
 using HotelHttpBase;
 using System.Text.RegularExpressions;
-namespace HttpHotelServer
+
+namespace CtripHotelServer
 {
     public class CtripHotelHttpServer : HotelHttpServer
     {
@@ -163,12 +161,13 @@ namespace HttpHotelServer
             foreach (var item in roomtypes)
             {
                 var roomtype = doc.DocumentNode.SelectSingleNode("//tr[@expand=\"\" and @class=\"\" and @ brid=\"" + item.Key + "\"]");
-                if (roomtype == null)
-                    continue;
+                //if (roomtype == null)
+                //    continue;
                 string roomtypename = "";
                 try
                 {
-                    roomtypename = roomtype.SelectNodes("td")[0].InnerText.Trim().Replace("\n", "").Replace("查看详情", "").Trim();
+                    //roomtypename = roomtype.SelectNodes("td")[0].InnerText.Trim().Replace("\n", "").Replace("查看详情", "").Trim();
+                    roomtypename = item.First().SelectSingleNode("td/a[2]").InnerText.Replace("\n", "").Replace("查看详情", "").Trim();
                 }
                 catch (Exception ex)
                 {

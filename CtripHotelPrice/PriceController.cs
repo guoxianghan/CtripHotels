@@ -1,7 +1,7 @@
 ﻿using CommonHelper;
+using CtripHotelServer;
 using HotelServerLogic;
 using HtmlAgilityPack;
-using HttpHotelServer;
 using Maticsoft.DAL;
 using Maticsoft.Model;
 using Newtonsoft.Json;

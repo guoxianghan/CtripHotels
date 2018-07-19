@@ -1,14 +1,10 @@
-﻿using HttpHotelServer;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using HotelPriceModel;
 using HttpHelper;
 using HtmlAgilityPack;
 using HotelHttpBase;
 
-namespace CtripHotels
+namespace CtripHotelServer
 {
     public class CtripAppHttpServer : HotelHttpServer
     {

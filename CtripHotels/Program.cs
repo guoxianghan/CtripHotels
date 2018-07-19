@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using HttpHotelServer;
 using HttpHelper;
 using Maticsoft.DAL;
 using HtmlAgilityPack;
@@ -11,7 +8,7 @@ using CommonHelper;
 using System.Text.RegularExpressions;
 using System.Threading;
 
-namespace CtripHotels
+namespace CtripHotelServer
 {
     class Program
     {
@@ -103,7 +100,7 @@ namespace CtripHotels
                 + "&eleven=510e429809230c4b002cb9b567b407adb56118e161f3dbe20d2855dc652ff6a6&callback=CASJacaauulJVNspCzn&_=1506613336689";
             result = http.GetHttpResult();
 
-            CtripAppHttpServer c = new CtripHotels.CtripAppHttpServer();
+            CtripAppHttpServer c = new CtripAppHttpServer();
             string city = "青岛";
             List<string> listurl = c.Index("sitemap-qingdao7");
             DataTable dtHotelDetail = DbHelperSQLEx.GetDataTable("SELECT TOP (1) * FROM HotelDetail");

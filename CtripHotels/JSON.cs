@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HttpHotelServer
+namespace CtripHotelServer
 {
     
     public class Rootobject

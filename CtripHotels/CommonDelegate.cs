@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 
-namespace HttpHotelServer
+namespace CtripHotelServer
 {
     #region 定义委托原型
 
